@@ -1,3 +1,9 @@
+drop table bitpred;
+drop table alarm;
+drop table coin;
+drop table member;
+drop table risk;
+
 CREATE TABLE `bitpred` (
 	`timestamp` INT(20) NOT NULL,
 	`premium` FLOAT NULL DEFAULT NULL,
