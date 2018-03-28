@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-	<Resource
-			 name="jdbc/mariadb-kpc"
-			 auth="Container"
-              type="javax.sql.DataSource" 
-              driverClassName="org.mariadb.jdbc.Driver"
-              url="jdbc:mariadb://10.1.43.149:3306/db"
-              username="rabbit" password="rabbit"/>
+	<Resource name="jdbc/mariadb" auth="Container" type="javax.sql.DataSource"
+		driverClassName="org.mariadb.jdbc.Driver" 
+		url="jdbc:mariadb://10.1.43.149:3306/kps"
+		username="rabbit" password="rabbit" 
+		loginTimeout="10" maxWait="5000"
+		testOnBorrow="true" />
 </Context>

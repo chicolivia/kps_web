@@ -1,10 +1,12 @@
 package model;
 
 import java.util.ArrayList;
-import model.domain.CoinBean;
+import model.domain.CoinPredBean;
 
 public class BitCoinDAO {
-	public static ArrayList<CoinBean> bitCoinList = new ArrayList<>();
+	public static ArrayList<CoinPredBean> bitCoinPredList = new ArrayList<>();
 	
-	BitCoinDAO(){}
+	public static void getBitCoinPred() {
+		
+	}
 }

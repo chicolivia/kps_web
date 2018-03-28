@@ -1,11 +1,11 @@
 package model.domain;
 
-public class CoinBean {
+public class CoinPredBean {
 	private int timeStamp;
 	private float priminum;
 
-	public CoinBean() {};
-	public CoinBean(int timeStamp, float priminum) {
+	public CoinPredBean() {};
+	public CoinPredBean(int timeStamp, float priminum) {
 		super();
 		this.timeStamp = timeStamp;
 		this.priminum = priminum;

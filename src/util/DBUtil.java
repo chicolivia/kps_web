@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ResourceBundle;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -11,17 +12,22 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class DBUtil {
-	static DataSource ds;
+	static DataSource ds = null;
+	static ResourceBundle resource = null;
 	
 	static {
 		Context initContext;
 		try {
 			initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
-			ds = (DataSource)envContext.lookup("jdbc/mariadb-kpc");
+			ds = (DataSource)envContext.lookup("jdbc/mariadb");
+			resource = ResourceBundle.getBundle("conf/sql");
 		} catch (NamingException e) {
 			e.printStackTrace();
-		}
+		} 
+	}
+	public static ResourceBundle getResourceBundle() {
+		return resource;
 	}
 	
 	public static Connection getConnection() throws SQLException{
@@ -41,7 +47,6 @@ public class DBUtil {
 			e.printStackTrace();
 		}
 	}
-	
 	
 	public static void close(Connection con, Statement stmt, ResultSet rset) {
 		try {

@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<button>connect Server</button>
+
 </body>
 </html>
