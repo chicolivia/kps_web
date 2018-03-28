@@ -18,7 +18,7 @@ public class DBUtil {
 		try {
 			initContext = new InitialContext();
 			Context envContext  = (Context)initContext.lookup("java:/comp/env");
-			ds = (DataSource)envContext.lookup("jdbc/kmj");
+			ds = (DataSource)envContext.lookup("jdbc/mariadb-kpc");
 		} catch (NamingException e) {
 			e.printStackTrace();
 		}
