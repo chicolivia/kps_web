@@ -1,11 +1,12 @@
 CREATE TABLE `bitpred` (
-	`timestamp` TIMESTAMP NOT NULL DEFAULT '',
+	`timestamp` INT(20) NOT NULL,
 	`premium` FLOAT NULL DEFAULT NULL,
 	PRIMARY KEY (`timestamp`)
 )
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
 ;
+
 
 
 CREATE TABLE `alarm` (
@@ -57,6 +58,3 @@ CREATE TABLE `risk` (
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
 ;
-
-
-
