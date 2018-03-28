@@ -13,8 +13,6 @@ COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
 ;
 
-
-
 CREATE TABLE `alarm` (
 	`no` INT(11) NOT NULL AUTO_INCREMENT,
 	`member_no` INT(11) NOT NULL DEFAULT '0',
