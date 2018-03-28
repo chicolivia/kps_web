@@ -14,27 +14,26 @@ import util.DBUtil;
 
 public class BitCoinDAO {
 	static ResourceBundle sql = DBUtil.getResourceBundle();
-	public static ArrayList<CoinPredBean> bitCoinPredList = new ArrayList<>();
+	public static ArrayList<CoinPredBean> bitCoinPredList = null;
 	
-	public static void getBitCoinPred() {
+	public static void getBitCoinPredFromDB() {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
+		bitCoinPredList = new ArrayList<>();
+			
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql.getString("selectAllBitPred"));
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
-				Timestamp tstamp = rset.getTimestamp(1);
-				int stamp = tstamp.getDate();
 				bitCoinPredList.add(
-						new CoinPredBean(stamp,rset.getFloat(2)));
+						new CoinPredBean(rset.getInt(1),rset.getFloat(2)));
 			}
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}finally {
-			
+			DBUtil.close(con, pstmt, rset);
 		}
 	}
 	
