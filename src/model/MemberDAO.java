@@ -7,10 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
-
 import model.domain.MemberBean;
-import model.domain.MemberInfoBean;
 import util.DBUtil;
 
 public class MemberDAO {

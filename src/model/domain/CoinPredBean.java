@@ -1,7 +1,5 @@
 package model.domain;
 
-import java.sql.Timestamp;
-
 public class CoinPredBean {
 	private int timeStamp;
 	private float priminum;

@@ -1,16 +1,25 @@
 package model.domain;
 
 public class ContactBean {
+	private int contactNo;
 	private int contactType;
 	private String address;
 	private int certification;
 	
 	public ContactBean(){}
-	public ContactBean(int contactType, String address, int certification) {
+	public ContactBean(int contactNo, int contactType, String address, int certification) {
 		super();
+		this.contactNo = contactNo;
 		this.contactType = contactType;
 		this.address = address;
 		this.certification = certification;
+	}
+	
+	public int getContactNo() {
+		return contactNo;
+	}
+	public void setContactNo(int contactNo) {
+		this.contactNo = contactNo;
 	}
 	public int getContactType() {
 		return contactType;
@@ -32,7 +41,7 @@ public class ContactBean {
 	}
 	@Override
 	public String toString() {
-		return "ContactBean [contactType=" + contactType + ", address=" + address + ", certification=" + certification
-				+ "]";
+		return "ContactBean [contactNo=" + contactNo + ", contactType=" + contactType + ", address=" + address
+				+ ", certification=" + certification + "]";
 	}
 }
