@@ -3,7 +3,7 @@ package model.domain;
 public class MemberBean {
 	private String id;
 	private String pw;
-	private int riskNumber;
+	private int riskNo;
 	private int alarmAgree;
 	
 	public MemberBean() {}
@@ -11,7 +11,7 @@ public class MemberBean {
 		super();
 		this.id = id;
 		this.pw = pw;
-		this.riskNumber = riskNumber;
+		this.riskNo = riskNumber;
 		this.alarmAgree = alarmAgree;
 	}
 	public String getId() {
@@ -26,11 +26,11 @@ public class MemberBean {
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
-	public int getRiskType() {
-		return riskNumber;
+	public int getRiskNo() {
+		return riskNo;
 	}
-	public void setRiskType(int riskType) {
-		this.riskNumber = riskType;
+	public void setRiskNo(int riskNo) {
+		this.riskNo = riskNo;
 	}
 	public int getAlarmAgree() {
 		return alarmAgree;
@@ -41,6 +41,6 @@ public class MemberBean {
 
 	@Override
 	public String toString() {
-		return "MemberBean [id=" + id + ", pw=" + pw + ", riskType=" + riskNumber + ", alarmAgree=" + alarmAgree + "]";
+		return "MemberBean [id=" + id + ", pw=" + pw + ", riskNo=" + riskNo + ", alarmAgree=" + alarmAgree + "]";
 	}
 }

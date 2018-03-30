@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import com.sun.corba.se.spi.orbutil.fsm.Guard.Result;
+
 import model.domain.MemberBean;
 import model.domain.MemberInfoBean;
 import util.DBUtil;
@@ -24,7 +26,7 @@ public class MemberDAO {
 			pstmt.setString(1, member.getId());
 			pstmt.setString(2, member.getPw());
 			pstmt.setInt(3, member.getAlarmAgree());
-			pstmt.setInt(4, member.getRiskType());
+			pstmt.setInt(4, member.getRiskNo());
 			int addResult = pstmt.executeUpdate();
 			if(addResult == 1) {
 				result = true;
@@ -35,38 +37,138 @@ public class MemberDAO {
 		return result;		
 	}
 	
-	public static boolean updateMember() {
-		boolean result = true;
-		
-		return result;	
+	public static boolean deleteMember(int memberNo) throws SQLException {
+		boolean result = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("deleteMember"));
+			pstmt.setInt(1, memberNo);
+			int addResult = pstmt.executeUpdate();
+			if(addResult == 1) {
+				result = true;
+			}
+		}finally {
+			DBUtil.close(con, pstmt);
+		}
+		return result;			
 	}
 	
-	public static boolean deleteMember(String memberNo) {
-		boolean result = true;
-		
-		
-		
-		return result;	
-	}
-	
-	public static MemberBean selectMember(String memberNo) {
-		MemberBean member = new MemberBean();
-		
+	public static MemberBean selectMember(int memberNo) throws SQLException {
+		MemberBean member = null;
+		Connection con  = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("selectMember"));
+			pstmt.setInt(1, memberNo);
+			rset = pstmt.executeQuery();
+			while(rset.next()) {
+				member = new MemberBean(
+						rset.getString(1),rset.getString(2),rset.getInt(3),rset.getInt(4)
+						);
+			}
+		}finally {
+			DBUtil.close(con, pstmt, rset);
+		}
 		return member;
 	}
 	
-	public static ArrayList<MemberInfoBean> selectAll() throws SQLException{
-		ArrayList<MemberInfoBean> memberList = null;
+	public static ArrayList<MemberBean> selectAllMember() throws SQLException{
+		ArrayList<MemberBean> memberList = new ArrayList<MemberBean>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		
 		try {
 			con = DBUtil.getConnection();
-			
-		}finally{
+			pstmt = con.prepareStatement(sql.getString("selectAllMember"));
+			rset= pstmt.executeQuery();
+			while(rset.next()) {
+				memberList.add(new MemberBean(
+						rset.getString(1), rset.getString(2), rset.getInt(3), rset.getInt(4)
+						));
+			}
+		}finally {
 			DBUtil.close(con, pstmt, rset);
 		}
 		return memberList;
+	}
+	
+	public static int selectMemberNoById(String id) throws SQLException {
+		int memberNo = 0;
+		Connection con  = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("selectMemberNo"));
+			pstmt.setString(1, id);
+			rset = pstmt.executeQuery();
+			while(rset.next()) {
+				memberNo = rset.getInt(1);
+			}
+		}finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return memberNo;
+	}
+	
+	public static boolean updateMemberPw(int memberNo, String newPw) throws SQLException {
+		boolean result = false;
+		Connection con  = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("updateMemberPw"));
+			pstmt.setInt(1, memberNo);
+			pstmt.setString(2, newPw);
+			int resultInt = pstmt.executeUpdate();
+			if (resultInt == 1) {
+				result = true;
+			}
+		}finally{
+			DBUtil.close(con, pstmt);
+		}
+		return result;
+	}
+	
+	public static boolean updateMemberAlarmAgree(int memberNo, int alarmAgree) throws SQLException {
+		boolean result = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("updateMemberAlarmAgree"));
+			pstmt.setInt(1, alarmAgree);
+			pstmt.setInt(2, memberNo);
+			int resultInt = pstmt.executeUpdate();
+			if(resultInt == 1) {
+				result = true;
+			}
+		}finally {
+			DBUtil.close(con, pstmt);
+		}
+		return result;
+	}
+	
+	public static boolean updateMemberRiskType(int memberNo, int riskNo) throws SQLException {
+		boolean result = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("updateMemberRiskNo"));
+			pstmt.setInt(1, riskNo);
+			pstmt.setInt(2, memberNo);
+			int resultInt = pstmt.executeUpdate();
+			if(resultInt == 1) {
+				result = true;
+			}
+		}finally {
+			DBUtil.close(con, pstmt);
+		}
+		return result;
 	}
 }
