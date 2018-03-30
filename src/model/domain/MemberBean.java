@@ -1,7 +1,7 @@
 package model.domain;
 
 public class MemberBean {
-	private int no = 0;
+	private int no;
 	private String id;
 	private String pw;
 	private int riskNo;
@@ -10,6 +10,7 @@ public class MemberBean {
 	public MemberBean() {}
 	public MemberBean(String id, String pw, int riskNumber, int alarmAgree) {
 		super();
+		this.no=0;
 		this.id = id;
 		this.pw = pw;
 		this.riskNo = riskNumber;
