@@ -84,7 +84,7 @@ public class MemberDAO {
 			rset= pstmt.executeQuery();
 			while(rset.next()) {
 				memberList.add(new MemberBean(
-						rset.getString(1), rset.getString(2), rset.getInt(3), rset.getInt(4)
+						rset.getInt(1), rset.getString(2), rset.getString(3), rset.getInt(4),rset.getInt(5)
 						));
 			}
 		}finally {

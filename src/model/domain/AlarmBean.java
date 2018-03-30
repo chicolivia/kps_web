@@ -14,6 +14,13 @@ public class AlarmBean {
 		this.type = type;
 		this.percent = percent;
 	}
+	public AlarmBean(int coinNumber, float percent, int type) {
+		super();
+		this.alarmNo = 0;
+		this.coinNo = coinNumber;
+		this.type = type;
+		this.percent = percent;
+	}
 	
 	public int getAlarmNo() {
 		return alarmNo;

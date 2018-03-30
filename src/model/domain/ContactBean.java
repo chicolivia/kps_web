@@ -14,7 +14,13 @@ public class ContactBean {
 		this.address = address;
 		this.certification = certification;
 	}
-	
+	public ContactBean( int contactType, String address, int certification) {
+		super();
+		this.contactNo = 0;
+		this.contactType = contactType;
+		this.address = address;
+		this.certification = certification;
+	}
 	public int getContactNo() {
 		return contactNo;
 	}

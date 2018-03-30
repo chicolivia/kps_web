@@ -1,6 +1,7 @@
 package model.domain;
 
 public class MemberBean {
+	private int no = 0;
 	private String id;
 	private String pw;
 	private int riskNo;
@@ -9,6 +10,14 @@ public class MemberBean {
 	public MemberBean() {}
 	public MemberBean(String id, String pw, int riskNumber, int alarmAgree) {
 		super();
+		this.id = id;
+		this.pw = pw;
+		this.riskNo = riskNumber;
+		this.alarmAgree = alarmAgree;
+	}
+	public MemberBean(int no, String id, String pw, int riskNumber, int alarmAgree) {
+		super();
+		this.no= no;
 		this.id = id;
 		this.pw = pw;
 		this.riskNo = riskNumber;
@@ -39,6 +48,12 @@ public class MemberBean {
 		this.alarmAgree = alarmAgree;
 	}
 
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
 	@Override
 	public String toString() {
 		return "MemberBean [id=" + id + ", pw=" + pw + ", riskNo=" + riskNo + ", alarmAgree=" + alarmAgree + "]";
