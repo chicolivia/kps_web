@@ -20,8 +20,7 @@
 	var pw = 0
 	var email = 0
 	function idcheck(){
-		idString = document.getElementById("ID").value
-		if(idString )
+		idString = document.getElementById("ID").value;
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
@@ -36,8 +35,9 @@
 				}
 			}
 		};
+		
 		xhttp.open("GET", "SignInIdCheck?id="+ document.getElementById("ID").value, true);
-		xhttp.send()
+		xhttp.send();
 	}
 	function pwCheck(){
 		if(document.getElementById("pw1").value == document.getElementByID("pw2")){

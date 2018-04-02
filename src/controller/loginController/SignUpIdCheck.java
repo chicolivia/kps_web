@@ -18,16 +18,17 @@ import model.domain.MemberBean;
 /**
  * Servlet implementation class SignInIdCheck
  */
-@WebServlet("/SignInIdCheck")
-public class SignInIdCheck extends HttpServlet {
+
+@WebServlet("/SignUpIdCheck")
+public class SignUpIdCheck extends HttpServlet {
 	@Override
 	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/xml;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		out.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		String id = (String)request.getParameter("id");
-		System.out.println(id);
+
+		response.setContentType("text/xml;charset=utf-8");
+		out.println("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
 		out.print("<data><result>");
 		if(id != null && !id.equals("")) {
 			MemberBean member = null;
@@ -45,7 +46,7 @@ public class SignInIdCheck extends HttpServlet {
 				out.print("okay");
 			}
 		}else {	
-			out.print("noInputId");
+			out.print("noInput");
 		}
 		out.print("</result></data>");
 		out.close();
