@@ -10,30 +10,8 @@
 	</head>
 	<body>
 
-		<!-- Header -->
-			<header id="header" class="alt">
-				<a class="logo" href="../index.jsp">KPS <span>by 바늘토</span></a>
-				<nav>
-					<ul>
-						<li>
-							<a href="#menu">메뉴</a>
-						</li>
-					</ul>
-				</nav>
-			</header>
-
-		<!-- Menu -->
-			<nav id="menu">
-				<ul class="links">
-					<li><a href="../index.jsp">Home</a></li>
-					<li><a href="intro.jsp">소개</a></li>
-					<li><a href="predict.jsp">예측</a></li>
-					<li><a href="alarm.jsp">알림 서비스</a></li>
-					<li><a href="aboutus.jsp">그룹 정보</a></li>
-					<li><a href="#" class="button special">Sign Up</a></li>
-					<li><a href="#" class="button">Log In</a></li>
-				</ul>
-			</nav>
+	<!-- Header && Menu -->
+	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
 
 		
 		
