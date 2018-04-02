@@ -20,13 +20,6 @@ import model.domain.CoinPredBean;
 public class Tester extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		ArrayList<CoinPredBean> bitCoinPred = new ArrayList<CoinPredBean>();
 		
-		BitCoinDAO.getBitCoinPredFromDB();
-		bitCoinPred = BitCoinDAO.getBitCoinPredList();
-		
-		for(CoinPredBean cp : bitCoinPred) {
-			System.out.println(cp);
-		}
 	}
 }

@@ -59,12 +59,33 @@ public class MemberDAO {
 		ResultSet rset = null;
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sql.getString("selectMember"));
+			pstmt = con.prepareStatement(sql.getString("selectMemberByNo"));
 			pstmt.setInt(1, memberNo);
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
 				member = new MemberBean(
-						rset.getString(1),rset.getString(2),rset.getInt(3),rset.getInt(4)
+						rset.getInt(1),rset.getString(2),rset.getString(3),rset.getInt(4), rset.getInt(5)
+						);
+			}
+		}finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return member;
+	}
+	
+	public static MemberBean selectMember(String memberId) throws SQLException {
+		MemberBean member = null;
+		Connection con  = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("selectMemberById"));
+			pstmt.setString(1, memberId);
+			rset = pstmt.executeQuery();
+			while(rset.next()) {
+				member = new MemberBean(
+						rset.getInt(1),rset.getString(2),rset.getString(3),rset.getInt(4), rset.getInt(5)
 						);
 			}
 		}finally {
