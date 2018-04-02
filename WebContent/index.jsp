@@ -37,6 +37,7 @@
 
 	<!-- Banner -->
 	<section id="banner" data-video="images/coin">
+	
 		<div class="inner">
 			<h1>
 				<br /> KPS<br />
