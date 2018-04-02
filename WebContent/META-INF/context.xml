@@ -6,4 +6,9 @@
 		username="rabbit" password="rabbit" 
 		loginTimeout="10" maxWait="5000"
 		testOnBorrow="true" />
+	<Resource name="jdbc/oracledb" auth="Container" type="javax.sql.DataSource"
+		driverClassName="oracle.jdbc.driver.oracleDriver" 
+		url="jdbc:oracle:thin:@localhost:1521:xe"
+		username="SCOTT" password="TIGER" 
+		 />
 </Context>

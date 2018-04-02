@@ -11,7 +11,7 @@
 </head>
 <body>
 	<!-- Header && Menu -->
-	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
+	<jsp:include page="/menuPages/menuBar.jsp"  />
 	
 	<!-- Banner -->
 	<section id="banner" data-video="images/coin">

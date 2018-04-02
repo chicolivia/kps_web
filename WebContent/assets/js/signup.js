@@ -17,6 +17,7 @@
 				if (this.readyState == 4 && this.status == 200) {
 					var xml = this.responseXML;
 					var re = xml.getElementsByTagName("result")[0].firstChild.nodeValue;
+					console.log(re);
 					var resultString="";
 					if(re == "exist"){
 						resultString="이미 있는 아이디 입니다";

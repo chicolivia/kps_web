@@ -14,10 +14,10 @@
 		
 			<section id ="banner">
 				<div class="inner">
-					<form action="../LoginCheck" onsubmit="return submitCheck()" method="POST" onkeydown="return captureReturnKey(event)">
-						<input type="text" placeholder="id" id="id1" onblur="idCheck()" name ="id">
+					<form action="../LoginCheck" onsubmit="return loginChecking()" method="POST">
+						<input type="text" placeholder="id" id="id1" name ="id">
 						<span id="idresult"></span><br>
-						<input type="password" placeholder="password" id="pw1" onkeyup="pwCheck()" name="pw"><br>
+						<input type="password" placeholder="password" id="pw1" name="pw"><br>
 						<div>
 							<button>ID/PW 찾기</button>
 							<input type="submit" value="Log In">

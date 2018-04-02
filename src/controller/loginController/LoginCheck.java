@@ -1,6 +1,7 @@
 package controller.loginController;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -8,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.MemberDAO;
 import model.domain.MemberBean;
@@ -20,31 +22,36 @@ public class LoginCheck extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		String id = request.getParameter("id");
-		String pw= request.getParameter("pw");
-		String returnURL = "";
+		HttpSession session= request.getSession(); 
+		PrintWriter out = response.getWriter();
+		String id = (String)request.getParameter("id");
+		String pw= (String)request.getParameter("pw");
+		String returnText = "";
+		System.out.println(id);
 		if(id != null) {
 			try {
 				MemberBean member = MemberDAO.selectMember(id);
 				if (member != null) {
 					if(member.getPw().equals(pw)) {
+						
 						if(id.equals("master")) {
-							returnURL = "masterLoginView";
+							returnText = "master";
 						}else {
-							returnURL="memberLoginView";
+							returnText="exist";
 						}
 					}else {
-						returnURL ="pwErrorView";
+						returnText ="noPw";
 					}
 				}else {
-					returnURL="idErrorView";
+					returnText="noId";
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}else {
-			returnURL="wrongParameterCame";
+			returnText="wrongParam";
 		}
-		response.sendRedirect(returnURL);
+		out.print(returnText);
+		out.close();
 	}//service
 }

@@ -14,14 +14,18 @@
 	<nav id="menu">
 		<ul class="links">
 			<li><a href="/kps/index.jsp">Home</a></li>
-			<li><a href="/kps/intro.jsp">소개</a></li>
-			<li><a href="/kps/predict.jsp">예측</a></li>
-			<li><a href="/kps/alarm.jsp">알림 서비스</a></li>
-			<li><a href="/kps/aboutus.jsp">그룹 정보</a></li>
+			<li><a href="/kps/menuPages/intro.jsp">소개</a></li>
+			<li><a href="/kps/menuPages/predict.jsp">예측</a></li>
+			<li><a href="/kps/menuPages/alarm.jsp">알림 서비스</a></li>
+			<li><a href="/kps/menuPages/aboutus.jsp">그룹 정보</a></li>
 			<li>
-			<%if(session.getAttribute("memberNo") ==null){%>
+			<%
+				if(session.getAttribute("memberNo")== null){
+			%>
 				<a href="/kps/loginPages/signup.jsp" class="button special" >Sign Up
-			<%}else{%>
+			<%
+				}else{
+			%>
 				<a href="/kps/loginPages/mypage.jsp" class="button special" >My Page<%
 			}%>
 			</a></li>

@@ -43,7 +43,8 @@ public class SignUpIdCheck extends HttpServlet {
 				}
 			} catch (SQLException e) {
 				//id okay
-				out.print("okay");
+				System.out.print("SQLException");
+				out.print("sqlError");
 			}
 		}else {	
 			out.print("noInput");
