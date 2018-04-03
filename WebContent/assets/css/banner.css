@@ -1,0 +1,243 @@
+@import url(font-awesome.min.css);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600|Raleway:500,700,800");
+
+/*
+	Slate by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+*/
+
+/* Banner */
+
+	#banner {
+		background-color: #444;
+		color: #fff;
+		min-height: 40em;
+		height: 75vh;
+		position: relative;
+	}
+
+		#banner input, #banner select, #banner textarea {
+			color: #fff;
+		}
+
+		#banner a {
+			color: #fff;
+		}
+
+		#banner strong, #banner b {
+			color: #fff;
+		}
+
+		#banner h1, #banner h2, #banner h3, #banner h4, #banner h5, #banner h6 {
+			color: #fff;
+		}
+
+		#banner blockquote {
+			border-left-color: rgba(255, 255, 255, 0.25);
+		}
+
+		#banner code {
+			background: rgba(255, 255, 255, 0.075);
+			border-color: rgba(255, 255, 255, 0.25);
+		}
+
+		#banner hr {
+			border-bottom-color: rgba(255, 255, 255, 0.25);
+		}
+
+		#banner:after {
+			-moz-pointer-events: none;
+			-webkit-pointer-events: none;
+			-ms-pointer-events: none;
+			pointer-events: none;
+			-moz-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+			-webkit-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+			-ms-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+			transition: opacity 1.5s ease-in-out, visibility 1.5s;
+			background: #000511;
+			content: '';
+			display: block;
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			visibility: hidden;
+			width: 100%;
+			z-index: 2;
+		}
+
+		#banner .indicators {
+			bottom: 1.5em;
+			left: 0;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			z-index: 2;
+		}
+
+			#banner .indicators li {
+				cursor: pointer;
+				display: inline-block;
+				height: 2em;
+				overflow: hidden;
+				padding: 0;
+				position: relative;
+				text-indent: 2em;
+				width: 2em;
+			}
+
+				#banner .indicators li:before {
+					background: rgba(255, 255, 255, 0.35);
+					border-radius: 100%;
+					content: '';
+					display: inline-block;
+					height: 0.8em;
+					left: 50%;
+					margin: -0.4em 0 0 -0.4em;
+					position: absolute;
+					text-indent: 0;
+					top: 50%;
+					width: 0.8em;
+				}
+
+				#banner .indicators li.visible:before {
+					background: #fff;
+				}
+
+		#banner > article {
+			-moz-transition: opacity 1.5s ease, visibility 1.5s;
+			-webkit-transition: opacity 1.5s ease, visibility 1.5s;
+			-ms-transition: opacity 1.5s ease, visibility 1.5s;
+			transition: opacity 1.5s ease, visibility 1.5s;
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			text-align: center;
+			top: 0;
+			visibility: hidden;
+			width: 100%;
+			z-index: 0;
+		}
+
+			#banner > article:before {
+				content: '';
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+
+			#banner > article:after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: #000;
+				opacity: 0.35;
+			}
+
+			#banner > article .inner {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				z-index: 1;
+			}
+
+				#banner > article .inner > :last-child {
+					margin-bottom: 0;
+				}
+
+			#banner > article h2 {
+				font-weight: 800;
+				font-size: 2.75em;
+				padding-bottom: 0;
+				margin: 0 0 0.5em 0;
+			}
+
+				#banner > article h2:after {
+					display: none;
+				}
+
+			#banner > article img {
+				display: none;
+			}
+
+			#banner > article.visible {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			#banner > article.top {
+				z-index: 1;
+			}
+
+			#banner > article.instant {
+				-moz-transition: none !important;
+				-webkit-transition: none !important;
+				-ms-transition: none !important;
+				transition: none !important;
+			}
+
+		body.is-loading #banner:after {
+			opacity: 1.0;
+			visibility: visible;
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			#banner {
+				min-height: 35em;
+				height: 60vh;
+			}
+
+				#banner > article h2 {
+					font-size: 2.25em;
+				}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			#banner {
+				min-height: 50em;
+				height: 75vh;
+			}
+
+				#banner > article {
+					background-attachment: scroll;
+				}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#banner {
+				min-height: 25em;
+			}
+
+				#banner > article .inner {
+					width: 90%;
+				}
+
+				#banner > article h2 {
+					font-size: 1.75em;
+					line-height: 1.25em;
+				}
+
+		}
+
+		body.is-mobile #banner > article {
+			background-attachment: scroll;
+		}

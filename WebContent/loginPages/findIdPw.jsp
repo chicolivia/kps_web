@@ -14,25 +14,20 @@
 	<body>
 	<!-- Header && Menu -->
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
-		<section id ="banner">
-			<div class="inner">
-				<form action="#" id="loginForm" method="POST" onkeydown="return onKeyDown()">
-					<p>ID 찾기</p>
-					<input type="text" placeholder="id" id="id1" name ="id" >
-					<span id="idresult"></span><br>
-					<input type="password" placeholder="password" id="pw1" name="pw"><br>
-					<span id ="submitresult"></span>
+		<section id ="banner" >
+			<div class="inner" >
+				<form action="#" id="findIdForm" method="POST" onkeydown="return onKeyDown()">
+					<p>아이디 찾기</p>
+					<input type="email" placeholder="email" name="emailAddress"><br>
+					<button type="button">아이디 찾기</button>
+					<span id ="findIdResult"></span>
 				</form>
-			
-				<form action="#" id="loginForm" method="POST" onkeydown="return onKeyDown()">
-					<input type="text" placeholder="id" id="id1" name ="id" >
-					<span id="idresult"></span><br>
-					<input type="password" placeholder="password" id="pw1" name="pw"><br>
-					<div>
-						<button>ID/PW 찾기</button>
-						<input type="button" value="Log In" onclick="loginChecking()">
-					</div>
-					<span id ="submitresult"></span>
+				<form action="#" id="findIdForm" method="POST" onkeydown="return onKeyDown()">
+					<p>비밀번호 찾기</p>
+					<input type="text" placeholder="id" name="id">
+					<input type="email" placeholder="email" name="emailAddress"><br>
+					<button type="button">비밀번호 찾기</button>
+					<span id ="findIdResult"></span>
 				</form>
 			</div>
 		</section>
@@ -43,6 +38,6 @@
 		<script src="${pageContext.request.contextPath}/assets/js/skel.min.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
-		<script src="${pageContext.request.contextPath}/assets/js/login.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/findIdPw.js"></script>
 	</body>
 </html>

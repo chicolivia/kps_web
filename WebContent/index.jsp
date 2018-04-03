@@ -14,19 +14,13 @@
 	<jsp:include page="/menuPages/menuBar.jsp"  />
 	
 	<!-- Banner -->
-	<section id="banner" data-video="images/coin">
-	<video src="coin.mp4"></video>
-	
-		<div class="inner">
-			<h1>
-				<br /> KPS<br />
-			</h1>
-			<p>김치김치김치 프리미엄~</p>
-			<ul class="actions">
-				<li><a href="#one" class="button big wide scrolly-middle">돈을
-						벌러 가봅시다</a></li>
-			</ul>
-		</div>
+	<section id="banner">
+				<article>
+					<div class="inner">
+					<h1>김치 프리미엄</h1>
+					</div>
+				</article>
+				
 	</section>
 
 	<!-- Spotlight -->

@@ -4903,6 +4903,28 @@
 
 		}
 
+/* Main */
+
+	#main {
+		padding-top: 9rem;
+	}
+
+		@media screen and (max-width: 980px) {
+
+			#main {
+				padding-top: 6.5rem;
+			}
+
+		}
+
+		@media screen and (max-width: 736px) {
+
+			#main {
+				padding-top: 5rem;
+			}
+
+		}
+
 /* Banner */
 
 	#banner {
@@ -5141,28 +5163,6 @@
 
 		body.is-loading #banner .inner {
 			opacity: 0;
-		}
-
-/* Main */
-
-	#main {
-		padding-top: 9rem;
-	}
-
-		@media screen and (max-width: 980px) {
-
-			#main {
-				padding-top: 6.5rem;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#main {
-				padding-top: 5rem;
-			}
-
 		}
 
 

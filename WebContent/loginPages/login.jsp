@@ -20,7 +20,7 @@
 					<span id="idresult"></span><br>
 					<input type="password" placeholder="password" id="pw1" name="pw"><br>
 					<div>
-						<button>ID/PW 찾기</button>
+						<button type="button" onclick="location.href='${pageContext.request.contextPath}/loginPages/findIdPw.jsp'">ID/PW 찾기</button>						
 						<input type="button" value="Log In" onclick="loginChecking()">
 					</div>
 					<span id ="submitresult"></span>
