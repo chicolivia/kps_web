@@ -8,6 +8,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/noscript.css" /></noscript>
 </head>
 <body>
 	<!-- 메뉴바 -->
@@ -33,7 +34,7 @@
 						<h2><a href="#">Consequat dolore adipiscing.</a></h2>
 					</div>
 				</article>
-			</section>
+	</section>
 	<!-- 메인페이지 채워야할 곳 -->
 	
 

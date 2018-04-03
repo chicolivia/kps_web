@@ -3,6 +3,7 @@
 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,10 +11,11 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/noscript.css" /></noscript>
 </head>
 <body>
 	<!-- Header && Menu -->
-	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
+	<jsp:include page="/menuPages/menuBar.jsp" flush="true"></jsp:include>
 		
 			<section id ="banner">
 				<div class="inner">
@@ -50,12 +52,11 @@
 			</section>
 
 		<!-- Scripts -->
-			<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
-			<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/jquery.dropotron.min.js"></script>
 			<script src="${pageContext.request.contextPath}/assets/js/jquery.scrollex.min.js"></script>
 			<script src="${pageContext.request.contextPath}/assets/js/skel.min.js"></script>
 			<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
-			<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
-			<script src="${pageContext.request.contextPath}/assets/js/signup.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/signup.js"></script>
 </body>
 </html>
