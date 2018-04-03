@@ -1,5 +1,5 @@
 <!--  
-@Author Junmin Seong (chicolivia@gmail.com)
+	@Author Junmin Seong (chicolivia@gmail.com)
 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,13 +15,13 @@
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
 		<section id ="banner">
 			<div class="inner">
-				<form action="#" onsubmit="return loginChecking()" method="POST">
-					<input type="text" placeholder="id" id="id1" name ="id">
+				<form action="/kps/LoginController" id="loginForm" method="POST" onkeydown="return onKeyDown()">
+					<input type="text" placeholder="id" id="id1" name ="id" >
 					<span id="idresult"></span><br>
 					<input type="password" placeholder="password" id="pw1" name="pw"><br>
 					<div>
 						<button>ID/PW 찾기</button>
-						<input type="submit" value="Log In">
+						<input type="button" value="Log In" onclick="loginChecking()">
 					</div>
 					<span id ="submitresult"></span>
 				</form>

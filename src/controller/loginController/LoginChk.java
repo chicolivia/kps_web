@@ -5,53 +5,44 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.MemberDAO;
 import model.domain.MemberBean;
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class LoginChk
  */
-@WebServlet("/LoginCheck")
-public class LoginCheck extends HttpServlet {
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+@WebServlet("/LoginChk")
+public class LoginChk extends HttpServlet {
+	@Override
+	public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
-		HttpSession session= request.getSession(); 
 		PrintWriter out = response.getWriter();
 		String id = (String)request.getParameter("id");
-		String pw= (String)request.getParameter("pw");
-		String returnText = "";
-		System.out.println("---");
+		String pw = (String)request.getParameter("pw");
 		if(id != null) {
 			try {
 				MemberBean member = MemberDAO.selectMember(id);
 				if (member != null) {
 					if(member.getPw().equals(pw)) {
-						
-						if(id.equals("master")) {
-							returnText = "master";
-						}else {
-							returnText="exist";
-						}
+						out.print("ok");
 					}else {
-						returnText ="noPw";
+						out.print("pw");
 					}
 				}else {
-					returnText="noId"; 
+					out.print("id");
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
 		}else {
-			returnText="wrongParam";
+			out.print("id");
 		}
-		out.print(returnText);
 		out.close();
 	}//service
 }
