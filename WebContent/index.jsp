@@ -37,6 +37,7 @@
 
 	<!-- Banner -->
 	<section id="banner" data-video="images/coin">
+	<video src="coin.mp4"></video>
 	
 		<div class="inner">
 			<h1>

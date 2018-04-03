@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="../assets/css/main.css" />
+<link rel="stylesheet" href="../assets/css/main1.css" />
 </head>
 <body>
 
@@ -40,7 +41,7 @@
 
 						<!-- Post -->
 							<section class="post">
-								<header class="major">
+								<header class="major1">
 									<h1>Elements<br />
 									Reference</h1>
 								</header>
@@ -144,7 +145,7 @@
 									</dl>
 
 									<h3>Actions</h3>
-									<ul class="actions">
+									<ul class="actions1">
 										<li><a href="#" class="button special">Special</a></li>
 										<li><a href="#" class="button">Default</a></li>
 									</ul>

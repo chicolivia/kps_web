@@ -4919,9 +4919,9 @@
 		-webkit-justify-content: center;
 		-ms-justify-content: center;
 		justify-content: center;
-		/* background-color: #1e2731; */
-		/* color: #ffffff; */
-		background-image: url("../../images/bitcoin3.jpg");
+	    background-color: #1e2731; 
+		 color: #ffffff; 
+		background-image: url("../../images/bitcoin11.jpg");
 		background-position: center;
 		background-size: cover;
 		background-attachment: fixed;

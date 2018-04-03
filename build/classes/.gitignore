@@ -1,1 +1,4 @@
-/util/
+/conf/
+/controller/
+/exception/
+/model/
