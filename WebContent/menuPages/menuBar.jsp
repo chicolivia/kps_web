@@ -12,24 +12,25 @@
 				<li><a href="#">알림 서비스</a></li>
 				<li><a href="/kps/menuPages/aboutus.jsp">About us</a></li>
 				<li>
-				<%
-				if(session.getAttribute("memberNo")== null){
-			%>
-				<a href="/kps/loginPages/signup.jsp" class="button special" >Sign Up
-			<%
-				}else{
-			%>
-				<a href="/kps/loginPages/mypage.jsp" class="button special" >My Page<%
-			}%>
-			</a></li>
-			<li>
-			<%if(session.getAttribute("memberNo") ==null){%>
-					<a href="/kps/loginPages/login.jsp" class="button" id="lowerButton">Log In<%
-				}else{%>
-					<a href="/kps/biz/logout.jsp" class="button" id="lowerButton">Log Out<%
-				}%>
-				</a>
-			</li>
+					<%
+					if(session.getAttribute("memberNo")== null){
+					%>
+					<a href="/kps/loginPages/signup.jsp" class="button special" >Sign Up
+					<%
+					}else{
+					%>
+					<a href="/kps/loginPages/mypage.jsp" class="button special" >My Page<%
+					}%>
+					</a>
+				</li>
+				<li>
+					<%if(session.getAttribute("memberNo") ==null){%>
+						<a href="/kps/loginPages/login.jsp" class="button" id="lowerButton">Log In<%
+					}else{%>
+						<a href="/kps/biz/logout.jsp" class="button" id="lowerButton">Log Out<%
+					}%>
+						</a>
+				</li>
 			</ul>
 		</nav>
 	</header>
