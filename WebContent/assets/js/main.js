@@ -5,7 +5,6 @@
 */
 
 var settings = {
-
 	carousel: {
 
 		// Transition speed (in ms)

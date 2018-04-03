@@ -33,7 +33,7 @@
 			<%if(session.getAttribute("memberNo") ==null){%>
 					<a href="/kps/loginPages/login.jsp" class="button" id="lowerButton">Log In<%
 				}else{%>
-					<a href="/kps/loginPages/logout.jsp" class="button" id="lowerButton">Log Out<%
+					<a href="/kps/biz/logout.jsp" class="button" id="lowerButton">Log Out<%
 				}%>
 			</a></li>
 		</ul>
