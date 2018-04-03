@@ -15,7 +15,7 @@
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
 		<section id ="banner">
 			<div class="inner">
-				<form action="#" onsubmit="return loginChecking()" method="POST">
+				<form action="${pageContext.request.contextPath}/LoginChecking" onsubmit="return loginChecking()" method="POST">
 					<input type="text" placeholder="id" id="id1" name ="id">
 					<span id="idresult"></span><br>
 					<input type="password" placeholder="password" id="pw1" name="pw"><br>
