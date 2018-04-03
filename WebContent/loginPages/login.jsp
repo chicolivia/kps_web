@@ -14,7 +14,6 @@
 	<!-- Header && Menu -->
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
 		
-		
 		<section id ="one" class="wrapper major-pad">
 			<div class="inner">
 				<h4>Log In</h4>
