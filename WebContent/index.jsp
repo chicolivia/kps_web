@@ -7,7 +7,7 @@
 	<title>KPS</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="/kps/assets/css/main.css" />
+	<link rel="stylesheet" href="/kps/${pageContext.request.contextPath}/assets/css/main.css" />
 </head>
 <body>
 	<!-- 메뉴바 -->
@@ -16,19 +16,19 @@
 	<!-- 배너 -->
 	<section id="banner">
 				<article>
-					<img src="images/bitcoin1.jpg" alt="" />
+					<img src="${pageContext.request.contextPath}/images/bitcoin1.jpg" alt="" />
 					<div class="inner">
 						<h2><a href="#">Magna tempus. Sed feugiat.</a></h2>
 					</div>
 				</article>
 				<article>
-					<img src="images/bitcoin11.jpg" alt="" />
+					<img src="${pageContext.request.contextPath}/images/bitcoin11.jpg" alt="" />
 					<div class="inner">
 						<h2><a href="#">Aliquam veroeros nullam.</a></h2>
 					</div>
 				</article>
 				<article>
-					<img src="images/bitcoin6.jpg"  alt="" />
+					<img src="${pageContext.request.contextPath}/images/bitcoin6.jpg"  alt="" />
 					<div class="inner">
 						<h2><a href="#">Consequat dolore adipiscing.</a></h2>
 					</div>
@@ -42,11 +42,11 @@
 	<jsp:include page="/menuPages/footer.jsp"></jsp:include>
 
 	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/jquery.dropotron.min.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/jquery.scrollex.min.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/skel.min.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 </body>
 </html>
