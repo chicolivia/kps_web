@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- Header -->
-	<header id="header" class="alt">
+	<header id="header">
 		<h1><a href="${pageContext.request.contextPath}/index.jsp">Slate <span>by Pixelarity</span></a></h1>
 		<nav id="nav">
 			<ul>

@@ -13,7 +13,8 @@
 	<body>
 	<!-- Header && Menu -->
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
-		<section id ="banner">
+		
+		<section id ="one" class="wrapper major-pad">
 			<div class="inner">
 				<form action="/kps/LoginController" id="loginForm" method="POST" onkeydown="return onKeyDown()">
 					<input type="text" placeholder="id" id="id1" name ="id" >
@@ -29,7 +30,7 @@
 		</section>
 	<!-- Scripts -->
 		<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
-		<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/jquery.dropotron.min.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/jquery.scrollex.min.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/skel.min.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>

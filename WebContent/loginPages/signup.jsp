@@ -11,13 +11,12 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/noscript.css" /></noscript>
 </head>
 <body>
 	<!-- Header && Menu -->
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true"></jsp:include>
 		
-			<section id ="banner">
+			<section id ="one" class="wrapper major-pad">
 				<div class="inner">
 					<form action="${pageContext.request.contextPath}/SignUpMember" onsubmit="return submitCheck()" method="POST" onkeydown="return captureReturnKey(event)">
 						<input type="text" placeholder="id" id="id1" onblur="idCheck()" name ="id">
@@ -53,10 +52,11 @@
 
 		<!-- Scripts -->
 		<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
-			<script src="${pageContext.request.contextPath}/assets/js/jquery.dropotron.min.js"></script>
-			<script src="${pageContext.request.contextPath}/assets/js/jquery.scrollex.min.js"></script>
-			<script src="${pageContext.request.contextPath}/assets/js/skel.min.js"></script>
-			<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/jquery.dropotron.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/jquery.scrollex.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/skel.min.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/signup.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
 </body>
 </html>
