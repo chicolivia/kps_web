@@ -27,7 +27,7 @@ public class LoginCheck extends HttpServlet {
 		String id = (String)request.getParameter("id");
 		String pw= (String)request.getParameter("pw");
 		String returnText = "";
-		System.out.println(id);
+		System.out.println("---");
 		if(id != null) {
 			try {
 				MemberBean member = MemberDAO.selectMember(id);
@@ -43,7 +43,7 @@ public class LoginCheck extends HttpServlet {
 						returnText ="noPw";
 					}
 				}else {
-					returnText="noId";
+					returnText="noId"; 
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();

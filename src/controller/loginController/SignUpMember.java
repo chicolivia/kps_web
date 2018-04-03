@@ -33,6 +33,7 @@ public class SignUpMember extends HttpServlet {
 		String alarmAgree= request.getParameter("alarmAgree");
 		String riskType= request.getParameter("riskType");
 		MemberBean member = new MemberBean(id, pw, Integer.parseInt(alarmAgree), Integer.parseInt(riskType));
+		System.out.println(alarmAgree+"/"+riskType);
 		try {
 			boolean isAdd = MemberDAO.addMember(member);
 			if(isAdd) {

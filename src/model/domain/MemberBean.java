@@ -8,7 +8,7 @@ public class MemberBean {
 	private int alarmAgree;
 	
 	public MemberBean() {}
-	public MemberBean(String id, String pw, int riskNumber, int alarmAgree) {
+	public MemberBean(String id, String pw, int alarmAgree , int riskNumber) {
 		super();
 		this.no=0;
 		this.id = id;
@@ -16,7 +16,7 @@ public class MemberBean {
 		this.riskNo = riskNumber;
 		this.alarmAgree = alarmAgree;
 	}
-	public MemberBean(int no, String id, String pw, int riskNumber, int alarmAgree) {
+	public MemberBean(int no, String id, String pw, int alarmAgree , int riskNumber) {
 		super();
 		this.no= no;
 		this.id = id;

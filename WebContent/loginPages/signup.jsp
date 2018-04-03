@@ -1,3 +1,6 @@
+<!--  
+@Author Junmin Seong (chicolivia@gmail.com)
+-->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -6,7 +9,7 @@
 	<title>KPS</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="/kps/assets/css/main.css" />
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
 </head>
 <body>
 	<!-- Header && Menu -->
@@ -14,7 +17,7 @@
 		
 			<section id ="banner">
 				<div class="inner">
-					<form action="../SignUpMember" onsubmit="return submitCheck()" method="POST" onkeydown="return captureReturnKey(event)">
+					<form action="${pageContext.request.contextPath}/SignUpMember" onsubmit="return submitCheck()" method="POST" onkeydown="return captureReturnKey(event)">
 						<input type="text" placeholder="id" id="id1" onblur="idCheck()" name ="id">
 						<span id="idresult"></span><br>
 						<input type="password" placeholder="password" id="pw1" onkeyup="pwCheck()" name="pw">
@@ -47,12 +50,12 @@
 			</section>
 
 		<!-- Scripts -->
-			<script src="../assets/js/jquery.min.js"></script>
-			<script src="../assets/js/jquery.scrolly.min.js"></script>
-			<script src="../assets/js/jquery.scrollex.min.js"></script>
-			<script src="../assets/js/skel.min.js"></script>
-			<script src="../assets/js/util.js"></script>
-			<script src="../assets/js/main.js"></script>
-			<script src="../assets/js/signup.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/jquery.scrolly.min.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/jquery.scrollex.min.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/skel.min.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+			<script src="${pageContext.request.contextPath}/assets/js/signup.js"></script>
 </body>
 </html>
