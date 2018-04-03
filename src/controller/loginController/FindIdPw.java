@@ -20,7 +20,6 @@ import model.domain.MemberBean;
 @WebServlet("/FindIdPw")
 public class FindIdPw extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("---");
 		request.setCharacterEncoding("utf-8");
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
@@ -35,8 +34,7 @@ public class FindIdPw extends HttpServlet {
 				}else {
 					int memberNo = resultInt;
 					MemberBean member = MemberDAO.selectMember(memberNo);
-					request.getSession().setAttribute("findedId", member.getId());
-					out.print("ok");
+					out.print(member.getId());
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -54,7 +52,7 @@ public class FindIdPw extends HttpServlet {
 					if(memberNo == -1 || memberNo != member.getNo()) {
 						out.print("email");
 					}else if(memberNo == member.getNo()){
-						out.println("ok");
+						out.println(member.getPw());
 					}
 				}
 			} catch (SQLException e) {

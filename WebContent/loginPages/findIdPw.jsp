@@ -21,6 +21,7 @@
 					<input type="email" placeholder="email" name="emailAddress" id="email1"><br>
 				</div>
 				<input type="button" class="special" value="아이디 찾기" onclick="findId()">
+				<input type="hidden" id="findedId" value="" name="findedId">
 			</form>
 			<p style="color: red" id ="findIdResult"></p>
 			<br>
@@ -33,6 +34,7 @@
 					<input type="email" placeholder="email" name="emailAddress" id="email2"><br>
 				</div>
 				<input type="button" class="special" value="비밀번호 찾기" onclick="findPw()">
+				<input type="hidden" id="findedPw" name="findedPw">
 			</form>
 			<p style="color: red" id ="findPwResult"></p>
 		</div>

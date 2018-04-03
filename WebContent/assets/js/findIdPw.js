@@ -21,11 +21,11 @@ function findId(){
 			if (this.readyState == 4 && this.status == 200) {
 				var re = this.responseText;
 				var resultString = "";
-				if (re == "ok") {
-					document.getElementById("findIdForm").submit();
-				} else if(re == "email"){
+				 if(re == "email"){
 					resultString = "존재하지 않는 이메일 입니다.";
-				}else{
+				}else {
+					document.getElementById("findedId").value=re;
+					document.getElementById("findIdForm").submit();
 				}
 				document.getElementById("findIdResult").innerHTML = resultString;
 			}
@@ -48,13 +48,13 @@ function findPw(){
 			if (this.readyState == 4 && this.status == 200) {
 				var re = this.responseText;
 				var resultString = "";
-				if (re == "ok") {
-					document.getElementById("findPwForm").submit();
-				} else if (re == "id") {
+				if (re == "id") {
 					resultString = "존재 하지 않는 아이디입니다.";
 				} else if(re == "email"){
 					resultString = "이메일이 일치하지 않습니다.";
 				}else{
+					document.getElementById("findedPw").value=re;
+					document.getElementById("findPwForm").submit();
 				}
 				document.getElementById("findPwResult").innerHTML = resultString;
 			}
