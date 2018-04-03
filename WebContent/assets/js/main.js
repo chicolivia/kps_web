@@ -1,15 +1,26 @@
 /*
-	Cascade by Pixelarity
+	Slate by Pixelarity
 	pixelarity.com | hello@pixelarity.com
 	License: pixelarity.com/license
 */
 
+
 var settings = {
-	carousel: {
+
+	banner: {
+
+		// Indicators (= the clickable dots at the bottom).
+			indicators: true,
 
 		// Transition speed (in ms)
-		// For timing purposes only. It *must* match the transition speed of ".carousel > article".
-			speed: 350
+		// For timing purposes only. It *must* match the transition speed of "#banner > article".
+			speed: 1500,
+
+		// Transition delay (in ms)
+			delay: 5000,
+
+		// Parallax intensity (between 0 and 1; higher = more intense, lower = less intense; 0 = off)
+			parallax: 0.25
 
 	}
 
@@ -26,137 +37,219 @@ var settings = {
 	});
 
 	/**
-	 * Custom carousel for Altitude.
+	 * Applies parallax scrolling to an element's background image.
 	 * @return {jQuery} jQuery object.
 	 */
-	$.fn._carousel = function(options) {
+	$.fn._parallax = (skel.vars.browser == 'ie' || skel.vars.mobile) ? function() { return $(this) } : function(intensity) {
 
 		var	$window = $(window),
 			$this = $(this);
 
-		// Handle no/multiple elements.
-			if (this.length == 0)
-				return $this;
+		if (this.length == 0 || intensity === 0)
+			return $this;
 
-			if (this.length > 1) {
+		if (this.length > 1) {
 
-				for (var i=0; i < this.length; i++)
-					$(this[i])._slider(options);
+			for (var i=0; i < this.length; i++)
+				$(this[i])._parallax(intensity);
 
-				return $this;
+			return $this;
 
-			}
+		}
+
+		if (!intensity)
+			intensity = 0.25;
+
+		$this.each(function() {
+
+			var $t = $(this),
+				on, off;
+
+			on = function() {
+
+				$t.css('background-position', 'center 100%, center 100%, center 0px');
+
+				$window
+					.on('scroll._parallax', function() {
+
+						var pos = parseInt($window.scrollTop()) - parseInt($t.position().top);
+
+						$t.css('background-position', 'center ' + (pos * (-1 * intensity)) + 'px');
+
+					});
+
+			};
+
+			off = function() {
+
+				$t
+					.css('background-position', '');
+
+				$window
+					.off('scroll._parallax');
+
+			};
+
+			skel.on('change', function() {
+
+				if (skel.breakpoint('medium').active)
+					(off)();
+				else
+					(on)();
+
+			});
+
+		});
+
+		$window
+			.off('load._parallax resize._parallax')
+			.on('load._parallax resize._parallax', function() {
+				$window.trigger('scroll');
+			});
+
+		return $(this);
+
+	};
+
+	/**
+	 * Custom banner slider for Slate.
+	 * @return {jQuery} jQuery object.
+	 */
+	$.fn._slider = function(options) {
+
+		var	$window = $(window),
+			$this = $(this);
+
+		if (this.length == 0)
+			return $this;
+
+		if (this.length > 1) {
+
+			for (var i=0; i < this.length; i++)
+				$(this[i])._slider(options);
+
+			return $this;
+
+		}
 
 		// Vars.
 			var	current = 0, pos = 0, lastPos = 0,
-				slides = [],
+				slides = [], indicators = [],
+				$indicators,
 				$slides = $this.children('article'),
 				intervalId,
 				isLocked = false,
 				i = 0;
 
+		// Turn off indicators if we only have one slide.
+			if ($slides.length == 1)
+				options.indicators = false;
+
 		// Functions.
 			$this._switchTo = function(x, stop) {
 
-				// Handle lock.
-					if (isLocked || pos == x)
-						return;
+				if (isLocked || pos == x)
+					return;
 
-					isLocked = true;
+				isLocked = true;
 
-				// Stop?
-					if (stop)
-						window.clearInterval(intervalId);
+				if (stop)
+					window.clearInterval(intervalId);
 
 				// Update positions.
 					lastPos = pos;
 					pos = x;
 
 				// Hide last slide.
-					slides[lastPos].removeClass('visible');
+					slides[lastPos].removeClass('top');
+
+					if (options.indicators)
+						indicators[lastPos].removeClass('visible');
+
+				// Show new slide.
+					slides[pos].addClass('visible').addClass('top');
+
+					if (options.indicators)
+						indicators[pos].addClass('visible');
 
 				// Finish hiding last slide after a short delay.
 					window.setTimeout(function() {
 
-						// Hide last slide (display).
-							slides[lastPos].hide();
+						slides[lastPos].addClass('instant').removeClass('visible');
 
-						// Show new slide (display).
-							slides[pos].show();
+						window.setTimeout(function() {
 
-						// Show new new slide.
-							window.setTimeout(function() {
-								slides[pos].addClass('visible');
-							}, 25);
+							slides[lastPos].removeClass('instant');
+							isLocked = false;
 
-						// Unlock after sort delay.
-							window.setTimeout(function() {
-								isLocked = false;
-							}, options.speed);
+						}, 100);
 
 					}, options.speed);
 
 			};
 
+		// Indicators.
+			if (options.indicators)
+				$indicators = $('<ul class="indicators"></ul>').appendTo($this);
+
 		// Slides.
 			$slides
 				.each(function() {
 
-					var $slide = $(this);
+					var $slide = $(this),
+						$img = $slide.find('img');
+
+					// Slide.
+						$slide
+							.css('background-image', 'url("' + $img.attr('src') + '")')
+							.css('background-position', ($slide.data('position') ? $slide.data('position') : 'center'));
 
 					// Add to slides.
 						slides.push($slide);
 
-					// Hide.
-						$slide.hide();
+					// Indicators.
+						if (options.indicators) {
+
+							var $indicator_li = $('<li>' + i + '</li>').appendTo($indicators);
+
+							// Indicator.
+								$indicator_li
+									.data('index', i)
+									.on('click', function() {
+										$this._switchTo($(this).data('index'), true);
+									});
+
+							// Add to indicators.
+								indicators.push($indicator_li);
+
+						}
 
 					i++;
 
-				});
-
-		// Nav.
-			$this
-				.on('click', '.next', function(event) {
-
-					// Prevent default.
-						event.preventDefault();
-						event.stopPropagation();
-
-					// Increment.
-						current++;
-
-						if (current >= slides.length)
-							current = 0;
-
-					// Switch.
-						$this._switchTo(current);
-
 				})
-				.on('click', '.previous', function(event) {
-
-					// Prevent default.
-						event.preventDefault();
-						event.stopPropagation();
-
-					// Decrement.
-						current--;
-
-						if (current < 0)
-							current = slides.length - 1;
-
-					// Switch.
-						$this._switchTo(current);
-
-				});
+				._parallax(options.parallax);
 
 		// Initial slide.
-			slides[pos]
-				.show()
-				.addClass('visible');
+			slides[pos].addClass('visible').addClass('top');
+
+			if (options.indicators)
+				indicators[pos].addClass('visible');
 
 		// Bail if we only have a single slide.
 			if (slides.length == 1)
 				return;
+
+		// Main loop.
+			intervalId = window.setInterval(function() {
+
+				current++;
+
+				if (current >= slides.length)
+					current = 0;
+
+				$this._switchTo(current);
+
+			}, options.delay);
 
 	};
 
@@ -176,9 +269,25 @@ var settings = {
 				}, 100);
 			});
 
-		// IE: Various fixes.
-			if (skel.vars.browser == 'ie')
-				$body.addClass('is-ie');
+		// Mobile?
+			if (skel.vars.mobile)
+				$body.addClass('is-mobile');
+			else
+				skel
+					.on('-medium !medium', function() {
+						$body.removeClass('is-mobile');
+					})
+					.on('+medium', function() {
+						$body.addClass('is-mobile');
+					});
+
+		// Fix: Placeholder polyfill.
+			$('form').placeholder();
+
+		// Fix: Post wrapping on IE<10.
+			if (skel.vars.IEVersion < 10)
+				$('.posts > .post:nth-child(3n + 1)')
+					.addClass('first');
 
 		// Prioritize "important" elements on medium.
 			skel.on('+medium -medium', function() {
@@ -188,92 +297,62 @@ var settings = {
 				);
 			});
 
-		// Menu.
-			$('#menu')
-				.append('<a href="#menu" class="close"></a>')
-				.appendTo($body)
-				.panel({
-					delay: 500,
-					hideOnClick: true,
-					hideOnSwipe: true,
-					resetScroll: true,
-					resetForms: true,
-					side: 'right'
-				});
+		// Dropdowns.
+			$('#nav > ul').dropotron({
+				alignment: 'center',
+				hideDelay: 400
+			});
 
 		// Header.
-			if ($banner.length > 0 && $header.hasClass('alt')) {
+			if (skel.vars.IEVersion < 9)
+				$header.removeClass('alt');
 
-					$window.on('resize', function() { $window.trigger('scroll'); });
+			if ($banner.length > 0
+			&&	$header.hasClass('alt')) {
 
-					$banner.scrollex({
-							bottom:         $header.outerHeight(),
-							terminate:      function() { $header.removeClass('alt'); },
-							enter:          function() { $header.addClass('alt'); },
-							leave:          function() { $header.removeClass('alt'); }
-					});
+				$window.on('resize', function() { $window.trigger('scroll'); });
+
+				$banner.scrollex({
+					bottom:		$header.outerHeight(),
+					terminate:	function() { $header.removeClass('alt'); },
+					enter:		function() { $header.addClass('alt'); },
+					leave:		function() { $header.removeClass('alt'); $header.addClass('reveal'); }
+				});
 
 			}
 
-		// Images.
-			$('.image[data-position]').each(function() {
+		// Banner.
+			$banner._slider(settings.banner);
 
-				var $this = $(this),
-					$img = $this.children('img');
+		// Off-Canvas Navigation.
 
-				// Polyfill object-fit.
-					if (!skel.canUse('object-fit')) {
+			// Navigation Panel Toggle.
+				$('<a href="#navPanel" class="navPanelToggle"></a>')
+					.appendTo($header);
 
-						// Apply img as background.
-							$this
-								.css('background-image', 'url("' + $img.attr('src') + '")')
-								.css('background-position', $this.data('position'))
-								.css('background-size', 'cover')
-								.css('background-repeat', 'no-repeat');
+			// Navigation Panel.
+				$(
+					'<div id="navPanel">' +
+						'<nav>' +
+							$('#nav').navList() +
+						'</nav>' +
+						'<a href="#navPanel" class="close"></a>' +
+					'</div>'
+				)
+					.appendTo($body)
+					.panel({
+						delay: 500,
+						hideOnClick: true,
+						hideOnSwipe: true,
+						resetScroll: true,
+						resetForms: true,
+						side: 'right'
+					});
 
-						// Hide img.
-							$img
-								.css('opacity', '0');
-
-						return;
-
-					}
-
-			});
-
-		// Scrolly.
-			$('.scrolly').scrolly({
-				offset: function() {
-					return $header.outerHeight() - 2;
-				}
-			});
-
-			$('.scrolly-middle').scrolly({
-				anchor: 'middle',
-				offset: function() {
-					return $header.outerHeight() - 2;
-				}
-			});
-
-		// Spotlights.
-			$('.spotlight').scrollex({
-				top:		'30vh',
-				bottom:		'30vh',
-				delay:		25,
-				initialize:	function() {
-					$(this).addClass('is-inactive');
-				},
-				terminate:	function() {
-					$(this).removeClass('is-inactive');
-				},
-				enter:		function() {
-					$(this).removeClass('is-inactive');
-				}
-			});
-
-		// Carousels.
-			$('.carousel')
-				._carousel(settings.carousel);
+			// Fix: Remove transitions on WP<10 (poor/buggy performance).
+				if (skel.vars.os == 'wp' && skel.vars.osVersion < 10)
+					$('#navPanel')
+						.css('transition', 'none');
 
 	});
 

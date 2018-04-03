@@ -1,5 +1,9 @@
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
 ///
-/// Cascade by Pixelarity
+/// Slate by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -7,105 +11,12 @@
 /* Image */
 
 	.image {
-		border-radius: _size(border-radius);
 		border: 0;
 		display: inline-block;
 		position: relative;
 
-		&[data-position] {
-			img {
-				@include vendor('object-fit', 'cover');
-				display: block;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-			}
-		}
-
-		&[data-position="top left"] {
-			img {
-				@include vendor('object-position', 'top left');
-			}
-		}
-
-		&[data-position="top"] {
-			img {
-				@include vendor('object-position', 'top');
-			}
-		}
-
-		&[data-position="top right"] {
-			img {
-				@include vendor('object-position', 'top right');
-			}
-		}
-
-		&[data-position="right"] {
-			img {
-				@include vendor('object-position', 'right');
-			}
-		}
-
-		&[data-position="bottom right"] {
-			img {
-				@include vendor('object-position', 'bottom right');
-			}
-		}
-
-		&[data-position="bottom"] {
-			img {
-				@include vendor('object-position', 'bottom');
-			}
-		}
-
-		&[data-position="bottom left"] {
-			img {
-				@include vendor('object-position', 'bottom left');
-			}
-		}
-
-		&[data-position="left"] {
-			img {
-				@include vendor('object-position', 'left');
-			}
-		}
-
-		&[data-position="center"] {
-			img {
-				@include vendor('object-position', 'center');
-			}
-		}
-
-		&[data-position="25% 25%"] {
-			img {
-				@include vendor('object-position', '25% 25%');
-			}
-		}
-
-		&[data-position="75% 25%"] {
-			img {
-				@include vendor('object-position', '75% 25%');
-			}
-		}
-
-		&[data-position="75% 75%"] {
-			img {
-				@include vendor('object-position', '75% 75%');
-			}
-		}
-
-		&[data-position="25% 75%"] {
-			img {
-				@include vendor('object-position', '25% 75%');
-			}
-		}
-
 		img {
-			border-radius: _size(border-radius);
 			display: block;
-			max-width: 100%;
 		}
 
 		&.left,
@@ -119,14 +30,14 @@
 
 		&.left {
 			float: left;
-			margin: 0 1.5rem 1rem 0;
-			top: 0.25rem;
+			margin: 0 1.5em 1em 0;
+			top: 0.25em;
 		}
 
 		&.right {
 			float: right;
-			margin: 0 0 1rem 1.5rem;
-			top: 0.25rem;
+			margin: 0 0 1em 1.5em;
+			top: 0.25em;
 		}
 
 		&.fit {
@@ -146,26 +57,6 @@
 
 			img {
 				width: 100%;
-			}
-		}
-
-		@include breakpoint(small) {
-			&.main {
-				margin: 0 0 _size(element-margin) 0;
-			}
-		}
-	}
-
-	a.image {
-		overflow: hidden;
-
-		img {
-			@include vendor('transition', 'transform #{_duration(transition)} ease');
-		}
-
-		&:hover {
-			img {
-				@include vendor('transform', 'scale(1.05)');
 			}
 		}
 	}

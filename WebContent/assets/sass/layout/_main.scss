@@ -1,5 +1,9 @@
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
 ///
-/// Cascade by Pixelarity
+/// Slate by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -7,13 +11,31 @@
 /* Main */
 
 	#main {
-		padding-top: 9rem;
+		@include padding(6em, 0);
 
-		@include breakpoint(medium) {
-			padding-top: 6.5rem;
+		> .inner {
+			> header.major:first-child {
+				margin-bottom: 6em;
+			}
+		}
+
+		@include breakpoint(large) {
+			@include padding(4em, 0);
+
+			> .inner {
+				> header.major:first-child {
+					margin-bottom: 4em;
+				}
+			}
 		}
 
 		@include breakpoint(small) {
-			padding-top: 5rem;
+			@include padding(2.5em, 0);
+
+			> .inner {
+				> header.major:first-child {
+					margin-bottom: 2.5em;
+				}
+			}
 		}
 	}

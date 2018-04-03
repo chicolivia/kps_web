@@ -1,5 +1,9 @@
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
 ///
-/// Cascade by Pixelarity
+/// Slate by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -13,60 +17,33 @@
 	}
 
 	header {
-		p {
-			max-width: 50rem;
-			position: relative;
-			margin-left: auto;
-			margin-right: auto;
-		}
-
-		h1 + p,
-		h2 + p,
-		h3 + p {
-			margin-top: (_size(element-margin) * -0.55);
-		}
-
-		h4 + p,
-		h5 + p,
-		h6 + p {
-			font-size: 0.9rem;
-			margin-top: (_size(element-margin) * -0.3);
-		}
-
 		&.major {
-			margin-bottom: 5rem;
-			text-align: center;
+			margin: 0 0 (_size(element-margin) * 2) 0;
 
-			h1, h2 {
-				&:after {
-					background-color: currentColor;
-					content: '';
-					display: block;
-					height: 3px;
-					margin: 1.5rem auto;
-					width: 4rem;
-				}
+			> :last-child {
+				margin-bottom: 0;
 			}
 
-			p {
-				margin-top: 0;
+			h2 {
+				font-size: 2.25em;
+				font-weight: _font(weight-heading-extrabold);
+				margin: 0 0 (_size(element-margin) * 0.35) 0;
+				padding-bottom: 0.75em;
 			}
 
 			@include breakpoint(large) {
-				margin-bottom: 3.5rem;
+				h2 {
+					font-size: 1.25em;
+				}
 			}
 
-			@include breakpoint(small) {
-				margin-bottom: 2rem;
+			@include breakpoint(medium) {
 			}
 		}
 	}
 
 	@mixin color-section($p: null) {
 		header {
-			p {
-				color: _palette($p, fg-light);
-			}
 		}
 	}
 

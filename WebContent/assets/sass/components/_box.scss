@@ -1,5 +1,9 @@
+@import '../libs/vars';
+@import '../libs/functions';
+@import '../libs/mixins';
+
 ///
-/// Cascade by Pixelarity
+/// Slate by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -7,10 +11,9 @@
 /* Box */
 
 	.box {
-		border-radius: _size(border-radius);
 		border: solid 1px;
 		margin-bottom: _size(element-margin);
-		padding: 1.5rem;
+		padding: 1.5em;
 
 		> :last-child,
 		> :last-child > :last-child,
@@ -20,7 +23,6 @@
 
 		&.alt {
 			border: 0;
-			border-radius: 0;
 			padding: 0;
 		}
 	}
