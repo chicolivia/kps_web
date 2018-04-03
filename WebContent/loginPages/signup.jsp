@@ -15,48 +15,72 @@
 <body>
 	<!-- Header && Menu -->
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true"></jsp:include>
-		
 			<section id ="one" class="wrapper major-pad">
 				<div class="inner">
-					<form action="${pageContext.request.contextPath}/SignUpMember" onsubmit="return submitCheck()" method="POST" onkeydown="return captureReturnKey(event)">
-						<input type="text" placeholder="id" id="id1" onblur="idCheck()" name ="id">
-						<span id="idresult"></span><br>
-						<input type="password" placeholder="password" id="pw1" onkeyup="pwCheck()" name="pw">
-						
-						<input type="password" placeholder="repeat password" id="pw2" onkeyup="pwCheck()">
-						<span id="pwresult"></span>
-						<input type="email" placeholder="sophie@example.com" id="email1" onblur="emailCheck()" name="email"><br>
-						<span id="emailresult"></span>
-						<div id = "alarmAgrees">
-							<span>알람 수신 동의여부</span><br>
-							<input type="radio" id="alarmAgreeRadio1" name="alarmAgree" onclick="alarmChecking()" value=1>
-							<label for ="alarmAgreeRadio1">동의함</label>
-							<input type="radio" id="alarmAgreeRadio2" name="alarmAgree" onclick="alarmChecking()" value=0>
-							<label for ="alarmAgreeRadio2">동의하지 않음</label>
-						</div>
-						<div id = "riskTypes">
-							<span>투자 성향 선택</span><br>
-							<input type="radio" id="riskType1" name="riskType" value=1 onclick="riskCheck()">
-							<label for ="riskType1">원금 보장 추구형</label>
-							<input type="radio" id="riskType2" name="riskType" value=2 onclick="riskCheck()">
-							<label for ="riskType2">균형 투자형</label>
-							<input type="radio" id="riskType3" name="riskType" value=3 onclick="riskCheck()">
-							<label for ="riskType3">고위험.고수익 투자형</label>
-						</div>
-						<input type="submit" value="Sign up"><br>
-						<span id ="submitresult"></span>
-						<input style="VISIBILITY: hidden; WIDTH:0px">
-					</form>
+					<div class ="centered">
+						<h1>Sign Up</h1>
+						<form action="${pageContext.request.contextPath}/SignUpMember" onsubmit="return submitCheck()" method="POST" onkeydown="return captureReturnKey(event)">
+							<div>
+								<div class="6u$ 12u$(xsmall)">
+									<input type="text" placeholder="id" id="id1" onblur="idCheck()" name ="id">
+									<span id="idresult"></span><br>
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input type="password" placeholder="password" id="pw1" onkeyup="pwCheck()" name="pw">
+									<input type="password" placeholder="repeat password" id="pw2" onkeyup="pwCheck()">
+									<span id="pwresult"></span><br>
+								</div>
+								<div class="6u$ 12u$(xsmall)">
+									<input type="email" placeholder="sophie@example.com" id="email1" onblur="emailCheck()" name="email">
+									<span id="emailresult"></span><br>
+								</div>
+								<br>
+								<div id = "alarmAgrees" class ="12u 12u$">
+									<h4>알람 수신 동의여부</h4>
+										<input type="radio" id="alarmAgreeRadio1" name="alarmAgree" onclick="alarmChecking()" value=1>
+										<label for ="alarmAgreeRadio1"><p>동의함</p></label>
+										<input type="radio" id="alarmAgreeRadio2" name="alarmAgree" onclick="alarmChecking()" value=0>
+										<label for ="alarmAgreeRadio2">동의하지 않음</label>
+								</div>
+								<br>
+								<div>
+									<h4>투자 성향 선택</h4>
+									<input type="radio" id="riskType1" name="riskType" value=1 onclick="riskCheck()">
+									<label for ="riskType1" class="alt">원금 보장 추구형</label>
+									<input type="radio" id="riskType2" name="riskType" value=2 onclick="riskCheck()">
+									<label for ="riskType2">균형 투자형</label>
+									<input type="radio" id="riskType3" name="riskType" value=3 onclick="riskCheck()">
+									<label for ="riskType3">고위험.고수익 투자형</label>
+								<br>
+								</div>
+								<div>
+									<br>
+									<ul class="actions">
+										<li>
+											자신의 성향을 잘 모르겠다면? &nbsp;&nbsp;
+											<a href="#" class="button">투자 성향 테스트</a>
+										</li>
+									</ul>
+								</div>
+								<br>
+								<div>
+									<input type="submit" value="Sign up" class="special"><br>
+									<span id ="submitresult"></span>
+								</div>
+							</div>
+						</form>
+					</div>
 				</div>
 			</section>
-
 		<!-- Scripts -->
 		<script src="${pageContext.request.contextPath}/assets/js/jquery.min.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/jquery.dropotron.min.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/jquery.scrollex.min.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/skel.min.js"></script>
-		<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/signup.js"></script>
+		<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+		
+		
 </body>
 </html>

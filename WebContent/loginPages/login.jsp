@@ -14,18 +14,28 @@
 	<!-- Header && Menu -->
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
 		
+		
 		<section id ="one" class="wrapper major-pad">
 			<div class="inner">
+				<h4>Log In</h4>
 				<form action="/kps/LoginController" id="loginForm" method="POST" onkeydown="return onKeyDown()">
-					<input type="text" placeholder="id" id="id1" name ="id" >
-					<span id="idresult"></span><br>
-					<input type="password" placeholder="password" id="pw1" name="pw"><br>
 					<div>
-						<button type="button" onclick="location.href='${pageContext.request.contextPath}/loginPages/findIdPw.jsp'">ID/PW 찾기</button>						
-						<input type="button" value="Log In" onclick="loginChecking()">
+						<div class="6u$ 12u$(xsmall)">
+							<input type="text" placeholder="id" id="id1" name ="id" >
+							<br>
+						</div>
+						<div class="6u$ 12u$(xsmall)">
+							<input type="password" placeholder="password" id="pw1" name="pw"><br>
+						</div>
+						<div class="12u$">
+							<ul class="actions">
+								<li><input type="button" onclick="location.href='${pageContext.request.contextPath}/loginPages/findIdPw.jsp'" class="special" value="ID/PW 찾기"></li>				
+								<li><input type="button" value="Log In" onclick="loginChecking()" class= "special"></li>
+							</ul>
+						</div>
 					</div>
-					<span id ="submitresult"></span>
 				</form>
+				<span><h3 id ="submitresult"></h3></span>
 			</div>
 		</section>
 	<!-- Scripts -->
