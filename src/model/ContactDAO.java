@@ -148,4 +148,22 @@ public class ContactDAO {
 		}
 		return result;
 	}
+	public static int selectContactByAddress(String address) throws SQLException {
+		int memberNo = -1;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("selectContactByAddress"));
+			pstmt.setString(1, address);
+			rset = pstmt.executeQuery();
+			while(rset.next()) {
+				memberNo = rset.getInt(1);
+			}
+		}finally {
+			DBUtil.close(con, pstmt, rset);
+		}
+		return memberNo;
+	}
 }
