@@ -2,21 +2,17 @@ package controller.loginController;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.ContactDAO;
 import model.MemberDAO;
-import model.domain.AlarmBean;
 import model.domain.ContactBean;
 import model.domain.MemberBean;
-import model.domain.MemberInfoBean;
 import util.ContactTypeNumber;
 
 /**
@@ -47,6 +43,6 @@ public class SignUpMember extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("/kps/loginPages/signInResult.jsp");
 	}
 }

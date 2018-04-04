@@ -44,8 +44,6 @@ public class LoginController extends HttpServlet {
 				alarmList = AlarmDAO.selectAllAlarmByMemberNo(member.getNo());
 				MemberInfoBean memberInfo = new MemberInfoBean(member, alarmList, contactList);
 				session.setAttribute("memberInfo", memberInfo);
-				System.out.println(member.getNo());
-				System.out.println(member.getId());
 				response.sendRedirect("/kps/index.jsp");
 			}
 			catch(SQLException e) {
