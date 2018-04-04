@@ -26,29 +26,33 @@
 				<li><a
 					href="/menuPages/aboutus.jsp">About
 						us</a></li>
+						
+			
 				<li>
 					<%
 						if(session.getAttribute("memberNo")== null){
 						%> <a
 					href="/loginPages/signup.jsp"
-					class="button special">Sign Up <%
+					class="button small">Sign Up <%
 						}else{
 						%> <a
 						href="/loginPages/mypage.jsp"
-						class="button special">My Page<%
+						class="button small">My Page<%
 						}%>
 					</a>
 				</li>
+		
 				<li>
 					<%if(session.getAttribute("memberNo") ==null){%> <a
 					href="/loginPages/login.jsp"
-					class="button" id="lowerButton">Log In<%
+					class="button small" id="lowerButton">Log In<%
 						}else{%> <a
 						href="/biz/logout.jsp"
-						class="button" id="lowerButton">Log Out<%
+						class="button small" id="lowerButton">Log Out<%
 						}%>
 					</a>
 				</li>
+			
 			</ul>
 		</nav>
 
