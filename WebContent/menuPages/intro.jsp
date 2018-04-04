@@ -37,7 +37,6 @@
 						</div>
 					</section>
 
-			</div>
 			
 			<!--페이지 밑단  -->
 	<jsp:include page="/menuPages/footer.jsp"></jsp:include>

@@ -14,18 +14,18 @@
 	<!-- Wrapper -->
 	<div id="wrapper">
 		<!-- Header && Menu -->
-		<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
-		<section class="main alt">
+		<jsp:include page="/menuPages/menuBar.jsp" ></jsp:include>
+				<section class="main alt">
 				<header>
-					<h1>Sign up</h1>
+					<h1>Log in</h1>
 				</header>
+
 				<div class="inner style2">
-					<div class="row 200%">
-						<div class="6u 12u$(medium)">
+					<div >
+						<div>
 			
-								<section id ="one" class="wrapper major-pad">
-									<div class="inner">
-										<h4>Log In</h4>
+								<section>
+									<div>
 										<form action="/LoginController" id="loginForm" method="POST" onkeydown="return onKeyDown()">
 											<div>
 												<div class="6u$ 12u$(xsmall)">
@@ -53,7 +53,7 @@
 			</section>
 			<!--페이지 밑단  -->
 			<jsp:include page="/menuPages/footer.jsp"></jsp:include>
-		</div>
+	</div>
 	<!-- Scripts -->
 		<script src="/assets/js/jquery.min.js"></script>
 		<script src="/assets/js/jquery.dropotron.min.js"></script>
@@ -61,6 +61,7 @@
 		<script src="/assets/js/jquery.scrolly.min.js"></script>
 		<script src="/assets/js/skel.min.js"></script>
 		<script src="/assets/js/util.js"></script>
+		<script src="/assets/js/main.js"></script>
 		<script src="/assets/js/login.js"></script>
 	</body>
 </html>
