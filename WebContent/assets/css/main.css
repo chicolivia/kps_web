@@ -2044,7 +2044,7 @@
 	input[type="button"],
 	button,
 	.button {
-		background-color: #4a98e2;
+		background-color: #2923c6;
 		color: #ffffff !important;
 	}
 
@@ -2053,7 +2053,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #60a5e6;
+			background-color: #2923c6;
 			color: #ffffff !important;
 		}
 
@@ -2062,7 +2062,7 @@
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color: #348bde;
+			background-color: #2923c6;
 		}
 
 		input[type="submit"].alt,
@@ -3201,7 +3201,25 @@
 
 			#wrapper > .main > .inner.style2 {
 				padding: 5rem 4rem 3rem 4rem ;
-				background-color: #ffffff;
+				background-color: #f2f5f9;
+				border-radius: 4px;
+			}
+			
+			#wrapper > .main > .inner.style3 {
+				padding: 5rem 4rem 3rem 4rem ;
+				background-color: #e2e8cc;
+				border-radius: 4px;
+			}
+			
+			#wrapper > .main > .inner.style4 {
+				padding: 5rem 4rem 3rem 4rem ;
+				background-color: #e8d3be;
+				border-radius: 4px;
+			}
+			
+			#wrapper > .main > .inner.style5 {
+				padding: 5rem 4rem 3rem 4rem ;
+				background-color: #e3d7e8;
 				border-radius: 4px;
 			}
 
@@ -3638,11 +3656,33 @@
 			}
 
 		#wrapper > .main.alt {
-			background-image: url("../../images/bg.jpg");
+			background-image: url("../../images/pic04.jpg");
 			background-size: cover;
 			background-repeat: repeat;
 			background-attachment: fixed;
 		}
+		
+		#wrapper > .main.alt1 {
+			background-image: url("../../images/pic05.jpg");
+			background-size: cover;
+			background-repeat: repeat;
+			background-attachment: fixed;
+		}
+		
+		#wrapper > .main.alt2 {
+			background-image: url("../../images/pic07.jpg");
+			background-size: cover;
+			background-repeat: repeat;
+			background-attachment: fixed;
+		}
+		
+		#wrapper > .main.alt3 {
+			background-image: url("../../images/pic02.jpg");
+			background-size: cover;
+			background-repeat: repeat;
+			background-attachment: fixed;
+		}
+		
 
 		@media screen and (max-width: 1280px) {
 
