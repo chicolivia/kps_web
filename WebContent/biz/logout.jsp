@@ -1,3 +1,6 @@
+<!--  
+	@Author Junmin Seong (chicolivia@gmail.com)
+-->
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% 
