@@ -10,6 +10,9 @@
 	</head>
 	<body>
 
+	<!-- Wrapper -->
+	<div id="wrapper">
+	
 	<!-- 메뉴바 -->
 	<jsp:include page="/menuPages/menuBar.jsp"></jsp:include>
 	
@@ -47,5 +50,6 @@
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
 
+		
 	</body>
 </html>

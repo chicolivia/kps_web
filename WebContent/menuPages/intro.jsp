@@ -1,10 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset=UTF-8">
-	<title>Insert title here</title>
+
 <html>
 	<head>
 		<title>Untitled</title>
@@ -14,6 +11,9 @@
 	</head>
 	<body>
 
+	<!-- Wrapper -->
+	<div id="wrapper">
+	
 	<!-- 메뉴바 -->
 	<jsp:include page="/menuPages/menuBar.jsp"></jsp:include>
 	
@@ -37,6 +37,8 @@
 						</div>
 					</section>
 
+
+		</div>
 			
 			<!--페이지 밑단  -->
 	<jsp:include page="/menuPages/footer.jsp"></jsp:include>
@@ -50,5 +52,7 @@
 			<script src="/assets/js/util.js"></script>
 			<script src="/assets/js/main.js"></script>
 
+		
+		
 	</body>
 </html>

@@ -10,6 +10,9 @@
 	</head>
 	<body>
 
+	<!-- Wrapper -->
+	<div id="wrapper">
+
 	<!-- 메뉴바 -->
 	<jsp:include page="/menuPages/menuBar.jsp"></jsp:include>
 	

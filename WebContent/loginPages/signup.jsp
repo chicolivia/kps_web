@@ -14,6 +14,9 @@
 </head>
 <body>
 
+	<!-- Wrapper -->
+	<div id="wrapper">
+	
 <!-- Header && Menu -->
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true"></jsp:include>
 	
@@ -97,7 +100,7 @@
 			</div>
 			</div>
 			</section>
-			
+		</div>	
 		<!-- Scripts -->
 		<script src="/assets/js/jquery.min.js"></script>
 		<script src="/assets/js/jquery.dropotron.min.js"></script>
