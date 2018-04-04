@@ -33,6 +33,13 @@
 								<div class="6u$ 12u$(xsmall)">
 									<input type="email" placeholder="sophie@example.com" id="email1" onblur="emailCheck()" name="email">
 									<span id="emailresult"></span><br>
+									<div class ="6u 12u(xsmaill)">
+										<input type="text" name ="cerText" id="cerText" disabled="disabled">
+									</div>
+									<div>
+										<input type="button" disabled="disabled" id="sendCerButton" onclick="sendingCerNum()" value="인증 메일 보내기">
+										<input type="button" disabled="disabled" id="checkCerNumButton" onclick="checkingCerNum()" value="인증 번호 확인">
+									</div>
 								</div>
 								<br>
 								<div id = "alarmAgrees" class ="12u 12u$">
@@ -80,7 +87,5 @@
 		<script src="${pageContext.request.contextPath}/assets/js/signup.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/util.js"></script>
 		<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
-		
-		
 </body>
 </html>

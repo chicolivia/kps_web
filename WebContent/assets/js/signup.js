@@ -4,8 +4,10 @@
 var id = 0;
 var pw = 0;
 var email = 0;
+var cerEmail = 0;
 var alarmCheck = -1;
 var riskType = -1;
+var cerNumber = 0;
 var xhttp = new XMLHttpRequest();
 
 function idCheck() {
@@ -60,8 +62,9 @@ function pwCheck() {
 }
 function emailCheck() {
 	email1 = document.getElementById("email1").value;
+	cerNumber = 0;
 	email = 0;
-
+	cerEmail = 0;
 	var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 	if (regExp.test(email1) && email1.length <= 40) {
 		xhttp.onreadystatechange = function() {
@@ -70,9 +73,11 @@ function emailCheck() {
 				var innerString = "";
 				if (resultString1 == "exist") {
 					innerString = "존재하는 EMAIL 입니다";
+					disableBoxes();
 				} else if (resultString1 == "okay") {
-					innerString = "사용가능한 EMAIL 입니다";
+					innerString = "사용가능한 EMAIL 입니다. 인증해주세요.";
 					email = 1;
+					ableBoxes();
 				}
 				document.getElementById("emailresult").innerHTML = innerString;
 			}
@@ -81,10 +86,11 @@ function emailCheck() {
 		xhttp.send();
 	} else {
 		document.getElementById("emailresult").innerHTML = "EMAIL 형식을 맞춰주세요";
+		disableBoxes();
 	}
 }
 function submitCheck() {
-	if (id == 1 && pw == 1 && email == 1 && alarmCheck != -1 && riskType != -1) {
+	if (id == 1 && pw == 1 && email == 1 && cerEmail == 1 && alarmCheck != -1 && riskType != -1) {
 		return true;
 	} else {
 		if (id == 0) {
@@ -93,6 +99,8 @@ function submitCheck() {
 			document.getElementById("pw1").focus();
 		} else if (email == 0) {
 			document.getElementById("email1").focus();
+		} else if (cerEmail = 0){
+			document.getElementById("cerText").focus();
 		} else if (alarmCheck == -1) {
 			document.getElementById("alarmAgrees").focus();
 			document.getElementById("submitresult").innerHTML = "알림 수신 동의 여부를 선택해주세요";
@@ -121,8 +129,64 @@ function riskCheck() {
 		riskType = 3;
 	}
 }
+
 function captureReturnKey(e) {
 	if (e.keyCode == 13) {
 		return false;
 	}
+}
+
+function sendingCerNum(){
+	cerNumber = 0;
+	cerEmail = 0;
+	cerEmailAddress = document.getElementById("email1").value;
+	document.getElementById("cerText").focus();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			var res = this.responseText;
+			if(res == "fail"){
+				document.getElementById("cerText").placeholder="이메일이 발송되지 못했습니다.";
+			}else {
+				document.getElementById("cerText").placeholder="인증번호";
+				cerNumber = res;
+			}
+		}
+	};
+	xhttp.open("GET", "/kps/ValidateEmail?email=" + cerEmailAddress, true);
+	xhttp.send();
+}
+
+function checkingCerNum(){
+	cerEmail = 0;
+	var cerText = document.getElementById("cerText").value;
+	if(cerText == "" || cerText.length ==0){
+		document.getElementById("cerText").placeholder = "입력해주세요";
+	}
+	else if(cerNumber == cerText){
+		//인증 완료
+		cerEmail = 1;
+		disableBoxes();
+		document.getElementById("emailresult").innerText = "인증이 완료되었습니다.";
+	}else{
+		//일치 하지 않음.
+		document.getElementById("cerText").value="";
+		document.getElementById("cerText").placeholder="일치하지 않습니다.";
+	}
+}
+
+function ableBoxes(){
+	var boxText = document.getElementById("cerText");
+	var sendCerButton = document.getElementById("sendCerButton");
+	var checkCerNumButton = document.getElementById("checkCerNumButton");
+	boxText.disabled=false;
+	sendCerButton.disabled=false;
+	checkCerNumButton.disabled=false;
+}
+function disableBoxes(){
+	var boxText = document.getElementById("cerText");
+	var sendCerButton = document.getElementById("sendCerButton");
+	var checkCerNumButton = document.getElementById("checkCerNumButton");
+	boxText.disabled=true;
+	sendCerButton.disabled=true;
+	checkCerNumButton.disabled=true;
 }
