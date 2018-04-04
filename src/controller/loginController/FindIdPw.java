@@ -52,7 +52,7 @@ public class FindIdPw extends HttpServlet {
 					if(memberNo == -1 || memberNo != member.getNo()) {
 						out.print("email");
 					}else if(memberNo == member.getNo()){
-						out.println(member.getPw());
+						out.println(member.getPw().substring(0, member.getPw().length()-2)+"**");
 					}
 				}
 			} catch (SQLException e) {

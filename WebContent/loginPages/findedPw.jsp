@@ -14,9 +14,10 @@
 	<!-- Header && Menu -->
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
 	
-	<section id = "one" class="wrapper major-pad">
-		<div class="inner" >
-			<p>찾으신 비밀번호는 <%=request.getParameter("findedPw") %> 입니다.</p>
+	<section style="text-align: center">
+		<div >
+			<br><br><br><br><br><br>
+			<p style="font-weight: bold;"> 찾으신 비밀번호는 ${param.findedPw} 입니다.</p>
 		</div>
 	</section>
 	<!-- Scripts -->
