@@ -20,6 +20,7 @@
 			<header>
 				<h1>Log in</h1>
 			</header>
+<<<<<<< HEAD
 
 				<div class="image main" data-position="center">
 					<div class="row uniform">
@@ -39,11 +40,35 @@
 								</ul>
 							</form>
 						</div>
+=======
+			<div class="inner narrow">
+				<form action="/LoginController" id="loginForm" method="POST"
+					onkeydown="return onKeyDown()">
+					<div class="11u$">
+						<input type="text" placeholder="id" id="id1" name="id"> <br>
+						<input type="password" placeholder="password" id="pw1" name="pw"><br>
+						<ul class="actions fit">
+							<li><input type="button"
+								onclick="location.href='/loginPages/findIdPw.jsp'"
+								class="button fit" value="ID/PW 찾기"></li>
+							<li><input type="button" value="Log In"
+								onclick="loginChecking()" class="button fit"></li>
+						</ul>
+
+>>>>>>> branch 'master' of https://github.com/chicolivia/kps_web.git
 					</div>
+<<<<<<< HEAD
 </div>
 					<span><center>
 							<h3 id="submitresult"></h3>
 						</center></span>
+=======
+
+				</form>
+			</div>
+
+			<span><h3 id="submitresult"></h3></span>
+>>>>>>> branch 'master' of https://github.com/chicolivia/kps_web.git
 		</section>
 		</div>
 
