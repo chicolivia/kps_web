@@ -20,7 +20,6 @@
 			<header>
 				<h1>Log in</h1>
 			</header>
-
 			<div class="inner narrow">
 				<form action="/LoginController" id="loginForm" method="POST"
 					onkeydown="return onKeyDown()">
@@ -39,6 +38,7 @@
 
 				</form>
 			</div>
+
 			<span><h3 id="submitresult"></h3></span>
 		</section>
 
