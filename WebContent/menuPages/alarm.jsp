@@ -11,6 +11,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
+		<style>
+			.button2:hover {
+			    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+		
+		</style>
 	</head>
 	<body>
 <!-- 메뉴바 -->
@@ -39,53 +45,60 @@
 				<header>
 					<h1>Alarm</h1>
 				</header>
-				<div class="inner style3">
+				<div class="inner style3" style="border-radius: 20px;'">
 						<div class="image main" data-position="center">
 							<c:if test="${empty memberInfo.alarmInfo}">
 								<h3 style="text-align: center">알람을 추가해주세요</h3>
 							</c:if>
 							<c:if test="${not empty memberInfo.alarmInfo}">
-								<h3 style="text-align: center;">Registered Alarms</h3>
+								<h3 style="text-align: center; color: #E9967A">Registered Alarms</h3>
+								<!-- 알람 하나씩 -->
 								<c:forEach items="${memberInfo.alarmInfo}" var="alarm">
-									<div class="button alt fit">
-										<ul class="actions" >
-												<li class="4u$ 12u$" >
+									<div class="button2" style="border-radius: 20px;">
+									<div class="box" style="border-color: grey; border-radius: 20px; border-width: medium;  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" id="${alarm.alarmNo}">
+										<div class="row uniform">
+												<div class="3u 12u(xsmall)" >
 													<c:if test="${alarm.coinNo == 1}">
-														<p>BITCOIN</p>
+														<h5 style="color:grey">BITCOIN</h5>
 													</c:if>	
 													<c:if test="${alarm.coinNo == 2}">
-														<p>Etherium</p>
+														<h5 style="color:grey">Etherium</h5>
 													</c:if>	
-												</li>
-												<li class="6u$ 12u$" >
+												</div>
+												<div class="5u 12u(xsmall))" class="box">
 													<c:forEach items="${memberInfo.contactInfo}" var="contact">
 														<c:if test="${alarm.contactNo == contact.contactNo}">
-															<p>${contact.address }</p> 
+															<h5 style="color:grey">${contact.address }</h5> 
 														</c:if>
 													</c:forEach>
-												</li>
-												<li class="3u$ 12u$">
-													<p><fmt:formatNumber value="${alarm.percent}" type="number"/> %</p>
-												</li>
-										</ul>
+												</div>
+												<div class="2u 12u(xsmall)">
+													<h5 style="color:grey"><fmt:formatNumber value="${alarm.percent}" type="number"/> %</h5>
+												</div>
+												<div class="1u 12u(xsmall)" >
+													<a href="#" onclick="deleteAlarm(this)" class="button alt" style="border-radius: 500px;"><p style="color:grey;">del</p></a>
+												</div>
+										</div>
+									</div>
 									</div>
 								</c:forEach>
+								<!-- 알람 한개 END-->
 							</c:if>
 						</div>
 						<hr class="major" />
 						<!--  입력 양식 부분 -->
 						<div class="image main" data-position="center">
 							<form id="addAlarmForm" method="post" onkeydown="return captureReturnKey()" class="alt" action="/UpdateAlarm">
-									<div class="box">
+									<div class="box" style="border-color: white; border-radius: 20px; border-width: medium;">
 										<div class="row uniform">
-											<div class="3u 12u$(xsmaill)">
+											<div class="3u 12u(xsmall)">
 												<div class="select-wrapper">
 													<select name="coin-category" id="coin-category">
 														<option value="1"><p>BitCoin</p></option>
 													</select>
 												</div>
 											</div>
-											<div class="3u 12u$(xsmaill)">
+											<div class="3u 12u(xsmall)">
 												<div class="select-wrapper">
 													<select name="percent-category" id="percent-category">
 														<c:forEach begin="1" end="31" step="1" var="steps" varStatus="v">
@@ -99,14 +112,14 @@
 													</select>
 												</div>
 											</div>
-											<div class="3u 12u$(xsmaill)">
+											<div class="3u 12u(xsmall)">
 												<div class="select-wrapper">
 													<select name="contactType-category" id="contactType-category">
 														<option value="1">EMAIL</option>
 													</select>
 												</div>
 											</div>
-											<div class="3u 12u$(xsmaill)">
+											<div class="3u 12u(xsmall)">
 												<input type="button" value="등록" style="background-color: #E9967A" onclick="submit()">
 											</div>									
 										</div>
@@ -135,6 +148,10 @@
 					if (e.keyCode == 13) {
 						return false;
 					}
+				}
+				function deleteAlarm(v){
+					var parent = v.parentNode.parentNode.parentNode.id;
+					location.href = "/DeleteAlarm?no="+parent;
 				}
 			</script>
 	</body>
