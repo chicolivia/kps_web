@@ -26,7 +26,7 @@
 			
 				<li>
 					<%
-						if(session.getAttribute("memberNo")== null){
+						if(session.getAttribute("memberInfo")== null){
 						%> <a
 					href="/loginPages/signup.jsp"
 					class="button small">Sign Up <%
@@ -39,7 +39,7 @@
 				</li>
 		
 				<li>
-					<%if(session.getAttribute("memberNo") ==null){%> <a
+					<%if(session.getAttribute("memberInfo") ==null){%> <a
 					href="/loginPages/login.jsp"
 					class="button small" id="lowerButton">Log In<%
 						}else{%> <a

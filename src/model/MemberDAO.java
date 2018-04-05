@@ -189,4 +189,24 @@ public class MemberDAO {
 		}
 		return result;
 	}
+	public static boolean updateMember(MemberBean member) throws SQLException {
+		boolean result = false;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sql.getString("updateMember"));
+			pstmt.setString(1, member.getPw());
+			pstmt.setInt(2, member.getAlarmAgree());
+			pstmt.setInt(3, member.getRiskNo());
+			pstmt.setInt(4, member.getNo());
+			int resultInt = pstmt.executeUpdate();
+			if(resultInt == 1) {
+				result = true;
+			}
+		}finally {
+			DBUtil.close(con, pstmt);
+		}
+		return result;
+	}
 }

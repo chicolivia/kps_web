@@ -1,6 +1,7 @@
-package service.memberService;
+package service.member;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.MemberInfoDAO;
+import model.domain.ContactBean;
 import model.domain.MemberBean;
 import model.domain.MemberInfoBean;
 
@@ -25,10 +28,20 @@ public class MemberUpdate extends HttpServlet {
 		String pw = request.getParameter("pw");
 		MemberInfoBean memberInfo = (MemberInfoBean) request.getSession().getAttribute("memberInfo");
 		MemberBean member = memberInfo.getMember();
-		if(pw.equals("1")) {
+		if(pwSame.equals("1")) {
 			member.setPw(pw);
 		}
 		member.setAlarmAgree(Integer.parseInt(alarmAgree));
 		member.setRiskNo(Integer.parseInt(riskType));
+		System.out.println(pwSame+"/"+alarmAgree+"/"+riskType+"/"+email+"/"+pw);
+		
+		ArrayList<ContactBean> contactList = memberInfo.getContactInfo();
+		if(!email.equals("0")) {
+			(contactList.get(0)).setAddress(email);
+		}
+		
+		MemberInfoDAO.updateMemberInfoByMemberNo(memberInfo);
+		request.getSession().setAttribute("memberInfo", memberInfo);
+		response.sendRedirect("/loginPages/mypage.jsp");
 	}
 }

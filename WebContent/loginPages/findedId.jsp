@@ -11,6 +11,8 @@
 		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
 	<body>
+		<!-- Wrapper -->
+	<div id="wrapper">
 	<!-- Header && Menu -->
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
 	
@@ -20,6 +22,10 @@
 			<p style="font-weight: bold;"> 찾으신 아이디는 ${param.findedId} 입니다.</p>
 		</div>
 	</section>
+	<!--페이지 밑단  -->
+		<jsp:include page="/menuPages/footer.jsp"></jsp:include>
+
+	</div>
 	<!-- Scripts -->
 		<script src="/assets/js/jquery.min.js"></script>
 		<script src="/assets/js/jquery.dropotron.min.js"></script>

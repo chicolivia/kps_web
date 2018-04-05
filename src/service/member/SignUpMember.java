@@ -1,4 +1,4 @@
-package controller.loginController;
+package service.member;
 
 import java.io.IOException;
 import java.sql.SQLException;

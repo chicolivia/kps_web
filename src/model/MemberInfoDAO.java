@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import model.domain.ContactBean;
 import model.domain.MemberBean;
 import model.domain.MemberInfoBean;
 import util.DBUtil;
@@ -17,7 +18,6 @@ public class MemberInfoDAO {
 	}
 	
 	public static boolean getMemberInfoFromDB() {
-		boolean result = false;
 		ArrayList<MemberBean> memberList = new ArrayList<>();
 		try {
 			memberList = MemberDAO.selectAllMember();
@@ -30,8 +30,9 @@ public class MemberInfoDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			System.out.println("DBConnect failed.");
+			return false;
 		}
-		return result;
+		return true;
 	}
 	
 	public static MemberInfoBean getMemberInfoByMemberNo(int memberNo) {
@@ -46,5 +47,18 @@ public class MemberInfoDAO {
 			e.printStackTrace();
 		}
 		return memberInfo;
+	}
+	
+	public static boolean updateMemberInfoByMemberNo(MemberInfoBean memberInfo) {
+		try {
+			MemberDAO.updateMember(memberInfo.getMember());
+			for(ContactBean contact: memberInfo.getContactInfo()) {
+				ContactDAO.updateContactAddress(contact.getContactNo(), contact.getAddress());
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		return true;
 	}
 }

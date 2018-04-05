@@ -3,10 +3,11 @@
 -->
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Find ID&PW</title>
+		<title>회원 탈퇴</title>
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
@@ -19,7 +20,8 @@
 	<section style="text-align: center">
 		<div >
 			<br><br><br><br><br><br>
-			<p style="font-weight: bold;"> 찾으신 비밀번호는 ${param.findedPw} 입니다.</p>
+			<p style="font-weight: bold;">&nbsp;&nbsp;회원탈퇴가 완료되었습니다.</p>
+			<p style="font-weight: bold;">지금까지 이용해주셔서 감사합니다.</p>
 		</div>
 	</section>
 	<!--페이지 밑단  -->

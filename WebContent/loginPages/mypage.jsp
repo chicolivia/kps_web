@@ -116,7 +116,7 @@
 							<tr>
 								<th><h5>탈퇴하기</h5></th>
 								<th colspan = "2">
-									<a href="#" class="button alt">탈퇴하기</a>
+									<input type="button" class="button alt" value="탈퇴하기" onclick="checkByeBye()">
 								</th>
 							</tr>
 						</thread>
@@ -167,6 +167,13 @@
 			}
 			function submitForm(){
 				document.getElementById("updateMemberForm").submit();
+			}
+			function checkByeBye(){
+				if(confirm("정말 탈퇴하시겠습니까?")){
+					location.href="/LeaveMember";
+				}else{
+					return;
+				}
 			}
 		</script>
 	</body>
