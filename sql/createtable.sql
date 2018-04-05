@@ -3,6 +3,8 @@ drop table alarm;
 drop table coin;
 drop table member;
 drop table risk;
+drop table contact;
+drop table prominum;
 
 CREATE TABLE `bitpred` (
 	`timestamp` INT(20) NOT NULL,
@@ -15,17 +17,21 @@ ENGINE=InnoDB
 
 CREATE TABLE `alarm` (
 	`no` INT(11) NOT NULL AUTO_INCREMENT,
-	`member_no` INT(11) NOT NULL DEFAULT '0',
-	`coin_no` INT(11) NOT NULL DEFAULT '0',
+	`member_no` INT(11) NOT NULL,
+	`coin_no` INT(11) NOT NULL,
 	`percent` FLOAT NOT NULL DEFAULT '0',
+	`contact_no` INT(11) NOT NULL DEFAULT '1',
 	PRIMARY KEY (`no`),
-	INDEX `FK_alarm_member` (`member_no`),
 	INDEX `FK_alarm_coin` (`coin_no`),
-	CONSTRAINT `FK_alarm_coin` FOREIGN KEY (`coin_no`) REFERENCES `coin` (`no`),
-	CONSTRAINT `FK_alarm_member` FOREIGN KEY (`member_no`) REFERENCES `member` (`no`)
+	INDEX `FK_alarm_member` (`member_no`),
+	INDEX `FK_alarm_contact` (`contact_no`),
+	CONSTRAINT `FK_alarm_coin` FOREIGN KEY (`coin_no`) REFERENCES `coin` (`no`) ON DELETE CASCADE,
+	CONSTRAINT `FK_alarm_contact` FOREIGN KEY (`contact_no`) REFERENCES `contact` (`no`) ON DELETE CASCADE,
+	CONSTRAINT `FK_alarm_member` FOREIGN KEY (`member_no`) REFERENCES `member` (`no`) ON DELETE CASCADE
 )
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
+AUTO_INCREMENT=13
 ;
 
 CREATE TABLE `coin` (
@@ -37,6 +43,20 @@ COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
 ;
 
+CREATE TABLE `contact` (
+	`no` INT(11) NOT NULL AUTO_INCREMENT,
+	`member_no` INT(11) NOT NULL,
+	`type` INT(11) NOT NULL DEFAULT '',
+	`address` VARCHAR(60) NOT NULL DEFAULT '',
+	`certification` INT(11) NOT NULL DEFAULT '0',
+	PRIMARY KEY (`no`),
+	INDEX `FK_contact_member` (`member_no`),
+	CONSTRAINT `FK_contact_member` FOREIGN KEY (`member_no`) REFERENCES `member` (`no`) ON DELETE CASCADE
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB
+AUTO_INCREMENT=20
+;
 
 CREATE TABLE `member` (
 	`no` INT(11) NOT NULL AUTO_INCREMENT,
@@ -52,7 +72,14 @@ CREATE TABLE `member` (
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
 ;
-
+CREATE TABLE `premium` (
+	`timestamp` INT(11) NOT NULL,
+	`premium` FLOAT NULL DEFAULT NULL,
+	PRIMARY KEY (`timestamp`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB
+;
 
 CREATE TABLE `risk` (
 	`no` INT(11) NOT NULL AUTO_INCREMENT,
