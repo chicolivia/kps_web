@@ -19,7 +19,7 @@
 	
 
 				<!-- Section -->
-					<section class="main alt">
+					<section class="main alt3">
 						<header>
 							<h1>Generic Page</h1>
 							<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam facilisis ante sed etiam magna interdum congue. Sed consequat amet dolor magna consequat. Lorem ipsum dolor amet nullam sed etiam veroeros.</p>
