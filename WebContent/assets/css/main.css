@@ -292,7 +292,16 @@
 
 	.\-6u {
 		margin-left: 50%;
+		
+		
 	}
+	.\-horizon{ display: table; margin-left: auto; margin-right: auto; }
+	
+	.\-77u {
+        margin-left:auto;
+        margin-right:auto;}
+        
+
 
 	.\-5u {
 		margin-left: 41.66667%;
