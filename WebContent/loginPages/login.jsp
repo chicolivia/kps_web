@@ -21,26 +21,31 @@
 				<h1>Log in</h1>
 			</header>
 
-			<div class="inner narrow">
-				<form action="/LoginController" id="loginForm" method="POST"
-					onkeydown="return onKeyDown()">
-					<div class="11u$">
-						<input type="text" placeholder="id" id="id1" name="id"> <br>
-						<input type="password" placeholder="password" id="pw1" name="pw"><br>
-						<ul class="actions fit">
-							<li><input type="button"
-								onclick="location.href='/loginPages/findIdPw.jsp'"
-								class="button fit" value="ID/PW 찾기"></li>
-							<li><input type="button" value="Log In"
-								onclick="loginChecking()" class="button fit"></li>
-						</ul>
-
+				<div class="image main" data-position="center">
+					<div class="row uniform">
+						<div class="4u 12u"></div>
+						<div class="4u 12u(medium)">
+							<form action="/LoginController" id="loginForm" method="POST"
+								onkeydown="return onKeyDown()">
+								<input type="text" placeholder="id" id="id1" name="id">
+								<br> <br> <input type="password"
+									placeholder="password" id="pw1" name="pw"><br>
+								<ul class="actions fit">
+									<li><input type="button"
+										onclick="location.href='/loginPages/findIdPw.jsp'"
+										class="button fit" value="ID/PW 찾기"></li>
+									<li><input type="button" value="Log In"
+										onclick="loginChecking()" class="button fit"></li>
+								</ul>
+							</form>
+						</div>
 					</div>
-
-				</form>
-			</div>
-			<span><h3 id="submitresult"></h3></span>
+</div>
+					<span><center>
+							<h3 id="submitresult"></h3>
+						</center></span>
 		</section>
+		</div>
 
 		<!--페이지 밑단  -->
 		<jsp:include page="/menuPages/footer.jsp"></jsp:include>

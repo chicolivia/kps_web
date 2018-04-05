@@ -1,69 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>KPS</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="/assets/css/main.css" />
-	</head>
-	<body>
+<head>
+<title>KPS</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="/assets/css/main.css" />
+</head>
+<body>
 	<!-- Wrapper -->
 	<div id="wrapper">
-<!-- Header -->
-	<header id="header" class="alt">
-		<!-- Logo -->
-		<div class="logo">
-			<a href="/index.jsp"><strong>KPS</strong> by 바늘토</a>
-		</div>
+		<!-- Header -->
+		<header id="header" class="alt">
+			<!-- Logo -->
+			<div class="logo">
+				<a href="/index.jsp"><strong>KPS</strong> by 바늘토</a>
+			</div>
 
-		<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<li><a href="/index.jsp">Home</a></li>
-				<li><a
-					href="/menuPages/intro.jsp">소개</a></li>
-				<li><a
-					href="/menuPages/predict.jsp">예측</a></li>
-				<li><a
-					href="/menuPages/alarm.jsp">알림
-						서비스</a></li>
-				<li><a
-					href="/menuPages/aboutus.jsp">About
-						us</a></li>
-						
-			
-				<li>
-					<%
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="/index.jsp">Home</a></li>
+					<li><a href="/menuPages/intro.jsp">소개</a></li>
+					<li><a href="/menuPages/predict.jsp">예측</a></li>
+					<li><a href="/menuPages/alarm.jsp">알림 서비스</a></li>
+					<li><a href="/menuPages/aboutus.jsp">About us</a></li>
+
+
+					<li>
+						<%
 						if(session.getAttribute("memberNo")== null){
-						%> <a
-					href="/loginPages/signup.jsp"
-					class="button small">Sign Up <%
+						%> <a href="/loginPages/signup.jsp" class="button small">Sign
+							Up <%
 						}else{
-						%> <a
-						href="/loginPages/mypage.jsp"
-						class="button small">My Page<%
+						%> <a href="/loginPages/mypage.jsp" class="button small">My
+								Page<%
 						}%>
-					</a>
-				</li>
-		
-				<li>
-					<%if(session.getAttribute("memberNo") ==null){%> <a
-					href="/loginPages/login.jsp"
-					class="button small" id="lowerButton">Log In<%
-						}else{%> <a
-						href="/biz/logout.jsp"
-						class="button small" id="lowerButton">Log Out<%
-						}%>
-					</a>
-				</li>
-			
-			</ul>
-		</nav>
+						</a>
+					</li>
 
-	</header>
-		
+					<li>
+						<%if(session.getAttribute("memberNo") ==null){%> <a
+						href="/loginPages/login.jsp" class="button small" id="lowerButton">Log
+							In<%
+						}else{%> <a href="/biz/logout.jsp" class="button small"
+							id="lowerButton">Log Out<%
+						}%>
+						</a>
+					</li>
+
+				</ul>
+			</nav>
+
+		</header>
+
 		<!-- Banner -->
 		<section id="banner">
 			<div class="content">
@@ -74,159 +65,101 @@
 		</section>
 
 		<!-- Section -->
-			<section class="main alt" id="first">
-				<header>
-					<h2>Fusce sed adipiscing</h2>
-					<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam facilisis ante sed etiam magna interdum congue. Sed consequat amet dolor magna consequat. Lorem ipsum dolor amet nullam sed etiam veroeros.</p>
-				</header>
-				<div class="inner">
-					<article class="post style2">
-						<div class="content">
-							<header>
-								<span class="category">Erat lacinia</span>
-								<h3>Nisl euismod</h3>
-							</header>
-							<p>Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam magna tempus.</p>
-							<ul class="actions">
-								<li><a href="#" class="button next">Learn More</a></li>
-							</ul>
-						</div>
-						<div class="image" data-position="center"><img src="images/pic05.jpg" alt="" /></div>
-					</article>
-					<article class="post style2 alt">
-						<div class="content">
-							<header>
-								<span class="category">Magna sed</span>
-								<h3>Integer nulla</h3>
-							</header>
-							<p>Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam magna tempus.</p>
-							<ul class="actions">
-								<li><a href="#" class="button next">Learn More</a></li>
-							</ul>
-						</div>
-						<div class="image" data-position="center"><img src="images/pic06.jpg" alt="" /></div>
-					</article>
-				</div>
-			</section>
-
-			<!-- Section -->
-				<section class="main">
-					<header>
-						<h2>Mauris sed lorem</h2>
-						<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam facilisis ante sed etiam magna interdum congue. Sed consequat amet dolor magna consequat. Lorem ipsum dolor amet nullam sed etiam veroeros.</p>
-					</header>
-					<div class="inner">
-						<ul class="faces">
-							<li>
-								<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-								<h3>Jane Doe</h3>
-								<p>Sed magna etiam</p>
-							</li>
-							<li>
-								<span class="image"><img src="images/pic02.jpg" alt="" /></span>
-								<h3>John Smith</h3>
-								<p>Ipsum et dolor</p>
-							</li>
-							<li>
-								<span class="image"><img src="images/pic03.jpg" alt="" /></span>
-								<h3>Kate Anderson</h3>
-								<p>Euismod convallis</p>
-							</li>
-							<li>
-								<span class="image"><img src="images/pic04.jpg" alt="" /></span>
-								<h3>Alex Marks</h3>
-								<p>Mauris aliquam</p>
-							</li>
+		<section class="main accent2">
+			<header>
+				<h2>김치프리미엄 그래프</h2>
+				<p>크롤링해서 들여올 예정</p>
+			</header>
+			<div class="inner">
+				<article class="post alt">
+					<div class="content">
+						<header>
+							<span class="category">Lorem ipsum</span>
+							<h3>Finibus et magna</h3>
+						</header>
+						<p>Integer mollis, nisl amet convallis, porttitor magna
+							ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed
+							lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien
+							ac quam. Lorem ipsum dolor sit nullam magna tempus. Lorem ipsum
+							sit tempus amet feugiat.</p>
+						<ul class="actions">
+							<li><a href="#" class="button next">Learn More</a></li>
 						</ul>
 					</div>
-				</section>
-
-			<!-- Section -->
-				<section class="main accent2">
-					<header>
-						<h2>Egestas phasellus</h2>
-						<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam facilisis ante sed etiam magna interdum congue. Sed consequat amet dolor magna consequat. Lorem ipsum dolor amet nullam sed etiam veroeros.</p>
-					</header>
-					<div class="inner">
-						<article class="post alt">
-							<div class="content">
-								<header>
-									<span class="category">Lorem ipsum</span>
-									<h3>Finibus et magna</h3>
-								</header>
-								<p>Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam magna tempus. Lorem ipsum sit tempus amet feugiat.</p>
-								<ul class="actions">
-									<li><a href="#" class="button next">Learn More</a></li>
-								</ul>
-							</div>
-							<div class="image" data-position="center"><img src="images/pic07.jpg" alt="" /></div>
-						</article>
-						<article class="post">
-							<div class="content">
-								<header>
-									<span class="category">Sed etiam</span>
-									<h3>Nam adipiscing</h3>
-								</header>
-								<p>Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam magna tempus. Lorem ipsum sit tempus amet feugiat.</p>
-								<ul class="actions">
-									<li><a href="#" class="button next">Learn More</a></li>
-								</ul>
-							</div>
-							<div class="image" data-position="center"><img src="images/pic08.jpg" alt="" /></div>
-						</article>
-						<article class="post alt">
-							<div class="content">
-								<header>
-									<span class="category">Sapien erat</span>
-									<h3>Amet sed nullam</h3>
-								</header>
-								<p>Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam magna tempus. Lorem ipsum sit tempus amet feugiat.</p>
-								<ul class="actions">
-									<li><a href="#" class="button next">Learn More</a></li>
-								</ul>
-							</div>
-							<div class="image" data-position="center"><img src="images/pic09.jpg" alt="" /></div>
-						</article>
+					<div class="image" data-position="center">
+						<img src="images/pic07.jpg" alt="" />
 					</div>
-				</section>
+				</article>
+			</div>
+		</section>
 
-				<!-- Section -->
-					<section class="main alt special">
+		<!-- Section -->
+		<section class="main alt" id="first">
+			<header>
+				<h2>한국 미국 거래소 자료 들여올 곳</h2>
+				<p>크롤링을...한..번.. 해보곘습니다..</p>
+			</header>
+			<div class="inner">
+				<article class="post style2">
+					<div class="content">
 						<header>
-							<h2>Get in touch</h2>
-							<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam facilisis ante sed etiam magna interdum congue. Sed consequat amet dolor magna consequat. Lorem ipsum dolor amet nullam sed etiam veroeros.</p>
+							<span class="category">Erat lacinia</span>
+							<h3>Nisl euismod</h3>
 						</header>
-						<div class="inner narrow">
-							<form action="#" method="post">
-								<div class="field half">
-									<input name="name" id="name" placeholder="Name" type="text" />
-								</div>
-								<div class="field half">
-									<input name="email" id="email" placeholder="Email" type="email" />
-								</div>
-								<div class="field">
-									<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
-								</div>
-								<ul class="actions">
-									<li><button class="button next" type="submit">Send Message</button></li>
-								</ul>
-							</form>
-						</div>
-					</section>
+						<p>Integer mollis, nisl amet convallis, porttitor magna
+							ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed
+							lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien
+							ac quam. Lorem ipsum dolor sit nullam magna tempus.</p>
+						<ul class="actions">
+							<li><a href="#" class="button next">Learn More</a></li>
+						</ul>
+					</div>
+					<div class="image" data-position="center">
+						<img src="images/pic05.jpg" alt="" />
+					</div>
+				</article>
+			</div>
+		</section>
+		<!-- Section -->
+		<section class="main">
+			<header>
+				<h2>환율 참고 자료</h2>
+				<p>환율 참고 자료를 넣어보겠습니다.</p>
+			</header>
+			<div class="inner">
+				<ul class="faces">
+					<li><span class="image"><img src="images/pic01.jpg"
+							alt="" /></span>
+						<h3>Jane Doe</h3>
+						<p>Sed magna etiam</p></li>
+					<li><span class="image"><img src="images/pic02.jpg"
+							alt="" /></span>
+						<h3>John Smith</h3>
+						<p>Ipsum et dolor</p></li>
+					<li><span class="image"><img src="images/pic03.jpg"
+							alt="" /></span>
+						<h3>Kate Anderson</h3>
+						<p>Euismod convallis</p></li>
+
+				</ul>
+			</div>
+		</section>
+
+
 
 		<!--페이지 밑단  -->
 		<jsp:include page="/menuPages/footer.jsp"></jsp:include>
 
 
 	</div>
-		<!-- Scripts -->
-		<script src="/assets/js/jquery.min.js"></script>
-		<script src="/assets/js/jquery.dropotron.min.js"></script>
-		<script src="/assets/js/jquery.scrollex.min.js"></script>
-		<script src="/assets/js/jquery.scrolly.min.js"></script>
-		<script src="/assets/js/skel.min.js"></script>
-		<script src="/assets/js/util.js"></script>
-		<script src="/assets/js/main.js"></script>
+	<!-- Scripts -->
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery.dropotron.min.js"></script>
+	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/jquery.scrolly.min.js"></script>
+	<script src="/assets/js/skel.min.js"></script>
+	<script src="/assets/js/util.js"></script>
+	<script src="/assets/js/main.js"></script>
 
-	</body>
+</body>
 </html>
