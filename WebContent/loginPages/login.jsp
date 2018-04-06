@@ -20,11 +20,6 @@
 			<header>
 				<h1>Log in</h1>
 			</header>
-<<<<<<< HEAD
-
-=======
->>>>>>> branch 'master' of https://github.com/chicolivia/kps_web.git
-
 				<div class="image main" data-position="center">
 					<div class="row uniform">
 						<div class="4u 12u"></div>
@@ -43,12 +38,7 @@
 								</ul>
 							</form>
 						</div>
-<<<<<<< HEAD
-
-=======
-
 			<span><h3 id="submitresult"></h3></span>
->>>>>>> branch 'master' of https://github.com/chicolivia/kps_web.git
 		</section>
 		</div>
 
