@@ -28,21 +28,30 @@ public class UpdateAlarm extends HttpServlet {
 		String percent = request.getParameter("percent-category");
 
 		MemberInfoBean memberInfo = (MemberInfoBean) request.getSession().getAttribute("memberInfo");
-		ArrayList<ContactBean> contactList = memberInfo.getContactInfo();
-		
-		int contactNo = contactList.get(ContactTypeNumber.EMAIL-1).getContactNo();
-		
-		try {
-			AlarmDAO.addAlarm(memberInfo.getMember().getNo(), 
-					new AlarmBean(Integer.parseInt(coin), Integer.parseInt(percent), contactNo, memberInfo.getMember().getNo()));
-			memberInfo.setAlarmInfo(AlarmDAO.selectAllAlarmByMemberNo(memberInfo.getMember().getNo()));
-			request.getSession().setAttribute("memberInfo", memberInfo);
-		} catch (NumberFormatException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}finally {
-			response.sendRedirect("/menuPages/alarm.jsp");
+		boolean alarmSame = false;
+		for(AlarmBean alarm :memberInfo.getAlarmInfo()) {
+			if(Float.parseFloat(percent) == alarm.getPercent()) {
+				alarmSame= true;
+			}
 		}
 		
+		if(memberInfo.getAlarmInfo().size() <3 && !alarmSame) {
+			ArrayList<ContactBean> contactList = memberInfo.getContactInfo();
+			int contactNo = contactList.get(ContactTypeNumber.EMAIL-1).getContactNo();
+			
+			try {
+				AlarmDAO.addAlarm(memberInfo.getMember().getNo(), 
+						new AlarmBean(Integer.parseInt(coin), Integer.parseInt(percent), contactNo, memberInfo.getMember().getNo()));
+				memberInfo.setAlarmInfo(AlarmDAO.selectAllAlarmByMemberNo(memberInfo.getMember().getNo()));
+				request.getSession().setAttribute("memberInfo", memberInfo);
+			} catch (NumberFormatException | SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}finally {
+				response.sendRedirect("/menuPages/alarm.jsp");
+			}
+		}else {
+			response.sendRedirect("/menuPages/alarm.jsp");
+		}
 	}
 }
