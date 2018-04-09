@@ -1,3 +1,4 @@
+<%@page import="java.net.HttpURLConnection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="org.jsoup.nodes.Element, org.jsoup.select.Elements, org.jsoup.Jsoup, org.jsoup.nodes.Document"%>
@@ -9,12 +10,7 @@
 </head>
 <body>
 	<%
-	// 기준 거래소 코인원, 업비트,  빗썸 // 비교 거래소 : 
-		Document doc = Jsoup.connect("http://www.naver.com").get();
-		Elements tags = doc.getAllElements();
-		for (Element oneTag: tags){
-			System.out.println(oneTag);
-		}
+
 	%>
 </body>
 </html>

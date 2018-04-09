@@ -30,7 +30,7 @@ public class EmailUtil {
 		props.setProperty("mail.smtp.quitwait", "false");
 		auth = new Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("victoriaseong@gmail.com", "eowlaur1");
+				return new PasswordAuthentication("koreanpremium@gmail.com", "koreanadmin");
 			}
 		};
 	}
