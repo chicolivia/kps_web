@@ -38,7 +38,7 @@
 						</ul>
 					</div>
 					<div class="6u">
-						<span class="image fit"><img src="/images/logofinal.jpg" alt="" /></span>
+						<span class="image fit"><img src="/images/lionlion.png" alt="" /></span>
 					</div>
 				</article>
 				<hr style="border: solid 2px; color: AliceBlue; ">	
@@ -60,7 +60,7 @@
 						</ul>
 					</div>
 					<div class="6u">
-						<span class="image fit"><img src="/images/index.jpg" alt="" /></span>
+						<span class="image fit"><img src="/images/eye.jpg" alt="" /></span>
 					</div>
 				</article>
 				<hr style="border: solid 2px;  color: AliceBlue;">	
@@ -82,7 +82,7 @@
 						</ul>
 					</div>
 					<div class="6u">
-						<span class="image fit"><img src="/images/back.jpg" alt="" /></span>
+						<span class="image fit"><img src="/images/flower.png" alt="" /></span>
 					</div>
 				</article>
 				<hr style="border: solid 2px; color:#d2d2d2">

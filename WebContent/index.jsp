@@ -62,8 +62,7 @@
 		<!-- Banner -->
 		<section id="banner">
 			<div class="content">
-				<h1></h1>
-				<p></p>
+			<h1>Korea Premium Signal</h1>
 			</div>
 			<a href="#first2" class="more scrolly">Learn More</a>
 		</section>
@@ -91,7 +90,7 @@
 						</ul>
 					</div>
 					<div class="image" data-position="center">
-						<img src="images/index.jpg" alt="" />
+						<img src="images/jaebal.png" alt="" />
 					</div>
 				</article>
 			</div>
