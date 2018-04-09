@@ -110,14 +110,14 @@
 							<tr>
 								<th><h5>알림 설정</h5></th>
 								<th colspan = "2">
-									 <a href="/menuPages/alarm.jsp" class="button">알림 설정 페이지</a> 
+									 <a href="/menuPages/alarm.jsp" class="button alt fit">알림 설정 페이지</a> 
 								</th>
 							</tr>
 							<tr>
 								<th><h5>탈퇴  하기</h5></th>
 								<th colspan = "2">
-									<input type="button" class="button" value="탈퇴 하기"  style="background-color: #111111" onclick="checkByeBye()"> 
-									<!-- <input type="button" value="탈퇴하기" style="background-color: #111111" onclick="checkByeBye()"> -->
+									<!-- <input type="button" class="button" value="탈퇴 하기"  style="background-color: #111111" onclick="checkByeBye()">  -->
+									<input type="button" class="button alt fit" value="탈퇴하기" style="color:#009933" onclick="checkByeBye()">
 								</th>
 							</tr>
 						</thread>

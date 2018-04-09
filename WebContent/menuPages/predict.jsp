@@ -33,7 +33,7 @@
 		<!-- Section -->
 		<section class="main accent2">
 			<header>
-				<h1>signal</h1>
+				<h1>Predict</h1>
 			</header>
 				<div class="inner style3">
 					<div class="image main" data-position="center">

@@ -31,18 +31,14 @@
 								face="vernada">KPS</font></span>
 							<h3>Korea Premium Signal</h3>
 						</header>
-						<p>[Korea Premium Signal] Integer mollis, nisl amet convallis, porttitor magna
-							ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed
-							lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien
-							ac quam. Lorem ipsum dolor sit nullam magna tempus. Lorem ipsum
-							sit tempus amet feugiat.</p>
+						<p>저희는 </p>
 						<ul class="actions">
 						<br>
 							<li><a href="#" class="button next">Learn More</a></li>
 						</ul>
 					</div>
 					<div class="6u">
-						<span class="image fit"><img src="/images/KPS.jpg" alt="" /></span>
+						<span class="image fit"><img src="/images/logofinal.jpg" alt="" /></span>
 					</div>
 				</article>
 				<hr style="border: solid 2px; color: AliceBlue; ">	
@@ -64,7 +60,7 @@
 						</ul>
 					</div>
 					<div class="6u">
-						<span class="image fit"><img src="/images/SIGN.jpg" alt="" /></span>
+						<span class="image fit"><img src="/images/index.jpg" alt="" /></span>
 					</div>
 				</article>
 				<hr style="border: solid 2px;  color: AliceBlue;">	
@@ -74,7 +70,7 @@
 						<header>
 							<span class="category"><font size="5" color="293dbc"
 								face="vernada">SERVICE 2</font></span>
-							<h3>실시간 알람 서비스</h3>
+							<h3>실시간 알림 서비스</h3>
 						</header>
 						<p>Integer mollis, nisl amet convallis, porttitor magna
 							ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed
@@ -86,7 +82,7 @@
 						</ul>
 					</div>
 					<div class="6u">
-						<span class="image fit"><img src="/images/alarm.jpg" alt="" /></span>
+						<span class="image fit"><img src="/images/back.jpg" alt="" /></span>
 					</div>
 				</article>
 				<hr style="border: solid 2px; color:#d2d2d2">
