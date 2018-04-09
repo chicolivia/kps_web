@@ -33,7 +33,7 @@
 								<th colspan="2"><h5>${memberInfo.member.id}</h5></th>
 							</tr>
 							<tr>
-								<th><h5>Email</h5></th>
+								<th><h5>E-mail</h5></th>
 								<th>
 									<input type="text" name="email" id ="emailAddress" value="${memberInfo.contactInfo[0].address}" disabled="disabled">
 								</th>
@@ -110,13 +110,14 @@
 							<tr>
 								<th><h5>알림 설정</h5></th>
 								<th colspan = "2">
-									<a href="/menuPages/alarm.jsp" class="button alt fit">알림 설정 페이지</a>
+									 <a href="/menuPages/alarm.jsp" class="button">알림 설정 페이지</a> 
 								</th>
 							</tr>
 							<tr>
 								<th><h5>탈퇴  하기</h5></th>
 								<th colspan = "2">
-									<input type="button" class="button alt fit" value="탈퇴 하기" onclick="checkByeBye()">
+									<input type="button" class="button" value="탈퇴 하기"  style="background-color: #111111" onclick="checkByeBye()"> 
+									<!-- <input type="button" value="탈퇴하기" style="background-color: #111111" onclick="checkByeBye()"> -->
 								</th>
 							</tr>
 						</thread>
@@ -129,7 +130,8 @@
 				</form>
 				<div>
 				</div>
-				<input type="button" class="button fit" value="저 장 하 기"  onclick="submitForm()">
+			<!-- 	<input type="button" class="button fit" value="저 장 하 기"  onclick="submitForm()"> -->
+				<input type="button" value="저장하기" style="background-color: #E9967A" onclick="submitForm()">
 				
 				<!-- <input type="button" class="button" style="background-color: #FF9999;" value="저장하기" onclick="submitForm()"> -->
 			</div>

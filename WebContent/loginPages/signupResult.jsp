@@ -17,11 +17,11 @@
 		<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
 			
 			<section class="main alt">
-				<div class="inner style2" style="text-align: center;">
+				<div class="inner style5" style="text-align: center;">
 					<div class="row 200%">
 						<div class="12u 12u$(medium)">
-							<h5>회원가입이 완료되었습니다.</h5>
-							<h5>다시 로그인해주세요.</h5>
+							<font size=5><p style="font-weight: bold;">회원가입이 완료되었습니다.</p></font>
+							<font size=5><p style="font-weight: bold;">다시 로그인해주세요.</p></font>
 						</div>
 					</div>
 				</div>

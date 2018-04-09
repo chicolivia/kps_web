@@ -19,7 +19,7 @@
 		<jsp:include page="/menuPages/menuBar.jsp"></jsp:include>
 		<section class="main alt">
 			<header>
-				<h1>SIGN UP</h1>
+				<h1>회원 가입</h1>
 					<!-- <hr style="border: solid 2px; color:#bfbfbf;"> -->
 			</header>
 			<div class="inner style3">
@@ -31,13 +31,16 @@
 								method="POST" onkeydown="return captureReturnKey(event)">
 								<div>
 									<div class="13u">
+									<h4>ID</h4>
 										<input type="text" placeholder="id" id="id1"
 											onblur="idCheck()" name="id"> <span id="idresult"></span><br>
-
+									<h4>Password</h4>
 										<input type="password" placeholder="password" id="pw1"
 											onkeyup="pwCheck()" name="pw"> <input type="password"
 											placeholder="repeat password" id="pw2" onkeyup="pwCheck()">
-										<span id="pwresult"></span><br> <input type="email"
+										<span id="pwresult"></span><br>
+										<h4>E-mail</h4>
+										 <input type="email"
 											placeholder="sophie@example.com" id="email1"
 											onblur="emailCheck()" name="email"> <span
 											id="emailresult"></span><br> <input type="text"
