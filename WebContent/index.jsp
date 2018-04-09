@@ -154,7 +154,14 @@
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
 	<script type="text/javascript">
-		
+	$.getJSON(
+		"/GetKPJson",
+		function(json){
+			console.log(json)
+		}
+	);
+
+
 	</script>
 </body>
 </html>
