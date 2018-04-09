@@ -10,16 +10,26 @@
 		<meta charset="utf-8" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
+	
 	<body>
 		<!-- Wrapper -->
 	<div id="wrapper">
 	<!-- Header && Menu -->
 	<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
 	
-	<section style="text-align: center">
-		<div >
-			<br><br><br><br><br><br>
-			<p style="font-weight: bold;"> 찾으신 아이디는 ${param.findedId} 입니다.</p>
+
+	
+	<section class="main alt">
+	
+		<div class="inner style5" style="text-align: center;" >
+			<div class="row 200%">
+						<div class="12u 12u$(medium)">
+						
+
+	
+			<font size=5><p style="font-weight: bold;"> 찾으신 아이디는 ${param.findedId} 입니다.</p></font>
+		</div>
+		</div>
 		</div>
 	</section>
 	<!--페이지 밑단  -->
