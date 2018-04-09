@@ -33,14 +33,14 @@ public class PremiumDAO {
 		Runnable runnable = new Runnable() {
 			public void run() {
 				calPremiumLists();
-				System.out.println("======================");
-					for(PremiumMarketBean p: sortedPreList) {
-						System.out.println(p.getkMarket()+"/"+p.getuMarket()+"/"+p.getValue());
-					}
+//				System.out.println("======================");
+//					for(PremiumMarketBean p: sortedPreList) {
+//						System.out.println(p.getkMarket()+"/"+p.getuMarket()+"/"+p.getValue());
+//					}
 				}
 			};
 			ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
-			service.scheduleAtFixedRate(runnable, 0, 60, TimeUnit.SECONDS);
+			service.scheduleWithFixedDelay(runnable, 0, 60, TimeUnit.SECONDS);
 	}
 	
 	public static void calPremiumLists() {
@@ -51,6 +51,7 @@ public class PremiumDAO {
 	}
 	
 	public static void getKrwList() {
+		krwList = new ArrayList<>();
 		try {
 			krwList.add(new PriceMarketBean(CurBitthum.getPrice()));
 			krwList.add(new PriceMarketBean(CurCoinone.getPrice()));
@@ -62,6 +63,7 @@ public class PremiumDAO {
 		}
 	}
 	public static void getUsdList() {
+		usdList = new ArrayList<>();
 		try {
 			usdList.add(new PriceMarketBean(CurBinance.getPrice()));
 			usdList.add(new PriceMarketBean(CurBitFinex.getPrice()));
@@ -84,11 +86,13 @@ public class PremiumDAO {
 		}
 	}
 	public static void calculatePremium() {
-		for(int i  = 0 ; i < krwList.size(); i++) {
-			for(int j = 0 ; j <usdList.size(); j++) {
-				float pre = PreminumCalCulate.getPreminum(krwList.get(i).getValue(), usdList.get(j).getValue(), currency);
-				preList.add(new PremiumMarketBean(pre,KRWMarketNameNumber.getName(i), USDMarketNameNumber.getName(j)));
-				sortedPreList.add(new PremiumMarketBean(pre,KRWMarketNameNumber.getName(i), USDMarketNameNumber.getName(j)));
+		preList = new ArrayList<>();
+		sortedPreList = new ArrayList<>();
+		for(int i  = 0 ; i < usdList.size(); i++) {
+			for(int j = 0 ; j <krwList.size(); j++) {
+				float pre = PreminumCalCulate.getPreminum(krwList.get(j).getValue(), usdList.get(i).getValue(), currency);
+				preList.add(new PremiumMarketBean(pre,KRWMarketNameNumber.getName(j), USDMarketNameNumber.getName(i)));
+				sortedPreList.add(new PremiumMarketBean(pre,KRWMarketNameNumber.getName(j), USDMarketNameNumber.getName(i)));
 			}
 		}
 		sortList();
@@ -114,5 +118,11 @@ public class PremiumDAO {
 	}
 	public static ArrayList<PremiumMarketBean>getSortedPreList() {
 		return sortedPreList;
+	}
+	public static ArrayList<PriceMarketBean> getKrwListArray(){
+		return krwList;
+	}
+	public static ArrayList<PriceMarketBean> getUsdListArray(){
+		return usdList;
 	}
 }
