@@ -11,13 +11,15 @@
 		<link rel="stylesheet" href="/assets/css/main.css" />
 	</head>
 	<body>
+	<!-- Wrapper -->
+	<div id="wrapper">
 		<!-- Header && Menu -->
 		<jsp:include page="/menuPages/menuBar.jsp" flush="true" />
 			
 			<section class="main alt">
-				<div class="inner style2">
+				<div class="inner style2" style="text-align: center;">
 					<div class="row 200%">
-						<div class="6u 12u$(medium)">
+						<div class="12u 12u$(medium)">
 							<h5>회원가입이 완료되었습니다.</h5>
 							<h5>다시 로그인해주세요.</h5>
 						</div>
@@ -26,10 +28,12 @@
 			</section>
 
 		<jsp:include page="/menuPages/footer.jsp"></jsp:include>
+		</div>
 		<!-- Scripts -->
 		<script src="/assets/js/jquery.min.js"></script>
 		<script src="/assets/js/jquery.dropotron.min.js"></script>
 		<script src="/assets/js/jquery.scrollex.min.js"></script>
+		<script src="/assets/js/jquery.scrolly.min.js"></script>
 		<script src="/assets/js/skel.min.js"></script>
 		<script src="/assets/js/util.js"></script>
 		<script src="/assets/js/main.js"></script>

@@ -20,10 +20,10 @@ public class AlarmDAO {
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sql.getString("addAlarm"));
-			pstmt.setInt(1, memberNo);
-			pstmt.setInt(2, alarm.getCoinNo());
-			pstmt.setFloat(3, alarm.getPercent());
-			pstmt.setInt(4, alarm.getType());
+			pstmt.setInt(1, alarm.getCoinNo());
+			pstmt.setFloat(2, alarm.getPercent());
+			pstmt.setInt(3, alarm.getContactNo());
+			pstmt.setInt(4, alarm.getMemberNo());
 			int resultInt = pstmt.executeUpdate();
 			if(resultInt == 1) {
 				result = true;
@@ -34,30 +34,14 @@ public class AlarmDAO {
 		return result;
 	}
 
-	public static boolean deleteAllAlarmByMemberNo(int memberNo) throws SQLException {
-		boolean result = false;
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		try {
-			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sql.getString("deleteAllAlarmByMemberNo"));
-			pstmt.setInt(1, memberNo);
-			int resultInt = pstmt.executeUpdate();
-			if(resultInt == 1) {
-				result = true;
-			}
-		}finally {
-			DBUtil.close(con,pstmt);
-		}
-		return result;
-	}
+
 	public static boolean deleteAlarmByAlarmNo(int alarmNo) throws SQLException {
 		boolean result =false;
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sql.getString("deleteAllAlarmByMemberNo"));
+			pstmt = con.prepareStatement(sql.getString("deleteAlarmByAlarmNo"));
 			pstmt.setInt(1, alarmNo);
 			int resultInt = pstmt.executeUpdate();
 			if(resultInt == 1) {
@@ -81,7 +65,7 @@ public class AlarmDAO {
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
 				alarmList.add(new AlarmBean(
-						rset.getInt(1), rset.getInt(2), rset.getFloat(3), rset.getInt(4)
+						rset.getInt(1), rset.getInt(2), rset.getFloat(3), rset.getInt(4), memberNo
 						));
 			}
 		}finally {

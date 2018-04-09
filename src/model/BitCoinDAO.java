@@ -14,6 +14,9 @@ public class BitCoinDAO {
 	static ResourceBundle sql = DBUtil.getResourceBundle();
 	public static ArrayList<CoinPredBean> bitCoinPredList = null;
 	
+	static {
+		getBitCoinPredFromDB();
+	}
 	public static void getBitCoinPredFromDB() {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -37,5 +40,19 @@ public class BitCoinDAO {
 	
 	public static  ArrayList<CoinPredBean> getBitCoinPredList(){
 		return bitCoinPredList;
+	}
+	
+	public static String getCoinPredJSON() {
+		BitCoinDAO.getBitCoinPredFromDB();
+		ArrayList<CoinPredBean> coinList = BitCoinDAO.getBitCoinPredList(); 
+		String resultString ="[";
+		for(CoinPredBean coin: coinList) {
+			resultString += "["+coin.getTimeStamp()*1000L+","+
+					String.format("%.8f", coin.getPriminum()*100)+"],";
+		}
+		resultString = resultString.substring(0, resultString.length()-1);
+		resultString +="]";
+		System.out.println(resultString);
+		return resultString;
 	}
 }
