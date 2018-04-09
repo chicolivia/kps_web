@@ -33,10 +33,10 @@ public class PremiumDAO {
 		Runnable runnable = new Runnable() {
 			public void run() {
 				calPremiumLists();
-//				System.out.println("======================");
-//					for(PremiumMarketBean p: sortedPreList) {
-//						System.out.println(p.getkMarket()+"/"+p.getuMarket()+"/"+p.getValue());
-//					}
+				System.out.println("======================");
+					for(PremiumMarketBean p: sortedPreList) {
+						System.out.println(p.getkMarket()+"/"+p.getuMarket()+"/"+p.getValue());
+					}
 				}
 			};
 			ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();

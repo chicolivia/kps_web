@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="/assets/css/main.css" />
+
 </head>
 <body>
 	<!-- Wrapper -->
@@ -32,11 +33,11 @@
 							if (session.getAttribute("memberNo") == null) {
 						%> <a href="/loginPages/signup.jsp" class="button small">Sign
 							Up <%
- 	} else {
- %> <a href="/loginPages/mypage.jsp" class="button small">My
-								Page<%
- 	}
- %>
+						 	} else {
+						 %> <a href="/loginPages/mypage.jsp" class="button small">My
+														Page<%
+						 	}
+						 %>
 						</a>
 					</li>
 
@@ -106,7 +107,10 @@
 			<div class="inner">
 				<article class="post style2">
 					<div class="content">
-					
+						<div id="preTable">
+							<table id="sortedTable">
+							</table>
+						</div>
 					</div>
 					<div class="image" data-position="center">
 						<img src="images/index.jpg" alt="" />
@@ -155,14 +159,14 @@
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
 	<script type="text/javascript">
-	$.getJSON(
-		"/GetKPJson",
-		function(json){
-			console.log(json)
-		}
-	);
 
-
+	$(document).ready(function(){
+		$.getJSON("/GetKPJson", function(result){
+			$.each(result.sortedList, function(i, field){
+				$("#sortedTable").text= "%%%%"; 
+	        });
+   		});
+	});
 	</script>
 </body>
 </html>

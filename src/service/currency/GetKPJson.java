@@ -38,8 +38,8 @@ public class GetKPJson extends HttpServlet {
 		returnString += "], \"sortedList\":[";
 		for(PremiumMarketBean sList: sortedList) {
 			returnString += "{\"kMarket\": \""+sList.getkMarket()+"\",";
-			returnString += "{\"uMarket\": \""+sList.getuMarket()+"\",";
-			returnString += "{\"premium\": \""+sList.getValue()+"\"},";
+			returnString += "\"uMarket\": \""+sList.getuMarket()+"\",";
+			returnString += "\"premium\": \""+sList.getValue()+"\"},";
 		}
 		returnString = returnString.substring(0, returnString.length()-1);
 		returnString += "], \"krwList\":[";
@@ -53,7 +53,6 @@ public class GetKPJson extends HttpServlet {
 		}
 		returnString = returnString.substring(0, returnString.length()-1);
 		returnString +="]}";
-		System.out.println("--- " + returnString);
 		out.print(returnString);
 		out.close();
 	}
