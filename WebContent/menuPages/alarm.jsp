@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Alarm</title>
+		<title>signal</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
@@ -28,9 +28,9 @@
 	
 	<%if(session.getAttribute("memberInfo") == null) {
 	%>
-			<section class="main alt2">
+			<section class="main accent2">
 				<header>
-					<h1>Alarm</h1>
+					<h1>alarm</h1>
 				</header>
 				<div class="inner style3">
 						<div class="image main" data-position="center"></div>
@@ -43,7 +43,7 @@
 	%>
 			<section class="main alt2">
 				<header>
-					<h1>Alarm</h1>
+					<h1>alarm</h1>
 				</header>
 				<div class="inner style3" style="border-radius: 20px;'">
 						<div class="image main" data-position="center">

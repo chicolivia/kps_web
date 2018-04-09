@@ -17,12 +17,7 @@
 				<li><a
 					href="/menuPages/predict.jsp">예측</a></li>
 				<li><a
-					href="/menuPages/alarm.jsp">알림
-						서비스</a></li>
-				<li><a
-					href="/menuPages/aboutus.jsp">About
-						us</a></li>
-						
+					href="/menuPages/alarm.jsp">알람</a></li>
 			
 				<li>
 					<%

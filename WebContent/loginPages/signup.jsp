@@ -20,8 +20,7 @@
 		<section class="main alt">
 			<header>
 				<h1>SIGN UP</h1>
-
-				<br> <br>
+					<!-- <hr style="border: solid 2px; color:#bfbfbf;"> -->
 			</header>
 			<div class="inner style3">
 				<div class="image main" data-position="center">
@@ -76,7 +75,7 @@
 										<ul class="actions">
 											&nbsp;&nbsp;<li>자신의 성향을 잘 모르겠다면? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 											<a href="#"
-												class="button alt flt">투자 성향 테스트</a>
+												class="button flt">투자 성향 테스트</a>
 											</li>
 										</ul>
 										</center>
@@ -93,6 +92,7 @@
 							</form>
 						</div>
 					</div>
+				<!-- 	<hr style="border: solid 2px; color:#bfbfbf;"> -->
 				</div>
 			</div>
 
