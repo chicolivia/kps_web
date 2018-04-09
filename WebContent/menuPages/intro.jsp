@@ -13,43 +13,46 @@
 
 	<!-- Wrapper -->
 	<div id="wrapper">
-
 		<!-- 메뉴바 -->
 		<jsp:include page="/menuPages/menuBar.jsp"></jsp:include>
-
-
 
 		<!-- Section -->
 		<section class="main accent2">
 			<header>
-				<h2>intro</h2>
-				<p>코리아 프리미엄 소개/ 수익 구조 설명</p>
-			</header>
-			<div class="inner style3">
+				<h1>intro</h1>
+				<p><h4>코리아 프리미엄 / 서비스 소개</h4></p>
+			</header> 
+			<div class="inner">
+							<br>
 				<article class="post alt">
 					<div class="content">
 						<header>
-							<span class="category">코리아프리미엄</span>
-							<h3>Finibus et magna</h3>
+							<span class="category"><font size="5" color="293dbc"
+								face="vernada">KPS</font></span>
+							<h3>Korea Premium Signal</h3>
 						</header>
-						<p>Integer mollis, nisl amet convallis, porttitor magna
+						<p>[Korea Premium Signal] Integer mollis, nisl amet convallis, porttitor magna
 							ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed
 							lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien
 							ac quam. Lorem ipsum dolor sit nullam magna tempus. Lorem ipsum
 							sit tempus amet feugiat.</p>
 						<ul class="actions">
+						<br>
 							<li><a href="#" class="button next">Learn More</a></li>
 						</ul>
 					</div>
-					<div class="image" data-position="center">
-						<img src="images/pic07.jpg" alt="" />
+					<div class="6u">
+						<span class="image fit"><img src="/images/KPS.jpg" alt="" /></span>
 					</div>
 				</article>
+				<hr style="border: solid 2px; color: AliceBlue; ">	
+				<br><br>
 				<article class="post">
-					<div class="content">
-						<header>
-							<span class="category">수익구조</span>
-							<h3>Nam adipiscing</h3>
+										<div class="content">
+											<header>
+							<span class="category"><font size="5" color="293dbc"
+								face="vernada">SERVICE 1</font></span>
+							<h3>프리미엄 예측 서비스</h3>
 						</header>
 						<p>Integer mollis, nisl amet convallis, porttitor magna
 							ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed
@@ -60,15 +63,18 @@
 							<li><a href="#" class="button next">Learn More</a></li>
 						</ul>
 					</div>
-					<div class="image" data-position="center">
-						<img src="images/pic08.jpg" alt="" />
+					<div class="6u">
+						<span class="image fit"><img src="/images/SIGN.jpg" alt="" /></span>
 					</div>
 				</article>
+				<hr style="border: solid 2px;  color: AliceBlue;">	
+				<br><br>
 				<article class="post alt">
 					<div class="content">
 						<header>
-							<span class="category">수익구조2</span>
-							<h3>Amet sed nullam</h3>
+							<span class="category"><font size="5" color="293dbc"
+								face="vernada">SERVICE 2</font></span>
+							<h3>실시간 알람 서비스</h3>
 						</header>
 						<p>Integer mollis, nisl amet convallis, porttitor magna
 							ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed
@@ -79,15 +85,15 @@
 							<li><a href="#" class="button next">Learn More</a></li>
 						</ul>
 					</div>
-					<div class="image" data-position="center">
-						<img src="images/pic09.jpg" alt="" />
+					<div class="6u">
+						<span class="image fit"><img src="/images/alarm.jpg" alt="" /></span>
 					</div>
 				</article>
+				<hr style="border: solid 2px; color:#d2d2d2">
 			</div>
 		</section>
-
-
 	</div>
+
 
 	<!--페이지 밑단  -->
 	<jsp:include page="/menuPages/footer.jsp"></jsp:include>

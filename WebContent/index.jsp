@@ -24,29 +24,33 @@
 					<li><a href="/index.jsp">Home</a></li>
 					<li><a href="/menuPages/intro.jsp">소개</a></li>
 					<li><a href="/menuPages/predict.jsp">예측</a></li>
-					<li><a href="/menuPages/alarm.jsp">알림 서비스</a></li>
-					<li><a href="/menuPages/aboutus.jsp">About us</a></li>
+					<li><a href="/menuPages/alarm.jsp">알람</a></li>
 
 
 					<li>
 						<%
-						if(session.getAttribute("memberNo")== null){
+							if (session.getAttribute("memberNo") == null) {
 						%> <a href="/loginPages/signup.jsp" class="button small">Sign
 							Up <%
-						}else{
-						%> <a href="/loginPages/mypage.jsp" class="button small">My
+ 	} else {
+ %> <a href="/loginPages/mypage.jsp" class="button small">My
 								Page<%
-						}%>
+ 	}
+ %>
 						</a>
 					</li>
 
 					<li>
-						<%if(session.getAttribute("memberNo") ==null){%> <a
+						<%
+							if (session.getAttribute("memberNo") == null) {
+						%> <a
 						href="/loginPages/login.jsp" class="button small" id="lowerButton">Log
 							In<%
-						}else{%> <a href="/biz/logout.jsp" class="button small"
+ 	} else {
+ %> <a href="/biz/logout.jsp" class="button small"
 							id="lowerButton">Log Out<%
-						}%>
+ 	}
+ %>
 						</a>
 					</li>
 
@@ -58,14 +62,14 @@
 		<!-- Banner -->
 		<section id="banner">
 			<div class="content">
-				<h1>KPS~~</h1>
-				<p>Ipsum dolor sed consequat adipiscing magna</p>
+				<h1></h1>
+				<p></p>
 			</div>
-			<a href="#first" class="more scrolly">Learn More</a>
+			<a href="#first2" class="more scrolly">Learn More</a>
 		</section>
 
 		<!-- Section -->
-		<section class="main accent2">
+		<section class="main accent2" id="first2">
 			<header>
 				<h2>김치프리미엄 그래프</h2>
 				<p>크롤링해서 들여올 예정</p>
@@ -87,7 +91,7 @@
 						</ul>
 					</div>
 					<div class="image" data-position="center">
-						<img src="images/pic07.jpg" alt="" />
+						<img src="images/index.jpg" alt="" />
 					</div>
 				</article>
 			</div>
@@ -115,7 +119,7 @@
 						</ul>
 					</div>
 					<div class="image" data-position="center">
-						<img src="images/pic05.jpg" alt="" />
+						<img src="images/index.jpg" alt="" />
 					</div>
 				</article>
 			</div>

@@ -10,5 +10,5 @@
 					<li><a href="#" class="icon alt fa-phone"><span class="label">Phone</span></a></li>
 					<li><a href="#" class="icon alt fa-envelope-o"><span class="label">Email</span></a></li>
 				</ul>
-				<p class="copyright">&copy; KPS에서 만들었습니다.</p>
+				<p class="copyright">&copy; '바늘토' 팀이 만들었습니다.</p>
 			</footer>

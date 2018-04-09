@@ -19,51 +19,43 @@
 		<!-- Section -->
 		<section class="main alt">
 			<header>
-				<h1>log in</h1>
+				<h1>FIND ID/PW</h1>
 			</header>
-			<div class="inner style3">
 			<div class="image main" data-position="center">
 				<div class="row uniform">
 					<div class="4u 12u"></div>
 					<div class="4u 12u(medium)">
-<center>
-						
-								<h4>아이디 찾기</h4>
-								<hr>
-								<form action="/loginPages/findedId.jsp" id="findIdForm"
-									method="POST" onkeydown="return onKeyDown()">
-										<input type="email" placeholder="email" name="emailAddress"
-											id="email1"><br>
-									</div>
-									<input type="button" class="special" value="아이디 찾기"
-										onclick="findId()"> <input type="hidden" id="findedId"
-										value="" name="findedId">
-								</form>
-								<p style="color: red" id="findIdResult"></p>
-								<br>
-								<h4>비밀번호 찾기</h4>
-								<hr>
-								<form action="/loginPages/findedPw.jsp" id="findPwForm"
-									method="POST" onkeydown="return onKeyDown()">
-										<input type="text" placeholder="id" name="id" id="id2">
-									</div>
-										<input type="email" placeholder="email" name="emailAddress"
-											id="email2"><br>
-									</div>
-									<input type="button" class="special" value="비밀번호 찾기"
-										onclick="findPw()"> <input type="hidden" id="findedPw"
-										name="findedPw">
-								</form>
-								<p style="color: red" id="findPwResult"></p>
-							</div>
-						</section>
+						<center>
+							<h4>아이디 찾기</h4>
+							<hr>
+							<form action="/loginPages/findedId.jsp" id="findIdForm"
+								method="POST" onkeydown="return onKeyDown()">
+								<input type="email" placeholder="email" name="emailAddress"
+									id="email1"><br> <input type="button"
+									class="button fit" value="아이디 찾기" onclick="findId()"> <input
+									type="hidden" id="findedId" value="" name="findedId">
+							</form>
+							<p style="color: red" id="findIdResult"></p>
+							<h4>비밀번호 찾기</h4>
+							<hr>
+							<form action="/loginPages/findedPw.jsp" id="findPwForm"
+								method="POST" onkeydown="return onKeyDown()">
+								<input type="text" placeholder="id" name="id" id="id2">
+								<input type="email" placeholder="email" name="emailAddress"
+									id="email2"><br> <input type="button"
+									class="button fit" value="비밀번호 찾기" onclick="findPw()"> <input
+									type="hidden" id="findedPw" name="findedPw">
+							</form>
+							<p style="color: red" id="findPwResult"></p>
+
+						</center>
 					</div>
 				</div>
 			</div>
 		</section>
-
-		<!--페이지 밑단  -->
-		<jsp:include page="/menuPages/footer.jsp"></jsp:include>
+	
+	<!--페이지 밑단  -->
+	<jsp:include page="/menuPages/footer.jsp"></jsp:include>
 
 	</div>
 	<!-- Scripts -->
