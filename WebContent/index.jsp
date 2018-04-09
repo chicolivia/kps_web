@@ -106,17 +106,7 @@
 			<div class="inner">
 				<article class="post style2">
 					<div class="content">
-						<header>
-							<span class="category">Erat lacinia</span>
-							<h3>Nisl euismod</h3>
-						</header>
-						<p>Integer mollis, nisl amet convallis, porttitor magna
-							ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed
-							lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien
-							ac quam. Lorem ipsum dolor sit nullam magna tempus.</p>
-						<ul class="actions">
-							<li><a href="#" class="button next">Learn More</a></li>
-						</ul>
+					
 					</div>
 					<div class="image" data-position="center">
 						<img src="images/index.jpg" alt="" />
@@ -164,6 +154,8 @@
 	<script src="/assets/js/skel.min.js"></script>
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
-
+	<script type="text/javascript">
+		
+	</script>
 </body>
 </html>
