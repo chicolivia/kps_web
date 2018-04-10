@@ -7,7 +7,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="/assets/css/main.css" />
-
+<link rel="stylesheet" href="/assets/css/table1.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+<meta name="viewport" content="width=device-width">
 </head>
 <body>
 	<!-- Wrapper -->
@@ -44,14 +46,14 @@
 					<li>
 						<%
 							if (session.getAttribute("memberNo") == null) {
-						%> <a
-						href="/loginPages/login.jsp" class="button small" id="lowerButton">Log
-							In<%
- 	} else {
- %> <a href="/biz/logout.jsp" class="button small"
-							id="lowerButton">Log Out<%
- 	}
- %>
+							%> <a
+							href="/loginPages/login.jsp" class="button small" id="lowerButton">Log
+								In<%
+							 	} else {
+							 %> <a href="/biz/logout.jsp" class="button small"
+														id="lowerButton">Log Out<%
+							 	}
+							 %>
 						</a>
 					</li>
 
@@ -100,19 +102,44 @@
 		<!-- Section -->
 		<section class="main alt" id="first">
 			<header>
-				<h2>한국 미국 거래소 자료 들여올 곳</h2>
-				<p>크롤링을...한..번.. 해보곘습니다..</p>
+				<h2>Korea Vs. Foreign Markets</h2>
 			</header>
 			<div class="inner">
 				<article class="post style2">
 					<div class="content">
-						<div id="preTable">
-							<table id="sortedTable">
+					<!-- https://codepen.io/pixelchar/pen/rfuqK 참고. -->
+						<div class="container" >
+							  <table class="responsive-table">
+							    <h1 style="text-align:center">TOP 5 KP</h1>
+							    <thead>
+							      <tr>
+							        <th scope="col"><h1>Korea</h1></th>
+							        <th scope="col"><h1>Foreign</h1></th>
+							        <th scope="col"><h1>Premium</h1></th>
+							      </tr>
+							    </thead>
+							    <tbody id="top5Tbody">
+							     </tbody>
+							  </table>
+							</div>
+					</div>
+					
+					<div class="content" data-position="center">						
+						<div class="container">
+							<table class="responsive-table">
+								<h2 style="text-align:center">거래소간 KP</h2>
+								<thead>
+									<tr>
+										<th></th>
+										<th><h1>Bitthum</h1></th>
+										<th><h1>Coinone</h1></th>
+										<th><h1>Upbit</h1></th>
+									</tr>
+								</thead>
+								<tbody  id="marketBody">
+								</tbody>
 							</table>
 						</div>
-					</div>
-					<div class="image" data-position="center">
-						<img src="images/index.jpg" alt="" />
 					</div>
 				</article>
 			</div>
@@ -158,12 +185,33 @@
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
 	<script type="text/javascript">
-
+	var jsonData;
 	$(document).ready(function(){
 		$.getJSON("/GetKPJson", function(result){
+			jsonData;
 			$.each(result.sortedList, function(i, field){
-				$("#sortedTable").text= "%%%%"; 
+				$("#top5Tbody").append(
+						"<tr>"+
+							"<td data-title='Korea'>"+field.kMarket +"</td>"+		  
+				       		"<td data-title='Foreign'>"+field.uMarket +"</td>"+	    
+				        "<td data-title='Premium' data-type='currency'>"+field.premium+"%</td>"+
+				      "</tr>");
+				if (i == 4){
+					return false;
+				}
 	        });
+			var appendString ="";
+			$.each(result.preList, function(j,mfield){
+				if(j %3 == 0){
+					appendString="<tr><td>"+mfield.uMarket+"</td><td>"+mfield.premium+"%</td>";					
+				}else if(j%3==1){
+					appendString = appendString+"<td>"+mfield.premium+"%</td>";	
+				}else if(j%3==2){
+					appendString = appendString +"<td>"+mfield.premium+"%</td></tr>";
+					$("#marketBody").append(appendString);
+				}
+				
+			});
    		});
 	});
 	</script>
