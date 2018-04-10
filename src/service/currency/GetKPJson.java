@@ -32,7 +32,7 @@ public class GetKPJson extends HttpServlet {
 		for(PremiumMarketBean pList: preList) {
 			returnString += "{\"kMarket\": \""+pList.getkMarket()+"\",";
 			returnString += "\"uMarket\": \""+pList.getuMarket()+"\",";
-			returnString += "\"premium\": \""+String.format("%.3f", pList.getValue())+"\"},";
+			returnString += "\"premium\": \""+String.format("%.2f", pList.getValue())+"\"},";
 		}
 		returnString = returnString.substring(0, returnString.length()-1);
 		returnString += "], \"sortedList\":[";
