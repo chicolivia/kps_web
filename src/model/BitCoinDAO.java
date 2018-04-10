@@ -46,9 +46,11 @@ public class BitCoinDAO {
 		BitCoinDAO.getBitCoinPredFromDB();
 		ArrayList<CoinPredBean> coinList = BitCoinDAO.getBitCoinPredList(); 
 		String resultString ="[";
-		for(CoinPredBean coin: coinList) {
-			resultString += "["+coin.getTimeStamp()*1000L+","+
-					String.format("%.8f", coin.getPriminum()*100)+"],";
+		for(int i = 0 ; i < coinList.size(); i++) {
+			if(coinList.get(i).getTimeStamp() >= System.currentTimeMillis()/1000) {
+			resultString += "["+((coinList.get(i).getTimeStamp()+32400L)*1000L)+","+
+					String.format("%.8f", coinList.get(i).getPriminum())+"],";
+			}
 		}
 		resultString = resultString.substring(0, resultString.length()-1);
 		resultString +="]";
