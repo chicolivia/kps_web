@@ -41,20 +41,20 @@ public class BitCoinDAO {
 	public static  ArrayList<CoinPredBean> getBitCoinPredList(){
 		return bitCoinPredList;
 	}
-	
-	public static String getCoinPredJSON() {
-		BitCoinDAO.getBitCoinPredFromDB();
-		ArrayList<CoinPredBean> coinList = BitCoinDAO.getBitCoinPredList(); 
-		String resultString ="[";
-		for(int i = 0 ; i < coinList.size(); i++) {
-			if(coinList.get(i).getTimeStamp() >= System.currentTimeMillis()/1000) {
-			resultString += "["+((coinList.get(i).getTimeStamp()+32400L)*1000L)+","+
-					String.format("%.8f", coinList.get(i).getPriminum())+"],";
-			}
-		}
-		resultString = resultString.substring(0, resultString.length()-1);
-		resultString +="]";
-		System.out.println(resultString);
-		return resultString;
-	}
+//	
+//	public static String getCoinPredJSON() {
+//		BitCoinDAO.getBitCoinPredFromDB();
+//		ArrayList<CoinPredBean> coinList = BitCoinDAO.getBitCoinPredList(); 
+//		String resultString ="[";
+//		for(int i = 0 ; i < coinList.size(); i++) {
+//			if(coinList.get(i).getTimeStamp() >= System.currentTimeMillis()/1000) {
+//			resultString += "["+((coinList.get(i).getTimeStamp()+32400L)*1000L)+","+
+//					String.format("%.8f", coinList.get(i).getPriminum())+"],";
+//			}
+//		}
+//		resultString = resultString.substring(0, resultString.length()-1);
+//		resultString +="]";
+//		System.out.println(resultString);
+//		return resultString;
+//	}
 }
