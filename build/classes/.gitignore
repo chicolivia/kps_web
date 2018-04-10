@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-/util/
-/model/
-/service/
-=======
 /conf/
 /controller/
 /exception/
 /model/
 /service/
 /util/
->>>>>>> branch 'master' of https://github.com/chicolivia/kps_web.git
