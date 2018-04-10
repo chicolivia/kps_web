@@ -63,7 +63,7 @@
       <!-- Banner -->
       <section id="banner">
          <div class="content">
-         <h1>Korea Premium Signal</h1>
+         <h1><font color="#f6f4f7">Korea Premium Signal</font></h1>
          </div>
          <a href="#first2" class="more scrolly">Learn More</a>
       </section>
