@@ -2,8 +2,8 @@
 <Context>
 	<Resource name="jdbc/mariadb" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.mariadb.jdbc.Driver" 
-		url="jdbc:mariadb://10.1.43.149:3306/kps"
-		username="rabbit" password="rabbit" 
+		url="jdbc:mariadb://45.119.144.83:3306/kps"
+		username="rabbit1" password="rabbit1" 
 		loginTimeout="10" maxWait="5000"
 		testOnBorrow="true" />
 </Context>

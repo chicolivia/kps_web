@@ -29,6 +29,7 @@ public class PremiumDAO {
 	static ArrayList<PriceMarketBean> usdList = new ArrayList<>();
 	static ArrayList<PremiumMarketBean> preList = new ArrayList<>();
 	static ArrayList<PremiumMarketBean> sortedPreList = new ArrayList<>();
+	static ScheduledExecutorService service = null;
 	static {
 		Runnable runnable = new Runnable() {
 			public void run() {
@@ -39,7 +40,7 @@ public class PremiumDAO {
 //					}
 				}
 			};
-			ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
+			service = Executors.newSingleThreadScheduledExecutor();
 			service.scheduleWithFixedDelay(runnable, 0, 30, TimeUnit.SECONDS);
 	}
 	
@@ -60,6 +61,7 @@ public class PremiumDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("한국 거래소 코인 가져오는데 실패");
+
 		}
 	}
 	public static void getUsdList() {
