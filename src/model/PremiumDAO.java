@@ -40,7 +40,7 @@ public class PremiumDAO {
 				}
 			};
 			ScheduledExecutorService service = Executors.newSingleThreadScheduledExecutor();
-			service.scheduleWithFixedDelay(runnable, 0, 60, TimeUnit.SECONDS);
+			service.scheduleWithFixedDelay(runnable, 0, 30, TimeUnit.SECONDS);
 	}
 	
 	public static void calPremiumLists() {

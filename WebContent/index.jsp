@@ -92,8 +92,9 @@
                      <li><a href="#" class="button next">Learn More</a></li>
                   </ul>
                </div>
-               <div class="image" data-position="center">
-                  <img src="images/jaebal.png" alt="" />
+               <div class="6u">
+                  <span class="image fit"><img src="/images/coinss.png"
+                     alt="" /></span>
                </div>
             </article>
          </div>
