@@ -4,6 +4,6 @@
 		driverClassName="org.mariadb.jdbc.Driver" 
 		url="jdbc:mariadb://45.119.144.83:3306/kps"
 		username="rabbit1" password="rabbit1" 
-		loginTimeout="10" maxWait="5000"
-		testOnBorrow="true" />
+		loginTimeout="10" maxWait="-1"
+		testOnBorrow="true" maxActive="20"/>
 </Context>

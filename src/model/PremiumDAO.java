@@ -54,14 +54,15 @@ public class PremiumDAO {
 	public static void getKrwList() {
 		krwList = new ArrayList<>();
 		try {
-			krwList.add(new PriceMarketBean(CurBitthum.getPrice()));
-			krwList.add(new PriceMarketBean(CurCoinone.getPrice()));
-			krwList.add(new PriceMarketBean(CurUpbit.getPrice()));
+		krwList.add(new PriceMarketBean(CurBitthum.getPrice()));
+		krwList.add(new PriceMarketBean(CurCoinone.getPrice()));
+		krwList.add(new PriceMarketBean(CurUpbit.getPrice()));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			System.out.println("한국 거래소 코인 가져오는데 실패");
-
+			System.out.println("한국 거래소 실패");
+			krwList.add(new PriceMarketBean(0));
+			krwList.add(new PriceMarketBean(0));
+			krwList.add(new PriceMarketBean(0));
 		}
 	}
 	public static void getUsdList() {
@@ -76,6 +77,11 @@ public class PremiumDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("외국 거래소 코인 가져오는데 실패");
+			usdList.add(new PriceMarketBean(0));
+			usdList.add(new PriceMarketBean(0));
+			usdList.add(new PriceMarketBean(0));
+			usdList.add(new PriceMarketBean(0));
+			usdList.add(new PriceMarketBean(0));
 		}
 	}
 	public static void getCurrency() {
@@ -85,6 +91,7 @@ public class PremiumDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("환율 가져오는데 실패");
+			currency = 1000;
 		}
 	}
 	public static void calculatePremium() {
