@@ -51,7 +51,7 @@
 								<h3 style="text-align: center">알람을 추가해주세요</h3>
 							</c:if>
 							<c:if test="${not empty memberInfo.alarmInfo}">
-								<h3 style="text-align: center; color: #9bb5f2">Registered Alarms</h3>
+								<h3 style="text-align: center; color: #dbb8ed">Registered Alarms</h3>
 								<!-- 알람 하나씩 -->
 								<c:forEach items="${memberInfo.alarmInfo}" var="alarm">
 									<div class="button2" style="border-radius: 20px;">
@@ -120,7 +120,7 @@
 												</div>
 											</div>
 											<div class="3u 12u(xsmall)">
-												<input type="button" value="등록" style="background-color: #314cc4" onclick="submit()">
+												<input type="button" value="등록" style="background-color: #b168d6" onclick="submit()">
 											</div>									
 										</div>
 									</div><!-- box -->

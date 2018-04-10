@@ -1878,7 +1878,7 @@
 	}
 
 		a:hover {
-			color: #293dbc !important;
+			color: #b168d6 !important;
 		}
 
 	strong, b {
@@ -2053,7 +2053,7 @@
 	input[type="button"],
 	button,
 	.button {
-		background-color:#314cc4;
+		background-color:#b168d6;
 		color: #ffffff !important;
 	}
 
@@ -2062,7 +2062,7 @@
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			background-color:#314cc4;
+			background-color:#b168d6;
 			color: #ffffff !important;
 		}
 
@@ -2071,7 +2071,7 @@
 		input[type="button"]:active,
 		button:active,
 		.button:active {
-			background-color:#314cc4;
+			background-color:#b168d6;
 		}
 
 		input[type="submit"].alt,
@@ -2081,7 +2081,7 @@
 		.button.alt {
 			background-color: transparent;
 			box-shadow: inset 0 0 0 2px rgba(143, 143, 143, 0.25);
-			color: #314cc4; !important;
+			color: #b168d6; !important;
 		}
 
 			input[type="submit"].alt:hover,
@@ -2097,7 +2097,7 @@
 			input[type="button"].alt.icon:before,
 			button.alt.icon:before,
 			.button.alt.icon:before {
-				color: #314cc4;
+				color: #b168d6;
 			}
 
 /* Form */
@@ -2374,8 +2374,8 @@
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #293dbc;
-			box-shadow: 0 0 0 1px #293dbc;
+			border-color: #b168d6;
+			box-shadow: 0 0 0 1px #b168d6;
 		}
 
 	.select-wrapper:before {
@@ -2394,16 +2394,16 @@
 
 	input[type="checkbox"]:checked + label:before,
 	input[type="radio"]:checked + label:before {
-		background-color: #293dbc;
-		border-color: #293dbc;
-		box-shadow: 0 0 0 1px #293dbc;
+		background-color: #b168d6;
+		border-color: #b168d6;
+		box-shadow: 0 0 0 1px #b168d6;
 		color: #ffffff;
 	}
 
 	input[type="checkbox"]:focus + label:before,
 	input[type="radio"]:focus + label:before {
-		border-color: #293dbc;
-		box-shadow: 0 0 0 1px #293dbc;
+		border-color: #b168d6;
+		box-shadow: 0 0 0 1px #b168d6;
 	}
 
 	::-webkit-input-placeholder {
@@ -3159,7 +3159,7 @@
 		}
 
 	.post > .content header .category {
-		color: #293dbc;
+		color: #b168d6;
 	}
 
 	.post.style2 {
@@ -3251,7 +3251,7 @@
 		}
 
 		#wrapper > .main.accent1 {
-			background-color: #293dbc;
+			background-color: #b168d6;
 			color: #ffffff;
 		}
 
@@ -3264,7 +3264,7 @@
 			}
 
 				#wrapper > .main.accent1 a:hover {
-					color: #293dbc !important;
+					color: #b168d6 !important;
 				}
 
 			#wrapper > .main.accent1 strong, #wrapper > .main.accent1 b {
@@ -3297,7 +3297,7 @@
 			#wrapper > .main.accent1 input[type="button"],
 			#wrapper > .main.accent1 button,
 			#wrapper > .main.accent1 .button {
-				background-color: #293dbc;
+				background-color: #b168d6;
 				color: #ffffff !important;
 			}
 
@@ -3384,7 +3384,7 @@
 				background-color: #ffffff;
 				border-color: #ffffff;
 				box-shadow: 0 0 0 1px #ffffff;
-				color: #293dbc;
+				color: #b168d6;
 			}
 
 			#wrapper > .main.accent1 input[type="checkbox"]:focus + label:before,
@@ -3442,11 +3442,11 @@
 			}
 
 			#wrapper > .main.accent1 .post > .content header .category {
-				color: #293dbc;
+				color: #b168d6;
 			}
 
 			#wrapper > .main.accent1 .post.style2 {
-				background-color: #293dbc;
+				background-color: #b168d6;
 			}
 
 			@media screen and (max-width: 480px) {
@@ -3471,7 +3471,7 @@
 			}
 
 				#wrapper > .main.accent2 a:hover {
-					color: #293dbc !important;
+					color: #b168d6 !important;
 				}
 
 			#wrapper > .main.accent2 strong, #wrapper > .main.accent2 b {
@@ -3504,7 +3504,7 @@
 			#wrapper > .main.accent2 input[type="button"],
 			#wrapper > .main.accent2 button,
 			#wrapper > .main.accent2 .button {
-				background-color: #293dbc;
+				background-color: #b168d6;
 				color: #ffffff !important;
 			}
 
@@ -3568,8 +3568,8 @@
 				#wrapper > .main.accent2 input[type="email"]:focus,
 				#wrapper > .main.accent2 select:focus,
 				#wrapper > .main.accent2 textarea:focus {
-					border-color: #293dbc;
-					box-shadow: 0 0 0 1px #293dbc;
+					border-color: #b168d6;
+					box-shadow: 0 0 0 1px #b168d6;
 				}
 
 			#wrapper > .main.accent2 .select-wrapper:before {
@@ -3588,16 +3588,16 @@
 
 			#wrapper > .main.accent2 input[type="checkbox"]:checked + label:before,
 			#wrapper > .main.accent2 input[type="radio"]:checked + label:before {
-				background-color: #293dbc;
-				border-color: #293dbc;
-				box-shadow: 0 0 0 1px #293dbc;
+				background-color: #b168d6;
+				border-color: #b168d6;
+				box-shadow: 0 0 0 1px #b168d6;
 				color: #ffffff;
 			}
 
 			#wrapper > .main.accent2 input[type="checkbox"]:focus + label:before,
 			#wrapper > .main.accent2 input[type="radio"]:focus + label:before {
-				border-color: #293dbc;
-				box-shadow: 0 0 0 1px #293dbc;
+				border-color: #b168d6;
+				box-shadow: 0 0 0 1px #b168d6;
 			}
 
 			#wrapper > .main.accent2 ::-webkit-input-placeholder {
@@ -3649,7 +3649,7 @@
 			}
 
 			#wrapper > .main.accent2 .post > .content header .category {
-				color: #293dbc;
+				color: #b168d6;
 			}
 
 			#wrapper > .main.accent2 .post.style2 {
@@ -3904,12 +3904,12 @@
 						left: -0.25rem;
 						width: calc(100% + 0.5rem);
 						height: 0.25rem;
-						background-color: #293dbc;
+						background-color: #b168d6;
 						border-radius: 4px;
 					}
 
 					#header > nav > ul > li.active > a {
-						color: #293dbc;
+						color: #b168d6;
 					}
 
 			.dropotron {
@@ -3953,7 +3953,7 @@
 					}
 
 					.dropotron li.active > a {
-						color: #293dbc;
+						color: #b168d6;
 					}
 
 				.dropotron a {
@@ -3964,7 +3964,7 @@
 				}
 
 					.dropotron a:active, .dropotron a:hover, .dropotron a:focus {
-						color: #293dbc;
+						color: #b168d6;
 					}
 
 		#header.reveal {
@@ -3995,7 +3995,7 @@
 			}
 
 				#header.alt a:hover {
-					color: #293dbc !important;
+					color: #b168d6 !important;
 				}
 
 			#header.alt strong, #header.alt b {
@@ -4151,7 +4151,7 @@
 	}
 
 		/* #banner > .content {
-			background-color: #293dbc;
+			background-color: #b168d6;
 			color: #ffffff;
 			-moz-transition: -moz-transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 			-webkit-transition: -webkit-transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -4175,7 +4175,7 @@
 			}
 
 				#banner > .content a:hover {
-					color: #293dbc !important;
+					color: #b168d6 !important;
 				}
 
 			#banner > .content strong, #banner > .content b {
@@ -4393,7 +4393,7 @@
 		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		-webkit-overflow-scrolling: touch;
-		background: #293dbc;
+		background: #b168d6;
 		box-shadow: none;
 		color: #ffffff;
 		height: 100%;

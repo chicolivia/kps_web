@@ -107,7 +107,7 @@
       
       <section class="main alt" id="first">
          <header>
-            <h2>Korea Vs. Foreign Markets</h2>
+            <h2>Korea Vs Foreign Markets</h2>
          </header>
          <div class="inner">
             <article class="main alt">
@@ -115,7 +115,7 @@
                <!-- https://codepen.io/pixelchar/pen/rfuqK 참고. -->
                   <div class="container" >
                        <table class="responsive-table">
-                         <h1 style="text-align:center"><font color="red">TOP 5</font> KP</h1>
+                         <h1 style="text-align:center"><font color="#b168d6">TOP 5</font> KP</h1>
                          <thead>
                            <tr>
                              <th scope="col"><h1>Korea</h1></th>
