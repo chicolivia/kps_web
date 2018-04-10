@@ -21,7 +21,7 @@
             <a href="/index.jsp"><strong>KPS</strong> by 바늘토</a>
          </div>
 
-         <!-- Nav -->
+  <!-- Nav -->
          <nav id="nav">
             <ul>
                <li><a href="/index.jsp">Home</a></li>
@@ -33,11 +33,10 @@
                <li>
                   <%
                      if (session.getAttribute("memberNo") == null) {
-                  %> <a href="/loginPages/signup.jsp" class="button small">Sign
-                     Up <%
+                  %> <a href="/loginPages/signup.jsp" class="button alt small"><font color=#bea5c6 size="3">Sign Up</font></a> <%
                       } else {
-                   %> <a href="/loginPages/mypage.jsp" class="button small">My
-                                          Page<%
+                   %> <a href="/loginPages/mypage.jsp" class="button alt small"><font color=#bea5c6 size="3">My
+                        Page</font><%
                       }
                    %>
                   </a>
@@ -46,12 +45,11 @@
                <li>
                   <%
                      if (session.getAttribute("memberNo") == null) {
-                     %> <a
-                     href="/loginPages/login.jsp" class="button small" id="lowerButton">Log
-                        In<%
+                     %> <a href="/loginPages/login.jsp" class="button alt small"
+                  id="lowerButton"><font color=#bea5c6 size="3">Log In</font></a><%
                          } else {
-                      %> <a href="/biz/logout.jsp" class="button small"
-                                          id="lowerButton">Log Out<%
+                      %> <a href="/biz/logout.jsp" class="button alt small"
+                     id="lowerButton"><font color=#bea5c6 size="3">Log Out</font><%
                          }
                       %>
                   </a>
@@ -73,45 +71,51 @@
       <!-- Section -->
       <section class="main accent2" id="first2">
          <header>
-            <h2>김치프리미엄 그래프</h2>
-            <p>크롤링해서 들여올 예정</p>
+            <h2>Korea Premuim Graph</h2>
          </header>
+         
          <div class="inner">
-            <article class="post alt">
-               <div class="content">
-                  <header>
-                     <span class="category">Lorem ipsum</span>
-                     <h3>Finibus et magna</h3>
-                  </header>
-                  <p>Integer mollis, nisl amet convallis, porttitor magna
-                     ullamcorper, amet egestas mauris. Ut magna finibus nisi nec sed
-                     lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien
-                     ac quam. Lorem ipsum dolor sit nullam magna tempus. Lorem ipsum
-                     sit tempus amet feugiat.</p>
-                  <ul class="actions">
-                     <li><a href="#" class="button next">Learn More</a></li>
-                  </ul>
-               </div>
-               <div class="6u">
+            <center>
+            <div class="6u">
                   <span class="image fit"><img src="/images/coinss.png"
                      alt="" /></span>
+               </div></center>
+            
+            <!-- <article class="post alt"> -->
+               <div class="content">
+                  <header>
+                     
+                     <center><span class="category"><strong><font size="5" color="#b06de8"
+                        face="vernada">실시간 코리아 프리미엄 그래프</font></strong></span>
+                          <p><font size=3>실시간 코인원-비트파이넥스 코리아 프리미엄 차트입니다.</font></p></center>
+                  </header>
+                
+                  <ul class="actions">
+                  </ul>
                </div>
-            </article>
+               
+               
+            <!-- </article> -->
+            <center>
+                  <img src="/images/kimchi.jpg"
+                     alt="" /></center>
          </div>
       </section>
+      
 
       <!-- Section -->
+      
       <section class="main alt" id="first">
          <header>
             <h2>Korea Vs. Foreign Markets</h2>
          </header>
          <div class="inner">
-            <article class="post style2">
+            <article class="main alt">
                <div class="content">
                <!-- https://codepen.io/pixelchar/pen/rfuqK 참고. -->
                   <div class="container" >
                        <table class="responsive-table">
-                         <h1 style="text-align:center">TOP 5 KP</h1>
+                         <h1 style="text-align:center"><font color="red">TOP 5</font> KP</h1>
                          <thead>
                            <tr>
                              <th scope="col"><h1>Korea</h1></th>
@@ -149,8 +153,7 @@
       <!-- Section -->
       <section class="main">
          <header>
-            <h2>환율 참고 자료</h2>
-            <p>환율 참고 자료를 넣어보겠습니다.</p>
+            <h2>뭔가를 넣어보겠다</h2>
          </header>
          <div class="inner">
             <ul class="faces">
