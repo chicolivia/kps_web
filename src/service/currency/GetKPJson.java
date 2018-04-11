@@ -27,7 +27,7 @@ public class GetKPJson extends HttpServlet {
 		ArrayList<PremiumMarketBean> sortedList = PremiumDAO.getSortedPreList();
 		ArrayList<PriceMarketBean> krwList = PremiumDAO.getKrwListArray();
 		ArrayList<PriceMarketBean> usdList = PremiumDAO.getUsdListArray();
-		
+		float currency = PremiumDAO.getCurrencyValue();
 		String returnString = "{\""+"preList\":[";
 		for(PremiumMarketBean pList: preList) {
 			returnString += "{\"kMarket\": \""+pList.getkMarket()+"\",";
@@ -52,7 +52,7 @@ public class GetKPJson extends HttpServlet {
 			returnString += pmu.getValue()+",";
 		}
 		returnString = returnString.substring(0, returnString.length()-1);
-		returnString +="]}";
+		returnString +="], \"currency\":\""+ currency+"\"}";
 		out.print(returnString);
 		out.close();
 	}

@@ -135,10 +135,10 @@
                         <h2 style="text-align:center">거래소간 KP</h2>
                         <thead>
                            <tr>
-                              <th></th>
-                              <th><h1>Bitthum</h1></th>
-                              <th><h1>Coinone</h1></th>
-                              <th><h1>Upbit</h1></th>
+                              <th><h1 id="currency">Currency</h1></th>
+                              <th><h1 id="bitthum">Bitthum</h1></th>
+                              <th><h1 id="coinone">Coinone</h1></th>
+                              <th><h1 id="upbit">Upbit</h1></th>
                            </tr>
                         </thead>
                         <tbody  id="marketBody">
@@ -168,7 +168,7 @@
                <li><span class="image"><img src="images/pic03.jpg"
                      alt="" /></span>
                   <h3>Kate Anderson</h3>
-                  <p>Euismod convallis</p></li>
+                  <p style="font-size: x-small;">Euismod convallis</p></li>
 
             </ul>
          </div>
@@ -204,10 +204,16 @@
                return false;
             }
            });
+         $("#currency").append("<br><p style='color: white; font-size: x-small;'>"+result.currency +" W</p>");
+         $('#bitthum').append("<br><p style='color: white; font-size: x-small;'>"+result.krwList[0]+" W</p>");
+         $('#coinone').append("<br><p style='color: white; font-size: x-small;'>"+result.krwList[1]+" W</p>");
+         $('#upbit').append("<br><p style='color: white; font-size: x-small;'>"+result.krwList[2]+" W</p>");
          var appendString ="";
          $.each(result.preList, function(j,mfield){
             if(j %3 == 0){
-               appendString="<tr><td>"+mfield.uMarket+"</td><td>"+mfield.premium+"%</td>";               
+               appendString="<tr><td>"+mfield.uMarket+"<br><p style='color: white; font-size: small;'>$ "+
+				result.usdList[j/3]     
+               +"</p></td><td>"+mfield.premium+"%</td>";               
             }else if(j%3==1){
                appendString = appendString+"<td>"+mfield.premium+"%</td>";   
             }else if(j%3==2){

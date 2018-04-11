@@ -134,4 +134,7 @@ public class PremiumDAO {
 	public static ArrayList<PriceMarketBean> getUsdListArray(){
 		return usdList;
 	}
+	public static float getCurrencyValue() {
+		return currency;
+	}
 }
