@@ -96,9 +96,10 @@
                
                
             <!-- </article> -->
-            <center>
+          <!--   <center>
                   <img src="/images/kimchi.jpg"
                      alt="" /></center>
+         	-->
          </div>
       </section>
       
@@ -107,7 +108,7 @@
       
       <section class="main alt" id="first">
          <header>
-            <h2>Korea Vs Foreign Markets</h2>
+            <h2>Premium </h2>
          </header>
          <div class="inner">
             <article class="main alt">
@@ -151,28 +152,7 @@
          </div>
       </section>
       <!-- Section -->
-      <section class="main">
-         <header>
-            <h2>뭔가를 넣어보겠다</h2>
-         </header>
-         <div class="inner">
-            <ul class="faces">
-               <li><span class="image"><img src="images/pic01.jpg"
-                     alt="" /></span>
-                  <h3>Jane Doe</h3>
-                  <p>Sed magna etiam</p></li>
-               <li><span class="image"><img src="images/pic02.jpg"
-                     alt="" /></span>
-                  <h3>John Smith</h3>
-                  <p>Ipsum et dolor</p></li>
-               <li><span class="image"><img src="images/pic03.jpg"
-                     alt="" /></span>
-                  <h3>Kate Anderson</h3>
-                  <p style="font-size: x-small;">Euismod convallis</p></li>
-
-            </ul>
-         </div>
-      </section>
+     
 
 
 
