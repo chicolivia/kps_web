@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context>
-	<WatchedResource>WEB-INF/web.xml</WatchedResource>
-    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
 	<Resource name="jdbc/mariadb" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.mariadb.jdbc.Driver" 
 		url="jdbc:mariadb://45.119.144.83:3306/kps"
