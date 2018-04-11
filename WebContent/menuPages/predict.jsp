@@ -72,7 +72,7 @@
 	                zoomType: 'x'
 	            },
 	            title: {
-	                text: 'KOREA PREMIUM PREDICTION - bithum&bitfinex'
+	                text: 'KOREA PREMIUM PREDICTION - bithum-bitfinex'
 	            },
 	            subtitle: {
 	                text: document.ontouchstart === undefined ?

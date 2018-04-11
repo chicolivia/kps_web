@@ -132,7 +132,7 @@
                <div class="content" data-position="center">                  
                   <div class="container">
                      <table class="responsive-table">
-                        <h2 style="text-align:center">거래소간 KP</h2>
+                        <h2 style="text-align:center">실시간 KP</h2>
                         <thead>
                            <tr>
                               <th><h1 id="currency">Currency</h1></th>
@@ -204,16 +204,16 @@
                return false;
             }
            });
-         $("#currency").append("<br><p style='color: white; font-size: x-small;'>"+result.currency +" W</p>");
-         $('#bitthum').append("<br><p style='color: white; font-size: x-small;'>"+result.krwList[0]+" W</p>");
-         $('#coinone').append("<br><p style='color: white; font-size: x-small;'>"+result.krwList[1]+" W</p>");
-         $('#upbit').append("<br><p style='color: white; font-size: x-small;'>"+result.krwList[2]+" W</p>");
+         $("#currency").append("<br><span style='color: white; font-size: x-small;'>"+result.currency +" W</span>");
+         $('#bitthum').append("<br><span style='color: white; font-size: x-small;'>"+result.krwList[0]+" W</span>");
+         $('#coinone').append("<br><span style='color: white; font-size: x-small;'>"+result.krwList[1]+" W</span>");
+         $('#upbit').append("<br><span style='color: white; font-size: x-small;'>"+result.krwList[2]+" W</span>");
          var appendString ="";
          $.each(result.preList, function(j,mfield){
             if(j %3 == 0){
-               appendString="<tr><td>"+mfield.uMarket+"<br><p style='color: white; font-size: small;'>$ "+
+               appendString="<tr><td>"+mfield.uMarket+"<br><span style='color: white; font-size: small;'>$ "+
 				result.usdList[j/3]     
-               +"</p></td><td>"+mfield.premium+"%</td>";               
+               +"</span></td><td>"+mfield.premium+"%</td>";               
             }else if(j%3==1){
                appendString = appendString+"<td>"+mfield.premium+"%</td>";   
             }else if(j%3==2){
