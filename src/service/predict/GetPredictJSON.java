@@ -40,9 +40,10 @@ public class GetPredictJSON extends HttpServlet {
 		ArrayList<CoinPredBean> coinList = BitCoinDAO.getBitCoinPredList(); 
 		String resultString ="[";
 		for(int i = 0 ; i < coinList.size(); i++) {
-			if(((System.currentTimeMillis()+32400L)/1000) <= (coinList.get(i).getTimeStamp())) {
+			if((System.currentTimeMillis()/1000) <= (coinList.get(i).getTimeStamp())) {
 			resultString += "["+(coinList.get(i).getTimeStamp()+32400L)*1000L+","+
 					String.format("%.3f", coinList.get(i).getPriminum())+"],";
+			System.out.println();
 			}
 		}
 		resultString = resultString.substring(0, resultString.length()-1);

@@ -51,8 +51,8 @@
 								onclick="findPw()"> <input type="hidden" id="findedPw"
 								name="findedPw">
 						</form>
-					</div>
 						<p style="color: red" id="findPwResult"></p>
+					</div>
 					
 				</div>
 			</div>
