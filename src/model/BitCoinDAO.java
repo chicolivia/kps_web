@@ -70,22 +70,22 @@ public class BitCoinDAO {
 		int resultInt = 0;
 		bitCoinPremiumList.add(new CoinPredBean(timestamp, premium));
 		int currentTime = (int) (System.currentTimeMillis()/1000);
-		if((currentTime-addTime) >= (60*5)) {
-			addTime = currentTime;
-			Connection con = null;
-			PreparedStatement pstmt = null;
-			try {
-				con = DBUtil.getConnection();
-				pstmt = con.prepareStatement(sql.getString("insertBitCoinPremium"));
-				pstmt.setInt(1, timestamp);
-				pstmt.setFloat(2, premium);
-				resultInt = pstmt.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}finally {
-				DBUtil.close(con, pstmt);
-			}
-		}
+//		if((currentTime-addTime) >= (60*5)) {
+//			addTime = currentTime;
+//			Connection con = null;
+//			PreparedStatement pstmt = null;
+//			try {
+//				con = DBUtil.getConnection();
+//				pstmt = con.prepareStatement(sql.getString("insertBitCoinPremium"));
+//				pstmt.setInt(1, timestamp);
+//				pstmt.setFloat(2, premium);
+//				resultInt = pstmt.executeUpdate();
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			}finally {
+//				DBUtil.close(con, pstmt);
+//			}
+//		}
 		return resultInt;
 	}
 	public static ArrayList<CoinPredBean> getBitCoinPremiumList(){
