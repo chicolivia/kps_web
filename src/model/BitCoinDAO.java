@@ -72,7 +72,6 @@ public class BitCoinDAO {
 		int currentTime = (int) (System.currentTimeMillis()/1000);
 		if((currentTime-addTime) >= (60*5)) {
 			addTime = currentTime;
-			System.out.println("addingDB");
 			Connection con = null;
 			PreparedStatement pstmt = null;
 			try {
