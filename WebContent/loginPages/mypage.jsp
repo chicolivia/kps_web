@@ -104,21 +104,23 @@
 									<label for ="riskType3">고위험.고수익 투자형</label>
 								</th>
 								<th>
-									<a href="#" class="button">투자 성향 테스트</a>
+									<a href="#" class="button" onclick="popupOpen()">투자 성향 테스트</a>
 								</th>
 							</tr>
 							<tr>
 								<th><h5>알림 설정</h5></th>
-								<th colspan = "2">
-									 <a href="/menuPages/alarm.jsp" class="button alt fit">알림 설정 페이지</a> 
+								<th>
+									 <a href="/menuPages/alarm.jsp" class="button alt fit" style="width: ">알림 설정 페이지</a> 
 								</th>
+								<th></th>
 							</tr>
 							<tr>
 								<th><h5>탈퇴  하기</h5></th>
-								<th colspan = "2">
+								<th>
 									<!-- <input type="button" class="button" value="탈퇴 하기"  style="background-color: #111111" onclick="checkByeBye()">  -->
 									<input type="button" class="button alt fit" value="탈퇴하기" style="color:#009933" onclick="checkByeBye()">
 								</th>
+								<th></th>
 							</tr>
 						</thread>
 					</table>
@@ -179,6 +181,16 @@
 					return;
 				}
 			}
+			function popupOpen(){
+
+				var popUrl = "/investment/investTest.jsp";	//팝업창에 출력될 페이지 URL
+				var windowW = 800;  // 창의 가로 길이
+		        var windowH = 950;  // 창의 세로 길이
+		        var left = Math.ceil((window.screen.width - windowW)/2);
+		        var top = Math.ceil((window.screen.height - windowH)/2);
+				window.open(popUrl,"pop_01","l top="+top+", left="+left+", height="+windowH+", width="+windowW+",resizable=yes");
+
+				}
 		</script>
 	</body>
 </html>

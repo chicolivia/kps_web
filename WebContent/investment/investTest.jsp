@@ -21,7 +21,7 @@
 			<header>
 				<h1>투자 성향 Test</h1>
 				<hr style="border: solid 2px; color: #bfbfbf;">
-				<font color="blue" size="4">다음 테스트 항목들은 증권사나 은행 등 금융기관에서 제공하는
+				<font color="red" size="4">다음 테스트 항목들은 증권사나 은행 등 금융기관에서 제공하는
 					테스트 문항들입니다. 테스트를 통해 자신의 투자성향을 진단해보세요!</font>
 			</header>
 			<div class="inner style3">
@@ -150,8 +150,8 @@
 								<br>
 								<br>
 								<div> <input type="submit" value="Test 결과 확인하기"
-									onclick="investChecking()" class="button fit"><span
-											id="inVest"></span></div>
+									onclick="investChecking()" class="button fit"><br>
+									<h3 id="inVest" style="text-align: center;"></h3></div>
 
 
 							</div>
@@ -179,24 +179,29 @@
 	<script type="text/javascript">
 	
 	function investChecking(){
-		var invest1 = document.getElementsByName('investment1');
+		var investQuestions;
+		var invest = 0;
 		
-		var invest2 = document.getElementsByName('investment2');
-		var invest3 = document.getElementsByName('investment3');
-		var invest4 = document.getElementsByName('investment4');
-		var invest5 = document.getElementsByName('investment5');
-		var invest6 = document.getElementsByName('investment6');
-		var invest7 = document.getElementsByName('investment7');
-		
-		var invest =  invest1 +  invest2 +  invest3 +  invest4 +  invest5 +  invest6 +  invest7;
-		if(invest < 30 ){
-			resultString = "당신의 투자성향은 원금보장 추구형입니다.";
-		}else if(30 <= invest < 60){
-			resultString = "당신의 투자성향은 균형 투자형입니다.";
-		}else{
-			resultString = "당신의 투자성향은 고위험, 고수익 투자형입니다.";
+		for(var i = 1; i < 8; i++){
+			var tmp = document.getElementsByName('investment'+i);
+			for(var j = 0 ; j< tmp.length; j++){
+				if(tmp[j].checked){
+					var tmp1 = tmp[j].value;
+					tmp1 *= 1;
+					invest += tmp1;
+					break;
+				}
+			}
 		}
-		document.getElementById("inVest").innerHTML = resultString;
+		if(invest < 30 ){
+			resultString = "원금보장 추구형";
+		}else if(30 <= invest < 60){
+			resultString = "균형 투자형";
+		}else{
+			resultString = "고위험, 고수익 투자형";
+		}
+		document.getElementById("inVest").innerHTML = "당신의 투자성향은  <span style='color:red;'>"+resultString+"</span>  입니다.";
+		
 	}
 	
 	
