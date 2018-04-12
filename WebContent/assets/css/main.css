@@ -3231,6 +3231,12 @@
 				background-color: #c0c7ea;
 				border-radius: 4px;
 			}
+			
+			#wrapper > .main > .inner.style6 {
+				padding: 5rem 4rem 3rem 4rem ;
+				background-color: #f3ddff;
+				border-radius: 4px;
+			}
 
 				#wrapper > .main > .inner.style2 > .image.main:first-child {
 					position: relative;

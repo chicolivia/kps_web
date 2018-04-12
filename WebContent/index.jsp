@@ -122,13 +122,13 @@
                <div class="content" data-position="center">                  
                   <div class="container">
                      <table class="responsive-table">
-                        <h2 style="text-align:center;">Current KP</h2>
+                        <h2 style="text-align:center;"><font color="#b168d6">Current </font>KP</h2>
                         <thead>
                            <tr>
-                              <th><h1 id="currency">Currency</h1></th>
-                              <th><h1 id="bitthum">Bitthum</h1></th>
-                              <th><h1 id="coinone">Coinone</h1></th>
-                              <th><h1 id="upbit">Upbit</h1></th>
+                              <th id="currency"></th>
+                              <th id="bitthum"></th>
+                              <th id="coinone"></th>
+                              <th id="upbit"></th>
                            </tr>
                         </thead>
                         <tbody  id="marketBody">
@@ -158,7 +158,7 @@
    <script src="/assets/js/util.js"></script>
    <script src="/assets/js/main.js"></script>
    <script type="text/javascript">
-   
+  
    $(document).ready(function(){
       $.getJSON("/GetKPJson", function(result){
          $.each(result.sortedList, function(i, field){
@@ -166,26 +166,26 @@
                   "<tr>"+
                      "<td data-title='Korea'>"+field.kMarket +"</td>"+        
                          "<td data-title='Foreign'>"+field.uMarket +"</td>"+       
-                    "<td data-title='Premium' data-type='currency'>"+field.premium+"%</td>"+
+                    "<td data-title='Premium' data-type='currency'>"+field.premium+" %</td>"+
                   "</tr>");
             if (i == 4){
                return false;
             }
            });
-         $("#currency").append("<br><span style='color: white; font-size: x-small;'>"+result.currency +" W</span>");
-         $('#bitthum').append("<br><span style='color: white; font-size: x-small;'>"+result.krwList[0]+" W</span>");
-         $('#coinone').append("<br><span style='color: white; font-size: x-small;'>"+result.krwList[1]+" W</span>");
-         $('#upbit').append("<br><span style='color: white; font-size: x-small;'>"+result.krwList[2]+" W</span>");
+         $("#currency").html("<h1 style='margin:0;'>Currency</h1><font color='#FFFFFF'>&#8361;"+Number(result.currency).toLocaleString('en').split(".")[0]+"</font>");
+         $("#bitthum").html("<h1 style='margin:0;'>Bitthum</h1><span style='color: white; font-size: medium;'>&#8361;"+Number(result.krwList[0]).toLocaleString('en').split(".")[0]+"</span>");
+         $("#coinone").html("<h1 style='margin:0;'>Coinone</h1><span style='color: white; font-size: medium;'>&#8361;"+Number(result.krwList[1]).toLocaleString('en').split(".")[0]+"</span>");
+         $("#upbit").html("<h1 style='margin:0;'>Upbit</h1><span style='color: white; font-size: medium;'>&#8361;"+Number(result.krwList[2]).toLocaleString('en').split(".")[0]+"</span>");
          var appendString ="";
          $.each(result.preList, function(j,mfield){
             if(j %3 == 0){
                appendString="<tr><td>"+mfield.uMarket+"<br><span style='color: white; font-size: small;'>$ "+
-				result.usdList[j/3]     
-               +"</span></td><td><p style='font-size: large;'>"+mfield.premium+"%</p></td>";               
+               Number(result.usdList[j/3]).toLocaleString('en').split(".")[0]
+               +"</span></td><td>"+mfield.premium+" %</td>";               
             }else if(j%3==1){
-               appendString = appendString+"<td>"+mfield.premium+"%</td>";   
+               appendString = appendString+"<td>"+mfield.premium+" %</td>";   
             }else if(j%3==2){
-               appendString = appendString +"<td>"+mfield.premium+"%</td></tr>";
+               appendString = appendString +"<td>"+mfield.premium+" %</td></tr>";
                $("#marketBody").append(appendString);
             }
             

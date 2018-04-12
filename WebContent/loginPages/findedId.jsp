@@ -27,7 +27,7 @@
 						
 
 	
-			<font size=5><p style="font-weight: bold;"> 찾으신 아이디는 ${param.findedId} 입니다.</p></font>
+			<h5 style="color:grey;"> 찾으신 아이디는 <span style="color:black">${param.findedId}</span> 입니다.</h5>
 		</div>
 		</div>
 		</div>
@@ -40,6 +40,7 @@
 		<script src="/assets/js/jquery.min.js"></script>
 		<script src="/assets/js/jquery.dropotron.min.js"></script>
 		<script src="/assets/js/jquery.scrollex.min.js"></script>
+		<script src="/assets/js/jquery.scrolly.min.js"></script>
 		<script src="/assets/js/skel.min.js"></script>
 		<script src="/assets/js/util.js"></script>
 		<script src="/assets/js/main.js"></script>

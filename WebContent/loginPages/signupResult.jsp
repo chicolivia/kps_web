@@ -20,8 +20,8 @@
 				<div class="inner style5" style="text-align: center;">
 					<div class="row 200%">
 						<div class="12u 12u$(medium)">
-							<font size=5><p style="font-weight: bold;">회원가입이 완료되었습니다.</p></font>
-							<font size=5><p style="font-weight: bold;">다시 로그인해주세요.</p></font>
+							<font size=4><p style="font-weight: bold;  color: grey;">회원가입이 완료되었습니다.</p></font>
+							<font size=4><p style="font-weight: bold; color: grey">다시 로그인해주세요.</p></font>
 						</div>
 					</div>
 				</div>

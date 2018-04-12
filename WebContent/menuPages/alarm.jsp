@@ -36,7 +36,7 @@
 				<!-- <div class="inner style3"> -->
 				<div class="inner style5">
 						<div class="image main" data-position="center"></div>
-						<h3 style="text-align: center">로그인이 필요한 서비스 입니다.</h3>
+						<h3 style="text-align: center; color: grey;">로그인이 필요한 서비스 입니다.</h3>
 				</div>
 			</section>
 	<%
@@ -50,7 +50,7 @@
 				<div class="inner style3" style="border-radius: 20px;'">
 						<div class="image main" data-position="center">
 							<c:if test="${empty memberInfo.alarmInfo}">
-								<h3 style="text-align: center">알람을 추가해주세요</h3>
+								<h3 style="text-align: center; color: grey;">알람을 추가해주세요</h3>
 							</c:if>
 							<c:if test="${not empty memberInfo.alarmInfo}">
 								<h3 style="text-align: center; color: #dbb8ed">Registered Alarms</h3>
@@ -122,7 +122,7 @@
 												</div>
 											</div>
 											<div class="3u 12u(xsmall)">
-												<input type="button" value="등록" style="background-color: #b168d6" onclick="submit()">
+												<input type="button" class="button2" value="등록" style="background-color: #b168d6" onclick="submit()">
 											</div>									
 										</div>
 									</div><!-- box -->

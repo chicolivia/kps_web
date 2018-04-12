@@ -57,6 +57,8 @@
 				</div>
 			</div>
 	
+			<br><br><br>
+			<p  style="color:grey; text-align: center;">email 문의: koreanpremium@gmail.com</p>
 </section>
 </div>
 	<!--페이지 밑단  -->
@@ -66,6 +68,7 @@
 	<script src="/assets/js/jquery.min.js"></script>
 	<script src="/assets/js/jquery.dropotron.min.js"></script>
 	<script src="/assets/js/jquery.scrollex.min.js"></script>
+	<script src="/assets/js/jquery.scrolly.min.js"></script>
 	<script src="/assets/js/skel.min.js"></script>
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>

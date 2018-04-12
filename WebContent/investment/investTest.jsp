@@ -27,7 +27,7 @@
 			<header>
 				<h1>투자 성향 Test</h1>
 				<hr style="border: solid 2px; color: #bfbfbf;">
-				<p style="color='red'; size='4'">다음 테스트 항목들은 증권사나 은행 등 금융기관에서 제공하는
+				<p style="color:red; size:4;">다음 테스트 항목들은 증권사나 은행 등 금융기관에서 제공하는
 					테스트 문항들입니다. 테스트를 통해 자신의 투자성향을 진단해보세요!</p>
 			</header>
 			<div class="inner style3">
@@ -35,8 +35,6 @@
 					<div class="row uniform">
 						<div class="2u 12u"></div>
 						<div class="9u 12u(medium)">
-							<!-- <form action="/SignUpMember" onsubmit="return submitCheck()"
-								method="POST" onkeydown="return captureReturnKey(event)"> -->
 
 							<div class="13u">
 

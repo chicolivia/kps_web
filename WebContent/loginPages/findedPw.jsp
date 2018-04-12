@@ -20,7 +20,9 @@
 		<div class="inner style5" style="text-align: center;" >
 			<div class="row 200%">
 			<div class="12u 12u$(medium)">
-			<font size=5><p style="font-weight: bold;"> 찾으신 비밀번호는 ${param.findedPw} 입니다.</p></font>
+			<h5 style="color:grey;"> 찾으신 비밀번호는 <span style="color:black">${param.findedPw}</span> 입니다.</h5>
+			<hr>
+			<h5  style="color:grey;">email 문의: koreanpremium@gmail.com</h5>
 		</div>
 		</div>
 		</div>
@@ -34,6 +36,7 @@
 		<script src="/assets/js/jquery.min.js"></script>
 		<script src="/assets/js/jquery.dropotron.min.js"></script>
 		<script src="/assets/js/jquery.scrollex.min.js"></script>
+		<script src="/assets/js/jquery.scrolly.min.js"></script>
 		<script src="/assets/js/skel.min.js"></script>
 		<script src="/assets/js/util.js"></script>
 		<script src="/assets/js/main.js"></script>

@@ -10,6 +10,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="/assets/css/main.css" />
+		<style>
+			.button2:hover {
+			    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+			}
+		</style>
 	</head>
 	<body>
 	<!-- Wrapper -->
@@ -39,7 +44,7 @@
 								</th>
 								<th>
 									<div class="actions small">
-										<input type="button" class="button fit" onclick="showEmailChangeRows()" value="변경하기">
+										<input type="button" class="button fit button2" onclick="showEmailChangeRows()" value="변경하기">
 									</div>
 								</th>
 							</tr>
@@ -97,14 +102,14 @@
 								<th><h5>투자 성향</h5></th>
 								<th>
 									<input type="radio" id="riskType1" name="riskType" value=1 onclick="riskCheck()">
-									<label for ="riskType1" class="alt">원금 보장 추구형</label>
+									<label for ="riskType1" class="alt"><span style="font-size: small;">원금 보장 추구형</span></label>
 									<input type="radio" id="riskType2" name="riskType" value=2 onclick="riskCheck()">
-									<label for ="riskType2">균형 투자형</label>
+									<label for ="riskType2"><span style="font-size: small;">균형 투자형</span></label>
 									<input type="radio" id="riskType3" name="riskType" value=3 onclick="riskCheck()">
-									<label for ="riskType3">고위험.고수익 투자형</label>
+									<label for ="riskType3"><span style="font-size: small;">고위험.고수익 투자형</span></label>
 								</th>
 								<th>
-									<a href="#" class="button" onclick="popupOpen()">투자 성향 테스트</a>
+									<a href="#" class="button button2" onclick="popupOpen()">투자 성향 테스트</a>
 								</th>
 							</tr>
 							<tr>
@@ -133,8 +138,8 @@
 				<div>
 				</div>
 			<!-- 	<input type="button" class="button fit" value="저 장 하 기"  onclick="submitForm()"> -->
-				<input type="button" value="저장하기" style="background-color: #E9967A" onclick="submitForm()">
-				
+				<input type="button" class="button2" value="저장하기" style="background-color: #CD1F48" onclick="submitForm()">
+				<br><br><p style="font-size: small; color: red;">변경을 위해 반드시 저장해주세요</p>
 				<!-- <input type="button" class="button" style="background-color: #FF9999;" value="저장하기" onclick="submitForm()"> -->
 			</div>
 		</section>
