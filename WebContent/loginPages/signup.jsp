@@ -78,7 +78,7 @@
 										<ul class="actions">
 											&nbsp;&nbsp;<li>자신의 성향을 잘 모르겠다면? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 											<a href="#"
-												class="button flt">투자 성향 테스트</a>
+												class="button flt" onclick="popupOpen()">투자 성향 테스트</a>
 											</li>
 										</ul>
 										</center>
@@ -113,5 +113,18 @@
 	<script src="/assets/js/util.js"></script>
 	<script src="/assets/js/main.js"></script>
 	<script src="/assets/js/jquery.scrolly.min.js"></script>
+	<script type="text/javascript">
+	function popupOpen(){
+
+		var popUrl = "/investment/investTest.jsp";	//팝업창에 출력될 페이지 URL
+		var windowW = 800;  // 창의 가로 길이
+        var windowH = 950;  // 창의 세로 길이
+        var left = Math.ceil((window.screen.width - windowW)/2);
+        var top = Math.ceil((window.screen.height - windowH)/2);
+		window.open(popUrl,"pop_01","l top="+top+", left="+left+", height="+windowH+", width="+windowW+",resizable=yes");
+
+		}
+
+	</script>
 </body>
 </html>
