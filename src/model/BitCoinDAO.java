@@ -23,7 +23,7 @@ public class BitCoinDAO {
 	}
 	public static void getBitCoinPredFromDB() {
 		int currentTime = (int) (System.currentTimeMillis()/1000);
-		if(getPreTime == 0 || (currentTime-getPreTime) > 60*60*1) {
+		if(getPreTime == 0 || (currentTime-getPreTime) > 60*5) {
 			getPreTime=currentTime;
 			Connection con = null;
 			PreparedStatement pstmt = null;
@@ -92,6 +92,7 @@ public class BitCoinDAO {
 		return bitCoinPremiumList;
 	}
 	public static  ArrayList<CoinPredBean> getBitCoinPredList(){
+		getBitCoinPredFromDB();
 		return bitCoinPredList;
 	}
 }
