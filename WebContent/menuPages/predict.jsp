@@ -13,13 +13,6 @@
 	<script src="/assets/chart/exporting.js"></script>
 	<script src="/assets/chart/dark-unica.js"></script>
 </head>
-<style>
-#container {
-    max-width: 100%;
-    height: 100%px;
-    margin: 1em auto;
-}
-</style>
 <body>
 
 	<!-- Wrapper -->
@@ -28,19 +21,17 @@
 		<!-- 메뉴바 -->
 		<jsp:include page="/menuPages/menuBar.jsp"></jsp:include>
 
-
-
 		<!-- Section -->
 		<section class="main accent2">
 			<header>
 				<h1>Predict</h1>
 			</header>
 				<div class="inner style3">
-					<div class="image main" data-position="center">
-						<div id="container" style="min-width: 200px; height:500px; margin: 0 auto"></div>
-					</div>
+					<div class="content">
+						<div id="container" style="min-width: 200px; height:700px; margin: 1em auto;"></div>
+					
 					<hr class="major" />
-				
+					</div>
 				</div>
 		</section>
 
@@ -72,11 +63,11 @@
 	                zoomType: 'x'
 	            },
 	            title: {
-	                text: 'KOREA PREMIUM PREDICTION - bithum-bitfinex'
+	                text: 'KOREA PREMIUM PREDICTION - bithum,bitfinex'
 	            },
 	            subtitle: {
 	                text: document.ontouchstart === undefined ?
-	                        '클릭해서 확대하세요' : 'Pinch the chart to zoom in'
+	                        '드래그해서 확대하세요' : 'Pinch the chart to zoom in'
 	            },
 	            xAxis: {
 	                type: 'datetime',

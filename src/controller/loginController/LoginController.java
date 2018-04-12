@@ -31,11 +31,7 @@ public class LoginController extends HttpServlet {
 		
 		String id = (String)request.getParameter("id");
 		String pw = (String)request.getParameter("pw");
-		if(id.equals("master")) {
-			session.setAttribute("master", "master");
-			response.sendRedirect("/masterPages/masterView.jsp");
-		}else {
-			try {
+		try {
 				MemberBean member = MemberDAO.selectMember(id);
 				session.setAttribute("memberNo", member.getNo());
 				ArrayList<ContactBean> contactList = null;
@@ -46,10 +42,14 @@ public class LoginController extends HttpServlet {
 				session.setAttribute("memberInfo", memberInfo);
 				System.out.println(member.getNo());
 				System.out.println(member.getId());
-				response.sendRedirect("/index.jsp");
-			}
+		}
 			catch(SQLException e) {
 				e.printStackTrace();
+		}finally {
+			if(id.equals("master")) {
+				response.sendRedirect("/masterPages/masterView.jsp");
+			}else {
+				response.sendRedirect("/index.jsp");
 			}
 		}
 	}
