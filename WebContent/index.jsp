@@ -79,8 +79,11 @@
          <header>
             <h2>Korea Premuim Graph</h2>
          </header>
+         
+      
          <div class="inner">
                <div class="content">
+                  <center><font size="4" face="vernada"> 국내 거래소인 빗썸과 해외 거래소인 비트파이넥스의 실시간 코리아 프리미엄 그래프입니다. </font></center><br>
                 
                  	<div id="container" style="min-width: 200px; height:600px; margin: 0 auto;
                  		max-width: 100%; margin: 1em auto;"></div>

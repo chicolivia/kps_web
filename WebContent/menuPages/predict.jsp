@@ -28,6 +28,8 @@
 			</header>
 				<div class="inner style3">
 					<div class="content">
+					
+					<center><font size="4" face="vernada"> 국내거래소인 빗썸과 해외 거래소 비트파이낵스의 데이터 기반 머신러닝으로 예측한 코리아 프리미엄 그래프입니다. </font></center><br>
 						<div id="container" style="min-width: 200px; height:700px; margin: 1em auto;"></div>
 					
 					<hr class="major" />

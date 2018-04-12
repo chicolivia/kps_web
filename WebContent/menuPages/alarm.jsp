@@ -28,11 +28,13 @@
 	
 	<%if(session.getAttribute("memberInfo") == null) {
 	%>
-			<section class="main accent2">
+			<section class="main alt">
+			<!-- <section class="main accent2"> -->
 				<header>
 					<h1>alarm</h1>
 				</header>
-				<div class="inner style3">
+				<!-- <div class="inner style3"> -->
+				<div class="inner style5">
 						<div class="image main" data-position="center"></div>
 						<h3 style="text-align: center">로그인이 필요한 서비스 입니다.</h3>
 				</div>
