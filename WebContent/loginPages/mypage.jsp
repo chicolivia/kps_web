@@ -110,7 +110,7 @@
 							<tr>
 								<th><h5>알림 설정</h5></th>
 								<th>
-									 <a href="/menuPages/alarm.jsp" class="button alt fit" style="width: ">알림 설정 페이지</a> 
+									 <a href="/menuPages/alarm.jsp" class="button alt fit" style="width: "><font style="color:grey;">알림 설정 페이지</font></a> 
 								</th>
 								<th></th>
 							</tr>
