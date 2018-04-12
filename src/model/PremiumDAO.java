@@ -78,7 +78,9 @@ public class PremiumDAO {
 		int curTime = (int) (System.currentTimeMillis()/1000);
 		float pre = PreminumCalCulate.getPreminum(krwList.get(KRWMarketNameNumber.Bitthum).getValue(),
 				usdList.get(USDMarketNameNumber.BitFinex).getValue(), currency);
+		if(pre!= 100) {
 		BitCoinDAO.addBitCoinPremium(curTime, pre);
+		}
 	}
 
 	public static void getKrwList() {
@@ -89,9 +91,6 @@ public class PremiumDAO {
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("한국 거래소 실패");
-			krwList.set(KRWMarketNameNumber.Bitthum,new PriceMarketBean(0));
-			krwList.set(KRWMarketNameNumber.Coinone,new PriceMarketBean(0));
-			krwList.set(KRWMarketNameNumber.Upbit,new PriceMarketBean(0));
 		}
 	}
 	public static void getUsdList() {
@@ -105,11 +104,6 @@ public class PremiumDAO {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("외국 거래소 코인 가져오는데 실패");
-			usdList.set(0, new PriceMarketBean(0));
-			usdList.set(1, new PriceMarketBean(0));
-			usdList.set(2, new PriceMarketBean(0));
-			usdList.set(3, new PriceMarketBean(0));
-			usdList.set(4, new PriceMarketBean(0));
 		}
 	}
 	public static void getCurrency() {
