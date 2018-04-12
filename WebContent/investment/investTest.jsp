@@ -180,12 +180,14 @@
 	
 	function investChecking(){
 		var invest1 = document.getElementsByName('investment1');
+		
 		var invest2 = document.getElementsByName('investment2');
 		var invest3 = document.getElementsByName('investment3');
 		var invest4 = document.getElementsByName('investment4');
 		var invest5 = document.getElementsByName('investment5');
 		var invest6 = document.getElementsByName('investment6');
 		var invest7 = document.getElementsByName('investment7');
+		
 		var invest =  invest1 +  invest2 +  invest3 +  invest4 +  invest5 +  invest6 +  invest7;
 		if(invest < 30 ){
 			resultString = "당신의 투자성향은 원금보장 추구형입니다.";
