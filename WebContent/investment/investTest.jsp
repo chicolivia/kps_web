@@ -16,7 +16,6 @@
 
 	<!-- Wrapper -->
 	<div id="wrapper">
-		<jsp:include page="/menuPages/menuBar.jsp"></jsp:include>
 		<section class="main alt">
 			<header>
 				<h1>투자 성향 Test</h1>
