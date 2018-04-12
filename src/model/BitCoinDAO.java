@@ -11,24 +11,51 @@ import model.domain.CoinPredBean;
 import util.DBUtil;
 
 public class BitCoinDAO {
+	static int addTime = 0;
+	static int getPreTime= 0;
 	static ResourceBundle sql = DBUtil.getResourceBundle();
-	public static ArrayList<CoinPredBean> bitCoinPredList = null;
+	public static ArrayList<CoinPredBean> bitCoinPredList = new ArrayList<>();
+	public static ArrayList<CoinPredBean> bitCoinPremiumList = new ArrayList<>();
 	
 	static {
 		getBitCoinPredFromDB();
+		getBitCoinPremiumFromDB();
 	}
 	public static void getBitCoinPredFromDB() {
+		int currentTime = (int) (System.currentTimeMillis()/1000);
+		if(getPreTime == 0 || (currentTime-getPreTime) > 60*60*3) {
+			getPreTime=currentTime;
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rset = null;
+			bitCoinPredList = new ArrayList<>();
+			try {
+				con = DBUtil.getConnection();
+				pstmt = con.prepareStatement(sql.getString("selectAllBitPred"));
+				rset = pstmt.executeQuery();
+				while(rset.next()) {
+					bitCoinPredList.add(
+							new CoinPredBean(rset.getInt(1),rset.getFloat(2)));
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				DBUtil.close(con, pstmt, rset);
+			}
+		}
+	}
+	
+	public static void getBitCoinPremiumFromDB() {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
-		bitCoinPredList = new ArrayList<>();
-			
+		bitCoinPremiumList = new ArrayList<>();
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sql.getString("selectAllBitPred"));
+			pstmt = con.prepareStatement(sql.getString("selectAllBitCoinPremium"));
 			rset = pstmt.executeQuery();
 			while(rset.next()) {
-				bitCoinPredList.add(
+				bitCoinPremiumList.add(
 						new CoinPredBean(rset.getInt(1),rset.getFloat(2)));
 			}
 		} catch (SQLException e) {
@@ -38,23 +65,34 @@ public class BitCoinDAO {
 		}
 	}
 	
+	public static int addBitCoinPremium(int timestamp, float premium) {
+		//insertBitCoinPremium
+		int resultInt = 0;
+		bitCoinPremiumList.add(new CoinPredBean(timestamp, premium));
+		int currentTime = (int) (System.currentTimeMillis()/1000);
+		if((currentTime-addTime) >= (60*5)) {
+			addTime = currentTime;
+			System.out.println("addingDB");
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			try {
+				con = DBUtil.getConnection();
+				pstmt = con.prepareStatement(sql.getString("insertBitCoinPremium"));
+				pstmt.setInt(1, timestamp);
+				pstmt.setFloat(2, premium);
+				resultInt = pstmt.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+				DBUtil.close(con, pstmt);
+			}
+		}
+		return resultInt;
+	}
+	public static ArrayList<CoinPredBean> getBitCoinPremiumList(){
+		return bitCoinPremiumList;
+	}
 	public static  ArrayList<CoinPredBean> getBitCoinPredList(){
 		return bitCoinPredList;
 	}
-//	
-//	public static String getCoinPredJSON() {
-//		BitCoinDAO.getBitCoinPredFromDB();
-//		ArrayList<CoinPredBean> coinList = BitCoinDAO.getBitCoinPredList(); 
-//		String resultString ="[";
-//		for(int i = 0 ; i < coinList.size(); i++) {
-//			if(coinList.get(i).getTimeStamp() >= System.currentTimeMillis()/1000) {
-//			resultString += "["+((coinList.get(i).getTimeStamp()+32400L)*1000L)+","+
-//					String.format("%.8f", coinList.get(i).getPriminum())+"],";
-//			}
-//		}
-//		resultString = resultString.substring(0, resultString.length()-1);
-//		resultString +="]";
-//		System.out.println(resultString);
-//		return resultString;
-//	}
 }

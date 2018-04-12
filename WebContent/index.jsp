@@ -8,8 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="/assets/css/main.css" />
 <link rel="stylesheet" href="/assets/css/table1.css"/>
+	<script src="/assets/js/jquery-3.1.1.min.js"></script>
+	<script src="/assets/chart/highcharts.js"></script>
+	<script src="/assets/chart/exporting.js"></script>
+	
+	<script src="/assets/chart/dark-unica.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
 <meta name="viewport" content="width=device-width">
+
 </head>
 <body>
    <!-- Wrapper -->
@@ -73,33 +79,13 @@
          <header>
             <h2>Korea Premuim Graph</h2>
          </header>
-         
          <div class="inner">
-            <center>
-            <div class="6u">
-                  <span class="image fit"><img src="/images/coinss.png"
-                     alt="" /></span>
-               </div></center>
-            
-            <!-- <article class="post alt"> -->
                <div class="content">
-                  <header>
-                     
-                     <center><span class="category"><strong><font size="5" color="#b06de8"
-                        face="vernada">실시간 코리아 프리미엄 그래프</font></strong></span>
-                          <p><font size=3>실시간 코인원-비트파이넥스 코리아 프리미엄 차트입니다.</font></p></center>
-                  </header>
                 
-                  <ul class="actions">
-                  </ul>
+                 	<div id="container" style="min-width: 200px; height:600px; margin: 0 auto;
+                 		max-width: 100%; margin: 1em auto;"></div>
+                
                </div>
-               
-               
-            <!-- </article> -->
-          <!--   <center>
-                  <img src="/images/kimchi.jpg"
-                     alt="" /></center>
-         	-->
          </div>
       </section>
       
@@ -108,7 +94,7 @@
       
       <section class="main alt" id="first">
          <header>
-            <h2>Premium </h2>
+            <h2>Korea vs Foreign Market</h2>
          </header>
          <div class="inner">
             <article class="main alt">
@@ -133,7 +119,7 @@
                <div class="content" data-position="center">                  
                   <div class="container">
                      <table class="responsive-table">
-                        <h2 style="text-align:center">실시간 KP</h2>
+                        <h2 style="text-align:center;">Current KP</h2>
                         <thead>
                            <tr>
                               <th><h1 id="currency">Currency</h1></th>
@@ -158,7 +144,6 @@
 
       <!--페이지 밑단  -->
       <jsp:include page="/menuPages/footer.jsp"></jsp:include>
-
 
    </div>
    <!-- Scripts -->
@@ -193,7 +178,7 @@
             if(j %3 == 0){
                appendString="<tr><td>"+mfield.uMarket+"<br><span style='color: white; font-size: small;'>$ "+
 				result.usdList[j/3]     
-               +"</span></td><td>"+mfield.premium+"%</td>";               
+               +"</span></td><td><p style='font-size: large;'>"+mfield.premium+"%</p></td>";               
             }else if(j%3==1){
                appendString = appendString+"<td>"+mfield.premium+"%</td>";   
             }else if(j%3==2){
@@ -203,7 +188,75 @@
             
          });
          });
+      $.getJSON(
+    		   '/GetBitCoinJSON',
+    		    function (data) {
+
+    		        Highcharts.chart('container', {
+    		            chart: {
+    		                zoomType: 'x'
+    		            },
+    		            title: {
+    		                text: 'KOREA PREMIUM - bithum,bitfinex'
+    		            },
+    		            subtitle: {
+    		                text: document.ontouchstart === undefined ?
+    		                        '드래그해서 확대하세요' : 'Pinch the chart to zoom in'
+    		            },
+    		            xAxis: {
+    		                type: 'datetime',
+    		                title:{
+    		                	text:'시간'
+    		                }
+    		            },
+    		            yAxis: {
+    		                title: {
+    		                    text: '프리미엄'
+    		                },
+    		            	labels:{
+    		            		format:'{value:.2f} %'
+    		            	}
+    		            },
+    		            legend: {
+    		                enabled: false
+    		            },
+    		            plotOptions: {
+    		                area: {
+    		                    fillColor: {
+    		                        linearGradient: {
+    		                            x1: 0,
+    		                            y1: 0,
+    		                            x2: 0,
+    		                            y2: 1
+    		                        },
+    		                        stops: [
+    		                            [0, Highcharts.getOptions().colors[0]],
+    		                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+    		                        ]
+    		                    },
+    		                    marker: {
+    		                        radius: 2
+    		                    },
+    		                    lineWidth: 1,
+    		                    states: {
+    		                        hover: {
+    		                            lineWidth: 1
+    		                        }
+    		                    },
+    		                    threshold: null
+    		                }
+    		            },
+
+    		            series: [{
+    		                type: 'area',
+    		                name: 'Premium',
+    		                data: data
+    		            }]
+    		        });
+    		    }
+    		);
    });
+   
    </script>
 </body>
 </html>

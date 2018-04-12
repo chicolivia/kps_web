@@ -30,58 +30,86 @@ public class PremiumDAO {
 	static ArrayList<PremiumMarketBean> preList = new ArrayList<>();
 	static ArrayList<PremiumMarketBean> sortedPreList = new ArrayList<>();
 	static ScheduledExecutorService service = null;
+	static Runnable runnable = null;
 	static {
-		Runnable runnable = new Runnable() {
+		for(int i = 0 ; i < 3;i++) {
+			krwList.add(new PriceMarketBean());
+		}
+		for(int i = 0 ; i < 5;i++) {
+			usdList.add(new PriceMarketBean());
+		}
+		startCRW();
+	}
+	public static void startCRW() {
+		runnable = new Runnable() {
 			public void run() {
-				calPremiumLists();
-//				System.out.println("======================");
-//					for(PremiumMarketBean p: sortedPreList) {
-//						System.out.println(p.getkMarket()+"/"+p.getuMarket()+"/"+p.getValue());
-//					}
+					calPremiumLists();
 				}
 			};
 			service = Executors.newSingleThreadScheduledExecutor();
-			service.scheduleWithFixedDelay(runnable, 0, 30, TimeUnit.SECONDS);
+			service.scheduleWithFixedDelay(runnable, 0, 5, TimeUnit.SECONDS);
+	}
+	public static void printLists() {
+		System.out.println(System.currentTimeMillis());
+		for(int i = 0 ; i <krwList.size(); i++) {
+			System.out.println(krwList.get(i));
+		}
+		for(int j = 0 ; j <usdList.size(); j++) {
+			System.out.println(usdList.get(j));
+		}
+		System.out.println(currency);
 	}
 	
+	public static void stopCRW() {
+		service.shutdownNow();
+		service=null;
+		runnable=null;
+	}
 	public static void calPremiumLists() {
 		getKrwList();
 		getUsdList();
 		getCurrency();
+		pushDB();
 		calculatePremium();
 	}
 	
+	private static void pushDB() {
+		// TODO Auto-generated method stub
+		int curTime = (int) (System.currentTimeMillis()/1000);
+		float pre = PreminumCalCulate.getPreminum(krwList.get(KRWMarketNameNumber.Bitthum).getValue(),
+				usdList.get(USDMarketNameNumber.BitFinex).getValue(), currency);
+		BitCoinDAO.addBitCoinPremium(curTime, pre);
+	}
+
 	public static void getKrwList() {
-		krwList = new ArrayList<>();
 		try {
-		krwList.add(new PriceMarketBean(CurBitthum.getPrice()));
-		krwList.add(new PriceMarketBean(CurCoinone.getPrice()));
-		krwList.add(new PriceMarketBean(CurUpbit.getPrice()));
+			krwList.set(KRWMarketNameNumber.Bitthum,new PriceMarketBean(CurBitthum.getPrice()));
+			krwList.set(KRWMarketNameNumber.Coinone,new PriceMarketBean(CurCoinone.getPrice()));
+			krwList.set(KRWMarketNameNumber.Upbit,new PriceMarketBean(CurUpbit.getPrice()));
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.out.println("한국 거래소 실패");
-			krwList.add(new PriceMarketBean(0));
-			krwList.add(new PriceMarketBean(0));
-			krwList.add(new PriceMarketBean(0));
+			krwList.set(KRWMarketNameNumber.Bitthum,new PriceMarketBean(0));
+			krwList.set(KRWMarketNameNumber.Coinone,new PriceMarketBean(0));
+			krwList.set(KRWMarketNameNumber.Upbit,new PriceMarketBean(0));
 		}
 	}
 	public static void getUsdList() {
-		usdList = new ArrayList<>();
 		try {
-			usdList.add(new PriceMarketBean(CurBinance.getPrice()));
-			usdList.add(new PriceMarketBean(CurBitFinex.getPrice()));
-			usdList.add(new PriceMarketBean(CurBittrex.getPrice()));
-			usdList.add(new PriceMarketBean(CurGdax.getPrice()));
-			usdList.add(new PriceMarketBean(CurKraken.getPrice()));
+			usdList.set(USDMarketNameNumber.Binance, new PriceMarketBean(CurBinance.getPrice()));
+			usdList.set(USDMarketNameNumber.BitFinex, new PriceMarketBean(CurBitFinex.getPrice()));
+			usdList.set(USDMarketNameNumber.Bittrex, new PriceMarketBean(CurBittrex.getPrice()));
+			usdList.set(USDMarketNameNumber.Gdax, new PriceMarketBean(CurGdax.getPrice()));
+			usdList.set(USDMarketNameNumber.Kraken, new PriceMarketBean(CurKraken.getPrice()));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("외국 거래소 코인 가져오는데 실패");
-			usdList.add(new PriceMarketBean(0));
-			usdList.add(new PriceMarketBean(0));
-			usdList.add(new PriceMarketBean(0));
-			usdList.add(new PriceMarketBean(0));
-			usdList.add(new PriceMarketBean(0));
+			usdList.set(0, new PriceMarketBean(0));
+			usdList.set(1, new PriceMarketBean(0));
+			usdList.set(2, new PriceMarketBean(0));
+			usdList.set(3, new PriceMarketBean(0));
+			usdList.set(4, new PriceMarketBean(0));
 		}
 	}
 	public static void getCurrency() {
