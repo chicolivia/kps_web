@@ -16,12 +16,19 @@
 
 	<!-- Wrapper -->
 	<div id="wrapper">
+	<header id="header">
+		  <nav id="nav">
+         <ul>
+            <li><a href="javascript:self.close();" >EXIT</a></li>
+           </ul>
+           </nav>
+	</header>
 		<section class="main alt">
 			<header>
 				<h1>투자 성향 Test</h1>
 				<hr style="border: solid 2px; color: #bfbfbf;">
-				<font color="red" size="4">다음 테스트 항목들은 증권사나 은행 등 금융기관에서 제공하는
-					테스트 문항들입니다. 테스트를 통해 자신의 투자성향을 진단해보세요!</font>
+				<p style="color='red'; size='4'">다음 테스트 항목들은 증권사나 은행 등 금융기관에서 제공하는
+					테스트 문항들입니다. 테스트를 통해 자신의 투자성향을 진단해보세요!</p>
 			</header>
 			<div class="inner style3">
 				<div class="image main" data-position="center">
@@ -204,7 +211,9 @@
 	}
 	
 	
-	
+	function goback(){
+		window.close();
+	}
 	
 	
 	</script>
