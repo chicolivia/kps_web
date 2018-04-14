@@ -1,3 +1,3 @@
 # kps_web
 
-homepage URL: www.kpsignal.com
+URL: www.kpsignal.com
